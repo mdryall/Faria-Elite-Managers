@@ -1,0 +1,272 @@
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[
+%draft,
+12pt,
+titlepage,
+reqno,
+%	oneside,
+%	twocolumn
+]{article}%Draft option puts "slugs" in the margin for overfull lines
+
+% wirWidarweg44
+%\usepackage{newlattice}%custom package by Gratzer. Use with amsart See book for details.
+%Packages loaded by amsart:
+%	\usepackage{amsmath}%This loads amsbsy, amsopn, amstext
+%	\usepackage{amsfonts}
+\usepackage{amsthm}%This loads amsgen
+\usepackage{amsxtra}
+\usepackage{geometry}
+%	\usepackage{upref}
+%	\usepackage{amsidx}
+\usepackage{pdfsync}
+
+\usepackage{
+	amssymb,
+	latexsym,
+	amsmath,
+	natbib,
+	exscale,
+	eufrak,
+	amscd, %commutative diagrams
+	dcolumn %to get decimal places aligned in tables
+}
+\usepackage[mathscr]{eucal}
+\usepackage[english]{babel}
+
+\usepackage[]{graphicx}
+%\usepackage{pgf,pgfarrows,pgfnodes,pgfshade}
+\usepackage{setspace} %Turn ON for editing
+%\usepackage{verbatim}
+%\usepackage{enumerate}
+%\usepackage{xspace}
+%\usepackage{longtable}
+%\usepackage{epstopdf}
+%\usepackage[authoryear]{natbib}
+%\usepackage{lscape}
+
+\bibliographystyle{chicago}
+
+%\theoremstyle{plain}
+\newtheorem{acknowledgement}{Acknowledgement}
+\newtheorem{assumption}{Assumption}
+\newtheorem{axiom}{Axiom}
+\newtheorem{case}{Case}
+\newtheorem{claim}{Claim}
+\newtheorem{conclusion}{Conclusion}
+\newtheorem{condition}{Condition}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{corollary}{Corollary}
+\newtheorem{criterion}{Criterion}
+%\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{econjecture}{Empirical Conjecture}
+\newtheorem{example}{Example}
+\newtheorem{exercise}{Exercise}
+\newtheorem{lemma}{Lemma}
+%\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newtheorem*{notation}{Notation}
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newtheorem*{main}{Main Theorem}
+\newtheorem{solution}{Solution}
+\newtheorem{summary}{Summary}
+%\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+
+\newcommand{\BigFig}[1]{\parbox{12pt}{\Huge #1}}%See Gratzer l. 2442 (for matrix)
+\newcommand{\BigZero}{\BigFig{0}}
+
+\geometry{letterpaper}
+\setlength{\oddsidemargin}{0in}
+\setlength{\topmargin}{0in}
+\setlength{\topskip}{0in}
+\setlength{\headsep}{0in}
+\setlength{\headheight}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.75in}
+
+
+\begin{document}
+	
+	
+	\title{A contraction mapping in elite quality\thanks{Initial thoughts -- NOT FOR CITATION OR CIRCULATION.}}
+	\author{
+		M. D. Ryall\\ Florida Atlantic University
+		\and 
+		Joao Faria\\ Florida Atlantic University
+	}
+	\date{\today}
+	\maketitle
+	
+	\begin{abstract}
+		Yadda Yadda ...
+	\end{abstract}
+	
+	\doublespacing
+	\def\baselinestretch{1.5}\small\normalsize
+	
+	
+	\section{Introduction}
+	The question is why this period of woke management appears to be largely immune to market correction. 
+	Of course, we can point to counter-examples like Bud Lite and Target.
+	Still, virtually all the F500 companies have embraced DEI and other woke policies that appear to be working against profit maximization.
+	Managers are not only transparent about it, but openly brag.
+	(There are plenty of examples to cite and statistics as well.)
+	No sooner does a Bud Lite destroy billions in shareholder value then a Disney releases the latest animation aimed at grooming kids. 
+	
+	What is causing this trend?
+	Why is the market so slow to correct it? 
+	Under what conditions will it be corrected?
+	
+	I have an extended, though incomplete theory about this. 
+	The model I presently have in mind is intended to capture a fundamental piece of what is going on.
+	It is a story you and I are both very familiar with.
+	Namely, higher education (or even education more generally) has been captured (willingly) by the ruling class to ensure that the sons and daughters of the ruling class remain in that class. educated
+	This involves educational institutions that don't actually teach anything but do strengthen class cohesion.
+	In a way, this is an anti-signaling model of education (you will see what I mean below).
+	
+	The key driver in this model is parents whose goal is to ensure their kids become members of the elite class. 
+	For that reason, I'm thinking that an overlapping generations style model is what we want to set up.
+	There is more but let me lay out the pieces that I have in mind and we can use that as a starting point for further reflection.
+	
+	\section{Agents}
+	
+	Begin with an indexed, finite population ofeducated agents $N=\{1,\ldots,n\}$ where $n\ge 2$. 
+	Let $(\Theta,2^\Theta,\rho)$ be a probability space where $\Theta$ is a finite set of agent types with typical element $\theta$.
+	Indicate the type of agent $i$ as $\theta(i)$. 
+	Then, define they \textit{latent quality} of type $\theta$ as the non-negative, real-valued random variable $q^l:\Theta\rightarrow\mathbb{R}_+$.
+	Similarly, let $q^m:\Theta\rightarrow\mathbb{R}_+$ represent type $\theta$'s \textit{manifest quality}.
+	Later we can decide if it makes sense to make $\Theta$ an  uncountably infinite set (e.g., an interval $[0,\bar{\theta}]$).
+	I'm thinking finite, but we can cross that bridge when we come to actually thinking about the kinds of propositions we want to write.
+	
+	Assume $q^l$ and $q^m$ are positively correlated.
+	Then, one way of thinking about $q^m$ is as a signal of quality given the underlying but unobserved quality $q^l$.
+	However, I am thinking of it as an actual capacity of agent $i$ for doing certain kinds of observable things, such as taking standardized tests, memorizing doctrine, communicating with others and so on.
+	In contrast, $q^l$ would represent a capacity for things like critical thinking, which are not easily observed on, e.g., college entrance applications but are (noisily) revealed by the agent's performance on certain kinds of tasks.
+	
+	Assume agents live for two periods.
+	In the first period, the agent may or may not attend school.
+	In the second period, the agent works and spawns a child.
+	If the agent completed school in the first period, then the agent enters the work force as an elite manager. 
+	Otherwise, the agent enters as a common laborer.
+	In the second period, if an elite manager retains his job, then his elite status is retained.
+	All agents have a preference to ensure their children grow up to be a member of the elite.
+	This is their only concern.  
+	If agent $i$ retains his elite status in the second period, then the chances of $i$'s child getting in to college is increased by boosting his overall quality (as discussed below).
+	
+	There are a couple of important ideas here.
+	One is that an agent may fail to attain elite status by failing college.
+	As outlined below, colleges can operate as centers of learning or degree mills.
+	The former provide a quality filter.
+	Graduating from such an institution is a true signal of quality per the usual understanding in economics.educated
+	The second is that performance as a manager is a second filter of one's elite status.
+	This second step is important in the sense of creating a market mechanism by which to discipline who gets to retain their elite status.
+	The idea is that, when everything is working, agents want to go to college to get elite status, colleges ensure that graduates have high levels of latent quality, and firm managers hire such agents as the new generation of managers because they are the most productive.
+	Finally,  elite parents naturally pass on the norms of the elite which show up in the manifest qualitieeducateds of their children.
+	Parents ensure that their kids attend private schools, play team sports, engage in community service activities, learn the appropriate narratives by which to signal their elite potential and so on. 
+	
+	Now, this setup requires a fair bit of additional notational bookkeeping to keep track of things. 
+	Let $i^r_t$ denote the instance of agent $i$ born in period $r$ living in period $t$.
+	Thus, the instance of agent $i$ born in period $t$ will live through two periods, the first as $i^t_t$ and the second as $i^t_{t+1}$. 
+	Let $\{0,1\}$ be the set of possible \textit{social statuses} for an agent, namely \textit{common} ($0$) or \textit{elite} ($1$). 
+	Then, $I(i^r_t)\in\{0,1\}$ indicates the social status of agent $i^r_t$ at the end of period $t$. 
+	
+	The (newborn) instance of agent $i$ in period $t$, $i^t_t$, receives a payoff of $\pi(i^t_t)=KI(i^{t+1}_{t+2})$ in period $t+2$ (where $K$ is a strictly positive number).
+	Thus, $i^t_t$ receives a payoff of $K$ if its child retains its social status as an elite at the end of its life and zero otherwise (again, paid in period $t+2$).
+	Because payoffs are only ``on'' or ``off'' according to the status of the child at the end of its life, there is no need for taking discounting into consideration (or, if you like, $K$ can be interpreted as the discounted payoff).
+	Technically, this means agents only receive their payoffs after they die, but the thing that will drive their actions is their expected payoff, so not really a problem.
+	
+	As we said above, we want a benefit passed on from an elite parent to an elite child.
+	Therefore, freely abusing notation in an attempt to simplify it, let the overall quality of agent $i^t_t$ (in the period of its birth) e defined as:
+	 \[
+	 q^m(i^t_t)\equiv q^m(\theta(i^t_t)) + LI(i^{t-1}_{t}),
+	 \]
+	where $L$ is a strictly positive number.
+	Thus, the child's \underline{manifest} quality is increased by some constant $L$ if its parent maintained its elite status through the end of its life. 
+	
+	
+\subsection{Schools}
+For simplicity, assume there are two schools, $A$ and $B$. 
+The reason for having two schools rather than one is to allow for the possiblity that schools will differentiate in a fashion described below. 
+
+At the beginning of period $t$, the schools observe the distribution of manifest qualities in the population. 
+Then, school $j$ adopts a policy $P^j_t=(\bar{q^m},\bar{q^l})$ where $\bar{q^m}$ is a number corresponding to its admissions policy and $\bar{q^l}$ a number corresponding to its graduation policy.
+Specifically, if $P^j_t=(\bar{q^m},\bar{q^l})$, then school $j$ will admit all applicants $i^t_t$ with  $q^m(i^t_t)\ge\bar{q^m}$ and it will graduate all students with  $q^l(i^t_t)\ge\bar{q^l}$.
+
+
+Thus, perhaps due to non-discrimination laws, the status of a student's parents cannot be taken into consideration.
+That is, schools can only consider $q^m(i^t_t)$ rather than the true manifest quality $q^m(\theta(i^t_t))$.
+
+Assume that period $t$ parents, the $i^{t-1}_{t}$s, observe the $P^j_t$s and decide the school to which to have their children apply.
+For now, assume applying to a school is costless 
+(so, there is no harm in assuming all parents have their children apply to one school or another even though some children have no chance of getting in). 
+Assume everyone, including parents, observe $ q^m(i^t_t)$. 
+Of course, knowing their own social status, parents also know the true manifest quality $q^m(\theta(i^t_t))$ of their kids.
+
+Children applying to school $j$ with a manifest quality above the bar are admitted.
+Once admitted in period $t$, agent $i^t_t$'s latent quality is revealed. 
+If this quality is above the graduation bar, then $i^t_t$ graduates and obtains status $I(i^t_t) =1$.
+Otherwise, $I(i^t_t) =0$.
+Note that, from the parent's perspective, knowing $(\Theta,2^\Theta,\rho)$ which we assume everyone does, it is not difficult to compute the probability that $q^l(i^t_t)\ge\bar{q^l}$ given $q^m(\theta(i^t_t))$.
+Applicants to a school who fail to get in due to their low manifest quality automatically fail to graduate.
+
+Let $A_t,B_t\subset N$ denote the agents who graduate from the respective schools in period $t$.
+The schools care about the share of its graduates that maintain their elite status in any given period.
+Specifically, school $j$ receives a period $t$ payoff of
+\[
+\pi(j,t)\equiv \sum_{i^{t-1}_t\in j_{t-1}}I(i^{t-1}_t).
+\]
+For example, if $i{t-1}_{t-1}$ graduates from $A$ in period $t-1$ and maintains his elite status at the end of period $t$, then he adds 1 to $A$'s payoff in period $t$.
+So, schools want their graduates to remain elite.
+The interpretation can be that those who remain elite provide donations to the general endowment, whereas failures do not.
+
+Notice that, in equilibrium, the parents of prospective students may care about the expected share of graduates who will ultimately keep their jobs and, hence, elite status. 
+
+\subsection{Production}
+
+This is the part I have thought about the least and is probably the most important. 
+However, in the interests of getting this to you for consideration, I will make some notes and we can discuss when you are ready (and when I may have some more concrete ideas).
+
+In period $t$, adult agents go to work. 
+Thus the inputs into the production module are a certain number of elites and a certain number of laborers.
+The elite go to work as managers and the common laborers go to work as labor. 
+We assume that, to produce, a firm needs at least one manager and one laborer. 
+What we need to formulate is some specification of firm performance as a function of its employees' (managers plus laborers) latent qualities. 
+Firms are assumed only to observe whether an agent has graduated with a degree.
+
+Then, the idea is that firms below a certain performance level fail.
+The managers of firms that fail have their elite status canceled.
+This could be done simply: two firms hire agents (through some policy) and the managers of the worse performing one get canceled.
+Or, it could be something along the lines of a general equilibrium model, in which there are prices, wages, profits and so on.
+I'm not sure what all that complexity would add in terms of insight. 
+
+Notice that schools could, in principle, accept and graduate everyone.
+But, if they did, production would be zero (no laborers), everyone would fail to keep their elite status, and school payoffs would be zero.
+
+Where I am interested in going is a set of conditions under which both schools adopt policies $P^j_t=(\bar{q^m},0)$: there is some bar for manifest quality (which has to be so in order to ensure some production takes place and some elite graduates retain their status) but no one cares about latent quality (i.e., the schools don't actually screen for the quality that matters to firms).
+
+Why might this be an equilibrium?
+It might be if the performance cut for managers is a relative one.
+No one cares if all the firms suck as long as some are good relative to others.
+Presumably, if the firms suck equally, then no one loses their elite status.
+It's not clear this could be an equilibrium, but it would be interesting if it was.
+
+Now, the reason we might want to go with a general equilibrium style model is that the question immediately arises as to why everyone would accept an equilibrium like that -- wouldn't people notice that GNP was bad and try to go to a better equilibrium with a higher GNP?
+The complaint would be that the only way the previous equilibrium holds is by having agents place zero weight on consumption (i.e., consistent with the assumption that agents ONLY care about the elite status of their kids at the and the end of their lives).
+
+So, a more elaborate model could have agents who care both about consumption and the elite status of their kids.
+That's getting complicated, but if the bad equilibrium could be demonstrated under those conditions it would be a killer paper.
+
+Another way of extending the basic model would be to introduce the option of ``ESG'' performance measures.
+The idea here might be a version of the model in which individual managers (i.e., rather than \textit{all} the managers at a poorly performing firm) have their status canceled if their firm underperforms \textit{and} their quality is low.
+Then, the introduction of multiple performance measures could be modeled by making it impossible to distinguish managerial quality.
+In this case, low quality managers could free-ride on the higher quality managers.
+Presumably, we could show that the key dynamic would be a higher demand for low quality degrees.
+ 
+	
+	%	\bibliographystyle{ecta}
+	%	\bibliography{bibliography}
+	
+\end{document}
