@@ -15,6 +15,7 @@
 \begin{document}
 	
 	\maketitle
+
 	
 %	\begin{abstract}
 %		Your abstract goes here...
@@ -228,19 +229,19 @@
 	The indexed set of membership characteristics is  $\Omega=\{\omega_1,\ldots,\omega_4\}$ where  $\omega_1=S$ represents a student at a university, $\omega_2=M$ a manager, $\omega_3=EM$ an elite manager, and $\omega_4=L$ a laborer.
 	
 	There are four group types. 
-	Serious schools are type $g_1=((S),s,y_s)$, in which the only member role is $\pi_s=(S)$, a student, and $y_s=(-r,0)$ because the university requires resources of $r$ to educate an individual student but it produces no output of the consumption good (although it does create managers who are required for firms to produce).\footnote
+	Serious schools are type $g_1=((S),s,y_s)$, in which the only member role is $\pi_s=(S)$, a student, and $y_s=(-r,0)$ because the university requires basic inputs of $r\ge 0$ to educate an individual student.\footnote
 	{
 		Note that writing $\pi_s=(S)$ is another abuse of notation since $\pi$ is a profile; i.e., $\pi_s=(1,0,0,0)$ is the technically correct, but more cumbersome, representation.
 	}
-	
-	Similarly, $g_2=((S),s^\ast,y_{s^\ast})$ with  $y_{s^\ast}=(-\tau r,0)$, where $\tau\ge 1$ is a parameter that accounts for the possibility that elite universities consume more resources than serious universities (on such things as beautiful facilities in geographically expensive areas, research faculty who do relatively little teaching, etc).
+	Similarly, $g_2=((S),s^\ast,y_{s^\ast})$ with  $y_{s^\ast}=(- \tau  r,0)$, where $\tau\ge 1$ is a parameter that accounts for the possibility that elite universities consume more resources than serious universities (on such things as beautiful facilities in geographically expensive areas, research faculty who do relatively little teaching, etc).
 	
 	Firms are also of two types, those run by well-trained managers and those run by elite managers.
 	Let $g_3=((M,2L),f,y_f)$, which indicates that one manager and two laborers are required to staff a firm.
 	Then $y_f=(-y_{f1},y_{f2})$ is the competent firm's production function in which $y_{f1}$ units of the input good are required to produce$y_{f2}$ units of the output good.
-	Assume that in and $y_f=(-c,\alpha\phi)$ where $\phi$ is the basic level of output common to both firm types and $\alpha\ge 1$ is a multiplier that allows us to account for an output productivity differential between firms.
+	Specifically, assume $y_f=(-c,\phi)$ where $\phi$ is the basic level of output common to both firm types.
 	
-	Similarly, there is a type of firm run by elite managers,   $g_4=((EM,2L),f,y_{f^\ast})$, in which one manager and two laborers are required and $y_{f^\ast}=(- \beta c,\phi)$ where $\beta\ge 1$ is a multiplier that accounts for input productivity differentials between the firm types (e.g, $\beta>1$ would reflect the fact that because elite universities do not actually teach anything, elite managers run their businesses less efficiently, such as by engaging in  signaling elite status by wasting firm resources in public displays of elite solidarity).
+	Similarly, there is a type of firm run by elite managers,   $g_4=((EM,2L),f,y_{f^\ast})$, in which one manager and two laborers are required and $y_{f^\ast}=(- \beta c,\alpha\phi)$ where $\beta\ge 1$ is a multiplier that accounts for input productivity differentials between the firm types (e.g, $\beta>1$ would reflect the fact that because elite universities do not actually teach anything, elite managers run their businesses less efficiently, such as by engaging in  signaling elite status by wasting firm resources in public displays of elite solidarity).
+	Similarly,   $\alpha\ge 0$ is a multiplier that allows us to account for an output productivity differential between firms
 	
 	The set of possible group memberships, $\mathcal{M}$, contains the following elements:
 	\begin{align*}
@@ -292,7 +293,7 @@
 	Consistent with our story, assume $D_1>\ldots> D_5$.
 	
 	For now, assume $h(y_1,y_2)=\sqrt{y_1,y_2}$ (we can write the analysis in terms of the conditions for a more general $h$ later).
-	To keep things tractible (and to track the example in Ellickson et al. as closely as possible for now), let $D_1=10,D_2=8,\ldots, D_5=2$.
+	To keep things tractible (and to track the example in Ellickson et al. as closely as possible for now), let the $D_i$'s be in decreasing multiples of two: $D_1=32,D_2=16,\ldots, D_5=2$.
 	
 	\subsection{Equilibrium}
 	
@@ -307,9 +308,9 @@
 	These are defined below (where $p_1=1$ and ``$:=$'' means ``is defined as''):
 	\[
 	v(p,q,k,C_j) = \begin{cases}
-		V(1):=5k/\sqrt{p_2}\text{ if }j=1\\
-		V(2):=4(k-q_2-q_{4.1})/\sqrt{p_2}\text{ if }j=2\\
-		V(3):=3(k-q_1-q_{3.1})/\sqrt{p_2}\text{ if }j=3\\
+		V(1):=16k/\sqrt{p_2}\text{ if }j=1\\
+		V(2):=8(k-q_2-q_{4.1})/\sqrt{p_2}\text{ if }j=2\\
+		V(3):=4(k-q_1-q_{3.1})/\sqrt{p_2}\text{ if }j=3\\
 		V(4):=2(k-q_{3.2})/\sqrt{p_2}\text{ if }j=4\\
 		V(5):=(k-q_{4.2})/\sqrt{p_2}\text{ if }j=5
 	\end{cases}
@@ -322,15 +323,11 @@
 		q_2-\tau r&=0,\label{Eq:u-balance2}
 	\end{align}
 	Where $q_1$ and $q2$ represent tuition payments by students.
-	Technically, these are multiplied by the fraction of the population choosing to go to each of these institutions ($\frac{1}{3}\sigma_1$ and $\frac{1}{3}\sigma_2$, respectively; these correspond to the share of the population choosing $C_2$ and $C_3$, respectively).
-	Notice that these drop out in the budget balance conditions.
-	
 	For the serious and elite firms, respectively, the budget balance conditions are:
 	\begin{align}
 		q_{3.1}+2q_{3.2}+p_2\alpha\phi-c&=0,\label{Eq:f-balance1}\\
 		q_{4.1}+2q_{4.2}+p_2\phi-\beta c&=0.\label{Eq:f-balance2}
 	\end{align}
-	
 	It can be shown that the market clearing condition for the input good requires\footnote
 	{
 		These are derived while solving for the indirect utilities above. I have the calculations on paper and can put the them in an appendix later.
@@ -359,131 +356,99 @@
 	Using \eqref{Eq:u-balance1} through \eqref{eq:sumsigmas}, the market clearing equation simplifies to
 	
 	\begin{align}
-		k&=1+\frac{\sigma_2}{2}
+		3k&=\sigma_1
 		\Big(
-		\tau r + \beta c + p_2\phi
+		\tau r + \beta c + p_2\alpha\phi
 		\Big) 
-		+\frac{\sigma_3}{2}
+		+\sigma_2
 		\Big(
-		r + c + p_2\alpha\phi
+		r + c + p_2\phi
 		\Big)\label{MktClear}
 	\end{align}
 	
 	Consider an equilibrium in which $\sigma_1,\sigma_2,\sigma_3>0$. 
-	Since all the agents are ex-ante equivalent, choices $V(1)$ through $V(5)$ must be the equal.
+	Since all the agents are ex-ante equivalent, choices $V(1)$ through $V(5)$ must provide equal utility.
 	Therefore, the prices for group memberships are as follows:
 	\begin{align*}
 	\phantom{====}	q_1&=r&&\text{ tuition for serious university}\\
 	\phantom{====}	q_2&=\tau r&&\text{ tuition for elite university}\\
-	\phantom{====}	q_{4.1}&=-(\frac{1}{4}k+\tau r)&&\text{ wage for elite manager}\\
-	\phantom{====}	q_{3.1}&=-(\frac{2}{3}k+r)&&\text{ wage for competent manager}\\
-	\phantom{====}	q_{4.2}&=-4k&&\text{ wage for laborer managed by elite}\\
-	\phantom{====}	q_{3.2}&=-\frac{3}{2}k&&\text{ wage for laborer managed by competent}.		
+	\phantom{====}	q_{4.1}&=-\tau r&&\text{ wage for elite manager}\\
+	\phantom{====}	q_{3.1}&=-(k+r)&&\text{ wage for competent manager}\\
+	\phantom{====}	q_{4.2}&=-15k&&\text{ wage for laborer managed by elite}\\
+	\phantom{====}	q_{3.2}&=-3k&&\text{ wage for laborer managed by competent}.		
 	\end{align*}
 	Here are some things to note. 
 	Universities get reimbursed for their tuition.
 	Managers pay for this, which is reflected in their compensation. 
-	The amount of compensation above reimbursement of tuition costs is lower for elite managers than competent managers ($\frac{1}{4}k$ vs $\frac{2}{4}k$, respectively).
-	What's funny is that laborers working for elite (e.g., woke) managers have to be paid a lot more than their counterparts working in normal companies.
+	Notice that elite managers are so happy to be in the elite that elite firms only reimburse them for their tuition and nothing more (given the price of elite university educations, this doesn't seem unrealistic).
 	
-	Interestingly, we can assume that elite universities signal their elite status by burning resources (e.g., hiring world-famous researchers who, as it turns out, don't actually teach anything such that $\tau>1$).
+	We assume that elite universities signal their elite status by essentially burning resources (e.g., hiring world-famous researchers who, as it turns out, don't actually teach anything but ensuring $\tau>1$).
 	Since tuition reimbursement shows up in the compensation of managers, this model posits that when elite manager compensation is significantly higher than that of competent managers, the gain is entirely due to their need to be reimbursed for their expensive elite education.
 	This implies that elite schools are pulling in tons of tuition \ldots to compensate expensive professors who don't produce anything that is actually useful! 
 	
+	What's funny is that, given how much they hate working for the elite, laborers working for elite (e.g., woke) firms have to be paid a lot more than their counterparts working in normal companies.
+	
 	With these prices in hand, we can compute the price of $p_2$ from the budget-balance conditions \eqref{Eq:f-balance1} and \eqref{Eq:f-balance2}.
 	\begin{align}
-		p_2=\left(\frac{11}{3}k+r+c\right)/\alpha
-		=\left(\frac{9}{4}k+\tau r+\beta c\right).\label{PriceOf2}
+		p_2=\left(6k+r+c\right)/\phi
+		=\left(30k+\tau r+\beta c\right)/(\alpha\phi).\label{PriceOf2}
 	\end{align}
 	
-	This allows us to think, for example, about how equilibrium depends upon the inefficiency of elite firms and the wealth of society when the other parameters are fixed.
-	Writing the $\beta$ that satisfies the preceding equations as a function of $k$,
+	This allows us to think, for example, about how equilibrium depends upon the output capability of elite firms and the wealth of society when the other parameters are fixed.
+	Writing the $\alpha$ that satisfies the preceding equations as a function of $k$,
 	\begin{align}
-		\beta(k):=\Big(\frac{1}{12}(44-27\alpha)k+(1-\tau\alpha)r+c\Big)/(c\alpha).
+		\alpha(k):=\frac{30k+\beta c+\tau r}{7k+c+r}.
 	\end{align}
-	Note that there always exist parameters $\alpha,\tau$  for which  $\beta(k)>1$. 
-	However, for sufficiently large $\alpha$ or $\tau$,  $\beta(k)$ may need to be less than 1 or even negative (which is consistent with equilibrium, but not in a way that is consistent with our assumptions).
-	One way of thinking about this is, for example, that if the tuition penalty $tau$ or productivity bonus $\alpha$ are too large, then also having $\beta>1$ is inconsistent with anyone transitioning to elite status -- the status benefit just does not offset the costs.
+	Note that   $\alpha(k)>1$ for all feasible parameter configurations.
+	Keep in mind that these are the parameter values for which equilibria exist such that positive shares of the population engage in all vocational choices.
 	
-	Finally, we wish to solve for $\sigma_2$ in terms of $\sigma_3$ in terms of $\sigma_1$. From market clearing \eqref{MktClear},
-	
+	Finally, we wish to solve for $\sigma_1$ in terms of $\sigma_2$ in terms of $\sigma_0$. From market clearing \eqref{MktClear} and the equilibrium prices,	
+	\begin{align}
+		\sigma_1&=
+		\frac{3k-(1-\sigma_0)(1-\sigma_0)(2r + 2c +7k)}
+		{23k + 2r(\tau-1) + 2c(\beta-1) +23k}\label{Example Sigma1}.
+	\end{align}
+	and
 	\begin{align}
 		\sigma_2&=
-		\frac
-		{
-			2(k-1)
-			-\sigma_3
-			\left(
-			(1-\frac{1}{\alpha})r
-			-(1-\frac{1}{\alpha})c
-			+\frac{11}{3}k
-			\right)
-		}
-		{
-			2\tau r  +2\beta c +\frac{9}{11}k
-		}.\label{Sigma2}
+		\frac{3k-(1-\sigma_0)(2r\tau + 2c\beta +30k)}
+		{-23k + 2r(1-\tau) + 2c(1-\beta)}.\label{Example Sigma2}			
 	\end{align} 
-	for $0<\sigma^2<1$ there are two conditions that must be met by the paramers
-	\begin{align}
-		\frac{17}{3}k-
-		\left(
-		1-\frac{1}{\alpha}
-		\right)r-
-		\left(
-		1-\frac{1}{\alpha}
-		\right)c-2
-		&>0\label{Paramter Constraints 1}\\
-		\frac{160}{33}k-
-		\left(
-		1-\frac{1}{\alpha}+2\tau
-		\right)r-
-		\left(
-		1-\frac{1}{\alpha}+2\beta
-		\right)c
-		&>0.\label{Paramter Constraints 2}
-	\end{align}
-	These will be useful for the numerical examples.
+	
 	
 	\section{Numerical example}
 	Let us construct a tractable numerical example by which to examine the relationship between societal wealth, $k$, productive inefficiency, $\beta$, and the proportions of people who sort in to each membership role, $\sigma_1,\sigma_2,\sigma_3$.
 	Assume parameters take the following values:
 		\begin{align*}
-		\phantom{====}	r&=0&&\text{ universities are cost nothing to operate}\\
-		\phantom{====}	\tau&=1&&\text{ tuition multiplier for elite universities is irrelevant}\\
-		\phantom{====}	c&=3&&\text{ resource us for productive firms}\\
-		\phantom{====}	\phi&=6&&\text{ output for elite firms}\\
-		\phantom{====}	\beta&>1&&\text{ resource multiplier for elite firms (a variable of interest in the analysis)}\\
-		\phantom{====}	\alpha&=1&&\text{ output multiplier for competent firms}		
+		\phantom{====}	r&=1&&\text{ cost to operate effective universities}\\
+		\phantom{====}	\tau&=2&&\text{ tuition multiplier for elite universities is irrelevant}\\
+		\phantom{====}	c&=1&&\text{ resource us for productive firms}\\
+		\phantom{====}	\phi&=6&&\text{ output for productive firms}\\
+		\phantom{====}	\beta&=2&&\text{ resource useage multiplier for elite firms}\\
+		\phantom{====}	\alpha&=?&&\text{ output multiplier for elite firms}		
 	\end{align*}
-	Then, we have 
-	\begin{align}
-		\beta(k)=1+\frac{17}{36}k.\label{Beta parameterized}
-	\end{align}
-	As society becomes richer, more resources are wasted on elite signalling. Rewriting \eqref{Sigma2} with the numerical values and \eqref{Beta parameterized}, we get
-	\begin{align}
-		\sigma_2
-		&=\frac{\left(2-\frac{11}{3}\sigma_3\right)k}
-		{6\left(1+\frac{17}{36}k\right)+\frac{9}{11}k},\notag\\
-		&=\frac{\left(2-\frac{11}{3}\sigma_3\right)k}
-		{6+\frac{102}{36}k+\frac{9}{11}k},\notag\\
-		&=\frac{\left(2-\frac{11}{3}\sigma_3\right)k}
-		{6+\frac{1122}{396}k+\frac{324}{396}k},\text{ so}\notag\\
-		\sigma_2
-		&=\left(2-\frac{11}{3}\sigma_3\right)k/
-		\left(6+\frac{1446}{396}k\right).\label{Sigma2 of k}
-	\end{align}
-	Keeping in mind that $\sigma_1=1-3\sigma_2-3\sigma_3$, we know both $\sigma_2,\sigma_3\le\frac{1}{3}$.
-	This is binding for $\sigma_3$.
 	
-	Suppose $\sigma_3=0$, then we potentially get the maximum value of $\sigma_2$:
-	\[
-	\sigma_2^{\max}=2k/\left(6+\frac{1446}{396}k\right).
-	\]
-	At $k=1$, $\sigma_2\approx 0.21$ and, since, $\frac{\partial \sigma_2}{\partial k}<0$, this \textit{is} as large as $\sigma_2$ can get. 
-	Moreover, $3\sigma_2^{\max}<1$.
-	Therefore, for any $k\ge 1$, we have equilibria with \textit{no} competent firms, $\sigma_2=\sigma_2^{\max}$ and $\sigma_1=1-3\sigma_2^{\max}$.
+	This results in the following function  
+	\begin{align}
+		\beta(k)=\frac{30k+4}{7k+4}.\label{alpha parameterized}
+	\end{align}
+	This function gives the parameter values $(\alpha,k)$ for which equilibria exist such that $\sigma_0,\sigma_1,\sigma_2>0$. 
 	
-	When $\sigma_3=\frac{1}{3}$, $\sigma_1=\sigma_2=0$. 
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=1.0\textwidth]{Alpha of k}
+		\caption{Graph of $\alpha(k)$ with $k$ on the $x$-axis. These are parameter values for $(x,\alpha)$ such that equilibria exist in which all vocations are engaged in equilibrium. A complete phase diagram will describe what happens in the economy on either side of the line. That can be done next.}
+		\label{fig:my_label}
+	\end{figure}
+	
+	
+	
+	
+	These equilibria are characterized by choosing  
+	\begin{align}
+		\sigma_0\in\left[\frac{4k+4}{7k+4},\frac{27k+8}{30k+8}\right].\label{Paramter Constraints 2}
+	\end{align}
+	Notice that if there is no endowment, $k=0$ and everyone enjoys their ``leisure''.
 	
 	
 	

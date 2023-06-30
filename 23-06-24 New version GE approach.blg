@@ -3,7 +3,7 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: 23-06-24 New version GE approach.aux
 The style file: plainnat.bst
 I couldn't open database file references.bib
----line 16 of file 23-06-24 New version GE approach.aux
+---line 43 of file 23-06-24 New version GE approach.aux
  : \bibdata{references
  :                    }
 I'm skipping whatever remains of this command

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023 - Flatpak) (preloaded format=xelatex 2023.4.15)  29 JUN 2023 07:21
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023 - Flatpak) (preloaded format=xelatex 2023.4.15)  30 JUN 2023 10:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -724,7 +724,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 ] [2]
-Overfull \hbox (4.48622pt too wide) in paragraph at lines 88--90
+Overfull \hbox (4.48622pt too wide) in paragraph at lines 89--91
 \OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 0\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1\OML/cmm
 /m/it/12 ; []\OMS/cmsy/m/n/12 g$\TU/lmr/m/n/12 ; $\OML/cmm/m/it/12 l\OT1/cmr/m/
 n/12 (\OML/cmm/m/it/12 m\OT1/cmr/m/n/12 )$ \TU/lmr/m/n/12 specifies the number 
@@ -734,34 +734,36 @@ of memberships of type $\OML/cmm/m/it/12 m \OT1/cmr/m/n/12 = (\OML/cmm/m/it/12
  []
 
 [3] [4] [5] [6] [7] [8]
-Overfull \hbox (22.21887pt too wide) in paragraph at lines 243--244
+Overfull \hbox (22.21887pt too wide) in paragraph at lines 243--245
 []\TU/lmr/m/n/12 Similarly, there is a type of firm run by elite managers, $\OM
 L/cmm/m/it/12 g[] \OT1/cmr/m/n/12 = ((\OML/cmm/m/it/12 EM; \OT1/cmr/m/n/12 2\OM
 L/cmm/m/it/12 L\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; f; y[]\OT1/cmr/m/n/12 )$\TU/
 lmr/m/n/12 ,
  []
 
-[9] [10] [11] [12] [13] [14] [15]
-Overfull \hbox (54.92946pt too wide) detected at line 457
-[]
- []
+[9] [10] [11] [12] [13] [14]
+File: Alpha of k.png Graphic file (type bmp)
+<Alpha of k.png>
 
-[16] (./23-06-24 New version GE approach.bbl
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[15] (./23-06-24 New version GE approach.bbl
 
 Package natbib Warning: Empty `thebibliography' environment on input line 8.
 
-) [17] (./23-06-24 New version GE approach.aux)
+) [16] (./23-06-24 New version GE approach.aux)
 Package rerunfilecheck Info: File `"23-06-24 New version GE approach".out' has 
 not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 30032 strings out of 476683
- 712697 string characters out of 5805369
- 1856018 words of memory out of 5000000
- 49788 multiletter control sequences out of 15000+600000
+ 30055 strings out of 476683
+ 713052 string characters out of 5805369
+ 1857018 words of memory out of 5000000
+ 49806 multiletter control sequences out of 15000+600000
  520648 words of font info for 79 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  99i,12n,103p,957b,479s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 23-06-24 New version GE approach.pdf (17 pages).
+Output written on 23-06-24 New version GE approach.pdf (16 pages).
