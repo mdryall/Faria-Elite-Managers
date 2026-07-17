@@ -53,7 +53,14 @@ efficiency does not follow. The welfare theorem fails only when status is
 but exhibits over-entry into elite institutions: each entrant dilutes the status of
 every incumbent, an economy-wide externality that membership prices cannot register.
 Equilibria are no longer in the core, and a tax on elite memberships raises both
-welfare and output. [Abstract to be finalized with the dynamic section.]
+welfare and output. Setting the economy in motion in an overlapping-generations
+frame, one condition --- the elite sector produces less output per unit of
+resources --- simultaneously governs the static output decline, makes status a
+luxury (wealthy economies endogenously support larger elites), and makes the elite
+sector a drag on accumulation: growth finances the status spending that arrests
+it, and the economy converges to a steady state permanently poorer than its
+status-free counterfactual, with every generation optimizing and the path fully
+foreseen. Positional dilution partially immunizes against the drag.
 \end{abstract}
 
 \onehalfspacing
@@ -118,8 +125,20 @@ and Proposition~\ref{prop:inefficiency} is the paper's answer to when elite wast
 and is not a policy problem: absolute status is efficient consumption; positional
 status is a rat race.
 
-\emph{[Planned: a paragraph previewing the overlapping-generations dynamics, in
-which the spread of status preferences interacts with wealth accumulation.]}
+Section~\ref{sec:dynamics} sets the economy in motion. Each generation inherits
+the resources its parents saved, plays the club economy within its lifetime, and
+bequeaths; the static model is the period economy and its comparative statics
+become the transition map. A single condition --- the one already governing the
+static output decline --- delivers two further results. Status is a \emph{luxury}
+by theorem: because the elite sector's waste is a fixed resource cost while wages
+scale with wealth, richer economies support larger elites
+(Proposition~\ref{prop:luxury}). And the elite sector drags on accumulation:
+growth finances the status spending that arrests it, and the economy converges to
+a steady state permanently poorer than its status-free counterfactual
+(Proposition~\ref{prop:drag}) --- with no collapse, because impoverishment itself
+prices the elite out of existence at low wealth. The path involves no error and no
+myopia: it is common knowledge, and no atomistic dynasty could or would deviate.
+Rational societies really do let it happen.
 
 \section{Related Literature}\label{sec:lit}
 
@@ -165,12 +184,22 @@ main exceptions are \citet{caucutt2001peer,caucutt2002vouchers} on schooling wit
 peer effects, and the firms-as-clubs analyses of \citet{prescotttownsend2006firms}
 and \citet{zame2007incentives}.
 
-\textbf{Dynamics (planned).} The dynamic section will engage
-\citet{murphyshleifervishny1991}, \citet{baumol1990entrepreneurship},
-\citet{acemoglu1995reward}, \citet{hasslermora2000}, \citet{galorzeira1993},
-\citet{durlauf1996persistent}, and \citet{doepkezilibotti2008} --- in particular,
-explaining why the selection dynamic that eliminates unproductive aristocracies in
-\citet{doepkezilibotti2008} is blocked when status is competitively priced.
+\textbf{Dynamics.} The rent-seeking-and-decline tradition
+(\citealt{murphyshleifervishny1991}; \citealt{baumol1990entrepreneurship};
+\citealt{acemoglu1995reward}) diverts talent to unproductive activity through
+distorted rewards; our drag operates instead through competitively priced status
+consumption, and its strength is disciplined by the same condition that governs
+the static equilibrium. Where \citet{hasslermora2000} and
+\citet{colemailathpostlewaite1992} sustain aristocratic regimes through
+information or norms, our elite is sustained by prices --- and where the
+leisure-loving aristocracies of \citet{doepkezilibotti2008} are competed away at
+industrialization, ours survive precisely because their inefficiency is financed
+by willing status buyers rather than borne by the firms' bottom line. The
+memberships tradition in inequality dynamics
+(\citealt{durlauf1996persistent}; \citealt{galorzeira1993}) generates traps from
+productive group memberships and credit constraints; our membership is a pure
+positional good, and our poverty dynamics run top-down --- wealth creates the
+elite that erodes wealth --- rather than bottom-up.
 
 \section{The Framework}\label{sec:framework}
 
@@ -688,6 +717,167 @@ point and the welfare curve. All computations are verified in
   \label{fig:positional}
 \end{figure}
 
+\section{Dynamics: Bequests, Growth, and Rational Impoverishment}\label{sec:dynamics}
+
+The static analysis holds wealth fixed. This section lets the economy accumulate:
+each generation inherits the resources its parents saved, plays the club economy of
+Sections~\ref{sec:model}--\ref{sec:positional} within its lifetime, and bequeaths.
+Three questions organize the analysis. Does the market for elite status expand or
+contract as an economy grows? Does the elite sector's resource burn feed back into
+accumulation? And --- the question any reader of Section~\ref{sec:equilibrium} will
+ask --- if status spending erodes the wealth of future generations, do rational,
+forward-looking agents really let it happen?
+
+\subsection{The overlapping-generations economy}
+
+Time is discrete, $t=0,1,2,\dots$. Each period a measure-one generation is born,
+inherits per-capita resources $k_t$ (the input good), and lives for one productive
+period within which the schooling-then-employment sequence of the static model
+unfolds (memberships are dated within the period, as in
+\citealt{ellickson2006organization}). Preferences extend \eqref{eq:utility} with a
+warm-glow bequest made in the \emph{produced} good --- output invested today is the
+resource base of the next generation:
+\begin{equation}\label{eq:olg-utility}
+  u \;=\; D(\ell;\eta)\; x_1^{\gamma/2}\, x_2^{\gamma/2}\, b^{\,1-\gamma},
+  \qquad \gamma\in(0,1),
+\end{equation}
+so an agent with net income $w$ spends $(\gamma/2)w$ on each consumption good and
+$(1-\gamma)w$ on the bequest, and attains indirect utility $D\,w\,\Psi(p_2)$ ---
+\emph{still linear in net income}. Every occupational-indifference condition,
+membership price, the output price \eqref{eq:p2}, the cutoff
+\eqref{eq:etastar}, and the positional fixed point \eqref{eq:fixedpoint} therefore
+carry over verbatim at wealth $k_t$; only the competent-sector scale $n$ adjusts
+for the saving margin, and $\gamma=1$ recovers the static model exactly
+(Lemma~\ref{lem:period} in Appendix~\ref{app:dynamics}). Invested output converts
+into next-period resources at a rate $\Theta>0$ (a linear investment technology),
+and children inherit the economy-wide average bequest:
+\begin{equation}\label{eq:transition}
+  k_{t+1} \;=\; G(k_t) \;\equiv\; \Theta\,(1-\gamma)\,\frac{W(k_t)}{p_2(k_t)},
+\end{equation}
+where $W(k)$ is aggregate net income --- endowment plus the value added of the
+schools and firms that form at wealth $k$. Uniform inheritance abstracts from
+within-generation dynasty heterogeneity; the Galor--Zeira-style interaction of
+inherited inequality with elite membership is an important extension we defer.
+
+\begin{proposition}[The transition map]\label{prop:map}
+Under \eqref{eq:olg-utility}: (i) the within-period allocation at wealth $k_t$ is
+the club equilibrium of Section~\ref{sec:equilibrium} (or
+Section~\ref{sec:positional}) at $k_t$; (ii) $G$ is continuous, with
+$G'(0^+)=\Theta(1-\gamma)\phi/(c+r)$ and $\lim_{k\to\infty}G(k)<\infty$
+(diminishing returns operate through the price of investment, $p_2(k)$, which
+rises with wealth); (iii) if $\Theta(1-\gamma)\phi>c+r$, the origin repels and a
+stable interior steady state exists. Along any equilibrium path, no agent's
+optimization requires forecasting: bequest utility is over the gift itself, and
+each period's prices depend only on $k_t$.
+\end{proposition}
+
+Part (iii)'s final sentence is worth dwelling on, because it answers the
+``do they really let it happen?'' question in a form stronger than rational
+expectations. The path $(k_t)$ generated by \eqref{eq:transition} is common
+knowledge, and every generation can compute the decline it participates in.
+No dynasty would behave differently with perfect foresight: each is atomistic, its
+bequest cannot move the aggregate, and its within-period choices are optimal at the
+prices it faces. The impoverishment we exhibit below is not a mistake, a bubble,
+or a failure of anticipation. It is what optimizing behavior looks like when
+status is among the things people want.
+
+\subsection{Status is a luxury --- by theorem, not assumption}
+
+\begin{proposition}[Luxury]\label{prop:luxury}
+The elite cutoff $\eta^\ast_0(k)=\mu k/Z(k)-1$ is strictly decreasing in $k$ ---
+and hence the elite mass $m^\ast(k)$ strictly increasing in $k$ wherever the elite
+sector is viable --- if and only if
+$\alpha(c+r) < \beta c + \tau r$: precisely the resource-productivity condition
+\eqref{eq:decline} of Proposition~\ref{prop:decline}.
+\end{proposition}
+
+The mechanism is instructive. The elite sector's excess costs --- the school's
+burn $(\tau-1)r$, the firm's burn $(\beta-1)c$ --- are \emph{fixed} resource
+costs, while every wage in the economy scales with wealth. As $k$ grows, the burn
+shrinks relative to the status discount that finances it, so the marginal entrant
+needs less taste for status to justify entry: rich societies buy more eliteness
+not because their preferences differ but because they can better afford the waste.
+Below a viability threshold ($Z(k)\leq 0$) the elite sector cannot break even at
+any taste level: poor economies have no market for wasteful status. No
+nonhomotheticity is assumed anywhere; the luxury property is produced by the same
+condition that makes the elite sector a drag on output.
+
+\subsection{The status drag and the spread of taste}
+
+\begin{proposition}[Status drag]\label{prop:drag}
+At any wealth $k$ at which the elite sector is active,
+$\operatorname{sign}\,\partial G/\partial m^\ast = \operatorname{sign}
+[\alpha(c+r)-(\beta c+\tau r)]$. Under condition \eqref{eq:decline}, therefore:
+(i) the transition map lies strictly below the no-elite-sector map wherever the
+elite is active, and the stable steady state is strictly poorer,
+$k^\ast_{\mathrm{elite}} < k^\ast_{\mathrm{none}}$; (ii) a FOSD spread of the
+status-taste distribution lowers $G$ pointwise (strictly where the elite is
+active) and strictly lowers the stable steady state; (iii) under positional
+status, both effects are strictly damped:
+$k^\ast_{\mathrm{abs}} < k^\ast_{\mathrm{pos}} < k^\ast_{\mathrm{none}}$.
+\end{proposition}
+
+One condition --- the elite sector produces less output per unit of resources ---
+now governs all three of the paper's mechanisms: the static output decline
+(Proposition~\ref{prop:decline}), the luxury property
+(Proposition~\ref{prop:luxury}), and the dynamic drag
+(Proposition~\ref{prop:drag}). Together they compose the paper's dynamic
+narrative: growth makes status affordable, status absorbs the resources that fund
+growth, and the economy converges to a steady state permanently poorer than its
+status-free counterfactual --- with every generation optimizing, and every
+generation aware.
+
+Two features of the dynamics deserve emphasis. First, there is no collapse: since
+the elite sector is unviable at low wealth (Proposition~\ref{prop:luxury}), the
+map near the origin is elite-free and the origin repels. Status spending
+impoverishes; it does not extinguish. The ``self-destruction of the economy'' takes
+the form of a permanently lower steady state, not a death spiral --- and the
+mechanism that limits the damage is the same one that creates it: as wealth falls,
+the economy can no longer afford its elite. Second, positional dilution is again
+protective, now dynamically: because entry dilutes status, the elite mass responds
+far less to spreading taste, and steady-state wealth barely moves. Societies in
+which status is relative are --- by that very relativity --- partially immunized
+against the status drag.
+
+On intertemporal welfare we claim less, deliberately. Within each period, the
+absolute-status allocation is Pareto optimal given $k_t$
+(Theorem~\ref{thm:nocorrection}); but future generations are not parties to any
+period's core, and warm-glow bequests internalize the intergenerational margin
+only partially. Whether the equilibrium path is efficient among feasible paths ---
+and what a generation-spanning planner could improve --- is a question we flag for
+the sequel rather than resolve here.
+
+\subsection{Numerical continuation}
+
+Continuing the running example with $\gamma=0.8$ (a 20\% bequest share) and
+$\Theta$ calibrated so that the absolute-status steady state is exactly the static
+example's wealth, $k^\ast=2$: the steady state is stable ($G'(k^\ast)=0.31$), with
+the static example's prices, wages, cutoff, and elite mass reproduced as the
+steady-state allocation. The no-elite counterfactual steady state is $2.034$; the
+positional steady state $2.018$. As the taste scale rises from $s=0.3$ to
+$s=0.8$, the absolute-status steady state falls to $1.61$ --- a 20.6\% wealth loss
+relative to the no-elite benchmark, with the elite swelling to 15\% of the
+population --- while the positional steady state falls only to $1.94$ (a 4.5\%
+loss). After a taste shift to $s=0.75$, the transition
+$2.00\rightarrow1.75\rightarrow1.68\rightarrow\cdots\rightarrow1.66$ completes
+within a few generations. Figure~\ref{fig:dynamics} displays the maps and the
+steady-state decline. All computations are verified in
+\texttt{analysis/dynamic\_model.py}.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\textwidth]{figures/dynamics_collapse.pdf}
+  \caption{Dynamics. Panel (a): transition maps at baseline taste ($s=0.3$) for
+  the no-elite counterfactual and the absolute-status economy, and the
+  absolute-status map after a taste spread ($s=0.75$); the marked point is the
+  calibrated steady state $k^\ast=2$. Panel (b): stable steady-state wealth as
+  the taste scale $s$ rises --- the absolute-status economy is impoverished by
+  the spread of status taste, the positional economy is largely protected by
+  dilution. Parameters as in Sections~\ref{sec:example}
+  and~\ref{sec:positional} with $\gamma=0.8$, $\Theta=5.056$.}
+  \label{fig:dynamics}
+\end{figure}
+
 \section{Discussion and Planned Extensions}\label{sec:discussion}
 
 \emph{[Working notes; to be developed.]}
@@ -725,14 +915,19 @@ firms compete for a capped pool of incumbent elites will shift $q_{4.1}$ toward
 scarcity rents --- observed premia --- without disturbing the marginal entrant's
 status discount.
 
-\textbf{Dynamics (next phase).} The overlapping-generations extension makes $k$ a
-state variable: parents value their children's status, finance tuition and bequests,
-and the within-period allocation is the equilibrium of
-Section~\ref{sec:equilibrium} at the current $k_t$. Because the elite sector burns
-resources, the transition map inherits Proposition~\ref{prop:decline}: when status is
-a luxury, growth expands the elite sector, which erodes the resource base that
-finances it. Multiple steady states and rational-expectations decline paths ---
-every generation optimizing, no generation deceived --- are the objects of study.
+\textbf{What remains.} Three items are on the agenda for the next revision.
+First, dynasty-specific inheritance: uniform inheritance isolates the aggregate
+mechanism, but letting elite parents bequeath directly to their children would
+interact status persistence with wealth inequality in the manner of
+\citet{galorzeira1993}, and would let the model speak to intergenerational
+mobility at the top. Second, parents who value their children's \emph{status}
+rather than the bequest itself --- the natural sharpening of the warm-glow
+specification, which would make elite membership itself heritable in demand.
+Third, intertemporal welfare: each period's absolute-status allocation is optimal
+given its inheritance, but the path's efficiency across generations --- and what,
+if anything, a generation-spanning planner could improve even in the
+absolute-status world --- is open, and the answer plausibly differs between the
+absolute and positional regimes.
 
 \appendix
 
@@ -911,6 +1106,68 @@ condition \eqref{eq:decline} give $dY/dt>0$ by Proposition~\ref{prop:decline}.
 The global welfare-maximizing tax in the numerical example, which accounts for all
 equilibrium feedback including the rebate, is computed in
 \texttt{analysis/positional\_model.py}. \qed
+
+\section{Dynamics: Proofs}\label{app:dynamics}
+
+All computations are verified in \texttt{analysis/dynamic\_model.py}.
+
+\begin{lemma}[Period equivalence]\label{lem:period}
+Under preferences \eqref{eq:olg-utility}, an agent with net income $w$ facing
+$(p_2)$ chooses $x_1=(\gamma/2)w$, $p_2x_2=(\gamma/2)w$, $p_2b=(1-\gamma)w$, and
+attains indirect utility $D\,w\,\Psi(p_2)$ with
+$\Psi(p_2)=(\gamma/2)^{\gamma}(1-\gamma)^{1-\gamma}p_2^{-(\gamma/2+1-\gamma)}$.
+Hence all occupational-indifference conditions, membership prices
+\eqref{eq:prices}, the output price \eqref{eq:p2}, the cutoff
+\eqref{eq:etastar}, and the positional fixed point \eqref{eq:fixedpoint} hold at
+wealth $k_t$ exactly as in the static sections. Market clearing in the input good
+reads $(\gamma/2)W + n(r+c) + m^\ast(\tau r+\beta c) = k$, which is linear in
+$n$; output clearing holds identically given it (Walras, machine-verified), and
+at $\gamma=1$ the static condition \eqref{eq:clearing} is recovered. \qed
+\end{lemma}
+
+\subsection{Proof of Proposition~\ref{prop:map}}
+(i) is Lemma~\ref{lem:period}. (ii): aggregate income satisfies
+$W = k + n(\mu+2\lambda-3)k + m^\ast e$ with $e \equiv w_E+(2\lambda^{e}-3)k$;
+substituting the clearing solution for $n$ gives $W(k)$ in closed form, and
+$G=\Theta(1-\gamma)\phi W/\Pi$ with $\Pi(k)=c+r+(\mu+2\lambda-3)k$. As
+$k\to 0^+$ the elite sector is inactive (Proposition~\ref{prop:luxury}) and
+$W\to k$, so $G/k\to\Theta(1-\gamma)\phi/(c+r)$; as $k\to\infty$, $n$ and
+$W/\Pi$ converge, so $G$ is bounded (limits machine-verified). (iii): with
+$G(0)=0$, $G'(0^+)>1$, $G$ continuous and bounded, $G$ crosses the diagonal from
+above at least once; at any such crossing the steady state is stable if
+$|G'|<1$, verified in the example ($G'=0.31$). The no-forecasting claim is
+immediate: \eqref{eq:olg-utility} depends on own consumption and own gift only,
+and period-$t$ prices depend only on $k_t$. \qed
+
+\subsection{Proof of Proposition~\ref{prop:luxury}}
+$\eta^\ast_0(k)=\mu k/Z(k)-1$ with
+$Z=\alpha\Pi-\beta c-\tau r+(3-2\lambda^{e})k$. Then
+$d\eta^\ast_0/dk = \mu\,(Z-kZ')/Z^2$ and direct computation (machine-verified)
+gives $Z-kZ' = \alpha(c+r)-\beta c-\tau r$. Hence $\eta^\ast_0$ is strictly
+decreasing iff $\alpha(c+r)<\beta c+\tau r$, and $m^\ast=1-F(\eta^\ast_0)$ (or
+its positional analogue, whose fixed-point map shifts up as $\eta^\ast_0$ falls)
+is strictly increasing wherever $0<Z<\mu k$. Viability: $Z(k)\leq 0$ for
+$k$ below the root of $Z$, where no cutoff exists and the elite sector is
+empty. \qed
+
+\subsection{Proof of Proposition~\ref{prop:drag}}
+Note $e = w_E+(2\lambda^{e}-3)k = \alpha\Pi-\beta c-\tau r$: the elite triple's
+value added. Substituting the clearing solution for $n$ into $W$ and
+differentiating at fixed $k$,
+\[
+\operatorname{sign}\frac{\partial W}{\partial m^\ast}
+= \operatorname{sign}\Big[(r+c)\,e - (\tau r+\beta c)\,(\Pi-r-c)\Big]
+= \operatorname{sign}\Big[\Pi\,\big(\alpha(c+r)-\beta c-\tau r\big)\Big],
+\]
+(machine-verified), and $\partial G/\partial m^\ast$ has the same sign since
+$\Pi$ is fixed given $k$. Under \eqref{eq:decline} the sign is negative:
+(i) follows pointwise and hence for the stable steady state ($G$ falls, the
+crossing with the diagonal moves left); (ii) a FOSD shift raises $m^\ast(k)$ at
+every $k$ with the elite active (Propositions~\ref{prop:decline}
+and~\ref{prop:positional}(ii)), lowering $G$ pointwise; (iii) under positional
+status the same shift raises $m^\ast$ by strictly less
+(Proposition~\ref{prop:positional}(ii)), so $G$ falls by strictly less at every
+$k$, and the steady states order as stated (verified in the example). \qed
 
 \bibliographystyle{chicago}
 \bibliography{elite-status-refs}
