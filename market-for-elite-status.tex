@@ -48,8 +48,12 @@ indeed it falls even when elite firms are more productive per unit of output, pr
 they are less productive per unit of resources. Yet every such equilibrium lies in the
 core and is Pareto optimal: no entrant, coalition, or policy commanding lump-sum
 instruments can profitably displace the elite sector. Markets work; material
-efficiency does not follow. [Abstract to be extended when the positional-externality
-and dynamic sections are complete.]
+efficiency does not follow. The welfare theorem fails only when status is
+\emph{positional} --- valued for its scarcity. Then the equilibrium remains unique
+but exhibits over-entry into elite institutions: each entrant dilutes the status of
+every incumbent, an economy-wide externality that membership prices cannot register.
+Equilibria are no longer in the core, and a tax on elite memberships raises both
+welfare and output. [Abstract to be finalized with the dynamic section.]
 \end{abstract}
 
 \onehalfspacing
@@ -97,11 +101,25 @@ popular syllogism ``markets work, therefore materially wasteful institutions can
 survive competition'' commits a non sequitur, and the point of this paper is to locate
 it precisely. Markets work; material efficiency does not follow.
 
-\emph{[Planned: paragraph previewing the positional-status extension, in which
-relative status introduces a widespread externality, the first welfare theorem
-genuinely fails, and there is over-entry into elite institutions; and a paragraph
-previewing the overlapping-generations dynamics, in which the spread of status
-preferences interacts with wealth accumulation.]}
+The efficiency of the baseline is not a celebration; it is a diagnosis. It locates
+exactly where a genuine market failure must live if there is one: not in the waste,
+which is priced, but in the \emph{relativity} of status. Section~\ref{sec:positional}
+makes status positional --- valuable because others lack it --- so that each entrant
+into the elite dilutes the status of every incumbent. This economy-wide externality
+lies outside the assumptions of the clubs welfare theorems: membership prices
+internalize composition effects \emph{within} a group, but eliteness is a
+characteristic of a class that spans all elite groups. The positional equilibrium
+exists, is unique, and self-limits (dilution shrinks the elite), but it is no longer
+Pareto optimal and no longer in the core (Propositions~\ref{prop:positional}
+and~\ref{prop:inefficiency}): there is over-entry into elite institutions, and a
+Pigouvian tax on elite memberships raises welfare \emph{and} output
+(Proposition~\ref{prop:tax}). The contrast between Theorem~\ref{thm:nocorrection}
+and Proposition~\ref{prop:inefficiency} is the paper's answer to when elite waste is
+and is not a policy problem: absolute status is efficient consumption; positional
+status is a rat race.
+
+\emph{[Planned: a paragraph previewing the overlapping-generations dynamics, in
+which the spread of status preferences interacts with wealth accumulation.]}
 
 \section{Related Literature}\label{sec:lit}
 
@@ -125,8 +143,10 @@ because their control rights are bundled with status consumption. The rat-race
 tradition (\citealt{akerlof1976caste}; \citealt{hopkinskornienko2004};
 \citealt{frank1985demand}; \citealt{hirsch1976social}) delivers genuine inefficiency
 from relative comparison; in our baseline there is no externality and hence no rat
-race --- that distinction is the point of Theorem~\ref{thm:nocorrection}, and the
-positional extension shows exactly what must be added to overturn it.
+race --- that distinction is the point of Theorem~\ref{thm:nocorrection}, and
+Section~\ref{sec:positional} shows exactly what must be added to overturn it,
+using the widespread-externalities equilibrium concept of
+\citet{noguchizame2006externalities}.
 \citet{kimtertiltyum2024} provide a recent quantitative treatment of education-status
 externalities; we provide the institutional theory.
 
@@ -464,14 +484,16 @@ inference --- markets discipline waste, elite waste persists, therefore markets 
 be impeded --- fails at its first step. Markets discipline \emph{unpriced} waste.
 Status is priced.
 
-Three caveats delimit the result, and each is a planned extension. First, the
-feasible set takes the group-type list $\mathcal{G}$ as given; whether a status-conferring
-group type without resource burn could exist is a question about what makes status
-credible, taken up in the positional extension. Second, if status is valued
-\emph{because others lack it}, utility depends on the economy-wide pattern of
-memberships --- an externality outside the present framework, under which the welfare
-theorem genuinely fails. Third, welfare here is welfarist: status utility counts.
-Section~\ref{sec:discussion} discusses all three.
+Three caveats delimit the result. First, the feasible set takes the group-type list
+$\mathcal{G}$ as given; whether a status-conferring group type without resource burn
+could exist is a question about what makes status credible.
+Section~\ref{sec:positional} answers it: when status derives from scarcity, entry
+self-dilutes, and exclusivity needs no artificial protection. Second, if status is
+valued \emph{because others lack it}, utility depends on the economy-wide pattern of
+memberships --- an externality outside the present framework, under which the
+welfare theorem genuinely fails; that is the subject of
+Section~\ref{sec:positional}. Third, welfare here is welfarist: status utility
+counts. Section~\ref{sec:discussion} returns to this.
 
 \section{Numerical Example}\label{sec:example}
 
@@ -518,6 +540,154 @@ every point on the path is in the core.
   \label{fig:comparative}
 \end{figure}
 
+\section{Positional Status and the Failure of the Welfare Theorem}\label{sec:positional}
+
+Theorem~\ref{thm:nocorrection} rests on status being an \emph{absolute} amenity:
+the elite-manager membership yields utility $(1+\eta)$ regardless of how many others
+hold it. But much of what makes status status is scarcity
+\citep{hirsch1976social,frank1985demand}: a credential everyone holds confers
+distinction on no one. This section makes status positional and shows that
+everything in Theorem~\ref{thm:nocorrection} breaks --- selectively, and in an
+instructive way.
+
+\subsection{Positional preferences and equilibrium}
+
+Let $M$ denote the aggregate measure of agents holding the elite-manager membership
+$m_{4.1}$, and replace the status factor $(1+\eta)$ in the utility specification of
+Section~\ref{sec:model} with
+\begin{equation}\label{eq:positional-utility}
+  1 + \eta\, v(M),
+\end{equation}
+where $v:[0,1]\rightarrow(0,1]$ is continuous, strictly decreasing, with $v(0)=1$:
+the value of eliteness falls as eliteness spreads. Each agent is negligible and
+takes $M$ as given. Because utility now depends on \emph{other agents'}
+memberships, preferences violate the assumptions of
+\citet{ellickson2006organization}: this is a widespread externality in the sense of
+\citet{noguchizame2006externalities}. We accordingly define a \emph{positional
+group equilibrium} as prices $(p,q)$ and a feasible state $(x,\mu)$ satisfying the
+three conditions of Section~\ref{sec:framework}, where optimization is with respect
+to preferences \eqref{eq:positional-utility} evaluated at the aggregate elite mass
+$M$ induced by the state itself.
+
+Crucially, the externality operates at the level of the \emph{class} of elites ---
+the holders of $m_{4.1}$ across all elite firms --- not at the level of any single
+group. Membership prices internalize composition effects within a group; they have
+no instrument that spans groups. This is precisely the gap in the price system that
+the welfare theorem needs closed, and it is why the failure below is not a defect of
+the clubs framework but a discovery made visible by it.
+
+\subsection{Existence, uniqueness, and self-limiting eliteness}
+
+The wages \eqref{eq:wages}, the output price \eqref{eq:p2}, and the elite-firm
+break-even income $w_E=Z$ are untouched by the externality. The cutoff condition
+becomes $(1+\eta^\ast v(M))\,\delta_s\delta_m\, w_E = k$, i.e.,
+\begin{equation}\label{eq:positional-cutoff}
+  \eta^\ast(M) \;=\; \frac{\eta^\ast_0}{v(M)},
+\end{equation}
+where $\eta^\ast_0 = \mu k/Z - 1$ is the cutoff of Section~\ref{sec:equilibrium}.
+Consistency of the conjectured mass with sorting requires $M$ to be a fixed point of
+\begin{equation}\label{eq:fixedpoint}
+  \Phi(M) \;\equiv\; 1 - F\!\left(\frac{\eta^\ast_0}{v(M)}\right).
+\end{equation}
+
+\begin{proposition}[Positional equilibrium]\label{prop:positional}
+Under Assumption~\ref{ass:interior} (applied at $M=M^\ast$), a positional group
+equilibrium exists and its elite mass is unique: $\Phi$ is continuous and strictly
+decreasing on $[0,1]$, so it has exactly one fixed point $M^\ast$. Moreover:
+(i) $M^\ast < M_0 \equiv 1-F(\eta^\ast_0)$ --- dilution self-limits the elite;
+(ii) a FOSD shift of $F$ raises $M^\ast$, but by strictly less than it raises
+$M_0$ --- positional concerns dampen the expansion of
+Proposition~\ref{prop:decline}; (iii) all prices, and the equilibrium values of
+$p_2$, $w_E$, $n$, and $Y$ given $M^\ast$, are as in
+Section~\ref{sec:equilibrium}.
+\end{proposition}
+
+Part (i) already delivers a result the baseline cannot: eliteness is
+self-protecting. Entry of new elite institutions dilutes the very good they sell,
+so the market itself polices exclusivity --- no entrant can arbitrage status,
+because relative position cannot be replicated by replication.
+
+\subsection{Failure of optimality and of core equivalence}
+
+\begin{proposition}[Inefficiency]\label{prop:inefficiency}
+If $v$ is strictly decreasing, the positional group equilibrium is not Pareto
+optimal, and its state does not belong to the core.
+\end{proposition}
+
+The proof (Appendix~\ref{app:positional}) is constructive and exploits the
+equilibrium's own structure. Every non-elite agent --- laborers, competent
+managers, leisure-takers --- is at reservation utility and indifferent among their
+activities; so is every marginal elite. The planner therefore shuts a small mass
+$dM$ of elite triples, sends their members to reservation activities at unchanged
+utility, and opens competent triples in the ratio that restores material balance in
+both goods --- a reallocation that is \emph{exactly} feasible because both
+adjustment directions have zero value at equilibrium prices. Nothing real has been
+given up by anyone. But $v(M)$ rises, so every inframarginal elite is strictly
+better off: a Pareto improvement, executable by the grand coalition, so the state
+is blocked and core equivalence fails. The contrast with
+Theorem~\ref{thm:nocorrection} is exact: there, shutting elite firms had to take
+status away from people who had paid its price; here, shrinking the elite
+\emph{creates} status out of scarcity.
+
+\subsection{Over-entry and the membership tax}
+
+At the laissez-faire equilibrium the marginal entrant weighs the private value of
+elite membership against its price, but ignores the dilution imposed on every
+inframarginal elite. The planner's cutoff condition (Appendix~\ref{app:positional})
+equates the marginal type's surplus to the aggregate dilution wedge
+\begin{equation}\label{eq:wedge}
+  \Omega \;=\; \left|v'(M)\right|\, \frac{w_E}{\,1+\eta^\ast v(M)\,}
+  \int_{\eta\geq\eta^\ast}\!\! \eta\, dF(\eta),
+\end{equation}
+expressed in units of the marginal entrant's income. Since the equilibrium sets the
+marginal surplus to zero while $\Omega>0$, there is over-entry.
+
+\begin{proposition}[Membership tax]\label{prop:tax}
+Let a tax $t$ be levied on the elite-manager membership, with revenue rebated as a
+uniform lump sum. (i) The positional equilibrium remains unique for small $t$, with
+$M(t)$ strictly decreasing. (ii) Utilitarian welfare is strictly increasing in $t$
+at $t=0$: small membership taxes are Pareto-improvable improvements over
+laissez-faire in the sense of Proposition~\ref{prop:inefficiency}, and the
+first-order Pigouvian level is $t^\ast=\Omega$. (iii) If, in addition, condition
+\eqref{eq:decline} holds, aggregate output also rises with the tax.
+\end{proposition}
+
+Part (iii) deserves emphasis because it reverses the baseline's policy content.
+Under absolute status, taxing the elite sector reduces welfare (it undoes priced,
+efficient consumption). Under positional status, the tax raises measured output
+\emph{and} welfare simultaneously --- there is no equity--efficiency trade-off,
+because the taxed activity was destroying value at the margin in both senses. The
+practical diagnostic offered by the theory is thus a question about preferences,
+not about waste: \emph{is elite status valued in itself, or valued because others
+lack it?} Only in the second case is there anything for policy to correct.
+
+\subsection{Numerical continuation}
+
+Continuing the example of Section~\ref{sec:example} with
+$v(M)=1/(1+\psi M)$, $\psi=25$: the elite mass falls from $M_0\approx 0.0153$ to
+$M^\ast\approx 0.0072$ ($v(M^\ast)\approx 0.85$) --- dilution alone halves the
+elite --- and output rises to $Y\approx 0.853$. The same FOSD taste shift that
+raises the baseline elite mass by $0.0071$ raises the positional mass by only
+$0.0021$. Utilitarian welfare is strictly increasing in the membership tax at
+$t=0$; the welfare-maximizing tax in the example is $t^{W}\approx 0.20$ (about
+$5.6\%$ of the elite manager's net income), under which the elite mass falls to
+$0.0053$ and output rises further. Figure~\ref{fig:positional} displays the fixed
+point and the welfare curve. All computations are verified in
+\texttt{analysis/positional\_model.py}.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\textwidth]{figures/positional_tax.pdf}
+  \caption{The positional equilibrium. Panel (a): the map $\Phi$ of
+  \eqref{eq:fixedpoint} is strictly decreasing, giving a unique elite mass
+  $M^\ast$, strictly below the non-positional mass $M_0$ (dotted). Panel (b):
+  utilitarian welfare as a function of the membership tax $t$ (uniform lump-sum
+  rebate); welfare rises for all small taxes --- the signature of over-entry ---
+  and peaks at $t^{W}$. Parameters as in Section~\ref{sec:example} with
+  $v(M)=1/(1+25M)$.}
+  \label{fig:positional}
+\end{figure}
+
 \section{Discussion and Planned Extensions}\label{sec:discussion}
 
 \emph{[Working notes; to be developed.]}
@@ -538,14 +708,22 @@ membership-price decomposition \eqref{eq:prices} shows exactly where such premia
 enter: as negative prices on a scarce characteristic, as in
 \citet[Section~9.3.6]{ellickson2006organization}.
 
-\textbf{Positional status (next phase).} If the value of elite membership derives
-from its scarcity --- utility falling in the measure of elites --- then preferences
-depend on others' memberships, a widespread externality outside the assumptions
-underlying Theorem~\ref{thm:nocorrection}. We conjecture: equilibria exist under
-regularity conditions; the first welfare theorem fails; there is over-entry into
-elite institutions relative to any Pareto optimum; and a tax on elite memberships
-implements a Pareto improvement. This extension also endogenizes why entrants cannot
-replicate eliteness: relative position cannot be produced by entry.
+\textbf{Absolute versus positional status as an empirical question.} The paper's
+two halves assign opposite policy conclusions to observationally similar worlds ---
+wasteful elite institutions persist in both --- so the operative question is which
+preference structure obtains. The halves do differ observably:
+positional status implies self-damped responses of elite-sector size to demand
+shifts (Proposition~\ref{prop:positional}(ii)) and predicts that historical
+expansions of elite institutions dilute the premium attached to them, while
+absolute status implies proportional pass-through. Developing this into a sharper
+empirical strategy is on the agenda for the framing phase.
+
+\textbf{The elite pay puzzle, revisited.} Positional scarcity also supplies the
+first of the two reconciliations anticipated above: with $v$ strictly decreasing,
+the elite characteristic is in endogenously limited supply, and extensions in which
+firms compete for a capped pool of incumbent elites will shift $q_{4.1}$ toward
+scarcity rents --- observed premia --- without disturbing the marginal entrant's
+status discount.
 
 \textbf{Dynamics (next phase).} The overlapping-generations extension makes $k$ a
 state variable: parents value their children's status, finance tuition and bequests,
@@ -650,6 +828,89 @@ strong Pareto optimality.
 in closed form. (For non-interior parameter configurations, existence follows from
 Theorem~2 of \citealt{ellickson2006organization} upon verifying group
 irreducibility; this is routine but omitted until needed.)
+
+\section{Positional Extension: Proofs}\label{app:positional}
+
+All computations are verified in \texttt{analysis/positional\_model.py}.
+
+\subsection{Proof of Proposition~\ref{prop:positional}}
+The occupational-indifference conditions for non-elite choices do not involve $M$,
+so \eqref{eq:wages} and \eqref{eq:p2} are unchanged, as is the elite break-even
+income $w_E=Z$ from firm budget balance. The cutoff type solves
+$(1+\eta v(M))\,\delta_s\delta_m w_E = k$, giving \eqref{eq:positional-cutoff};
+sorting is strict above and below the cutoff because
+\eqref{eq:positional-utility} is strictly increasing in $\eta$ for fixed $M$.
+Consistency of $M$ with sorting is \eqref{eq:fixedpoint}. Since $v$ is continuous
+and strictly decreasing and $F$ is continuous and strictly increasing, $\Phi$ is
+continuous and strictly decreasing, with $\Phi(0)=1-F(\eta^\ast_0)<1$ and
+$\Phi(1)\geq 0$; a unique fixed point $M^\ast\in[0,1)$ exists by the intermediate
+value theorem, and $M^\ast>0$ whenever $F$ has unbounded support. (i) Since
+$v(M^\ast)<1$ for $M^\ast>0$, $\eta^\ast=\eta^\ast_0/v(M^\ast)>\eta^\ast_0$, so
+$M^\ast=1-F(\eta^\ast)<1-F(\eta^\ast_0)=M_0$. (ii) A FOSD shift raises
+$1-F(\cdot)$ pointwise, shifting $\Phi$ up; with $\Phi$ strictly decreasing, the
+fixed point rises, but the induced fall in $v$ raises the cutoff, damping the
+increase: formally $dM^\ast = d\Phi/(1+|\partial\Phi/\partial M|) < d\Phi = dM_0$.
+(iii) Immediate, since given $M^\ast$ the remaining conditions coincide with those
+of Lemma~\ref{lem:characterization}. \qed
+
+\subsection{Proof of Proposition~\ref{prop:inefficiency}}
+Work at the equilibrium of Proposition~\ref{prop:positional}. Shutting one elite
+triple and moving its three members to leisure at their reservation utility changes
+aggregate excess demand by $(A_e,B_e)$ in (input, output):
+\[
+A_e = \tau r + \beta c + \tfrac{w_E}{2} + w_{L^\ast} - \tfrac{3k}{2},
+\qquad
+B_e = -\alpha\phi + \frac{w_E + 2w_{L^\ast} - 3k}{2p_2},
+\]
+and elite-firm budget balance implies $A_e + p_2 B_e = 0$. Opening one competent
+triple staffed from the (indifferent) leisure pool changes excess demand by
+$(-A_c, B_c)$ with $A_c = c + r + (w_M+2w_L-3k)/2$, $B_c = \phi -
+(w_M+2w_L-3k)/(2p_2)$, and competent budget balance implies $A_c = p_2 B_c$. Both
+vectors are orthogonal to $(1,p_2)$, hence collinear; shutting mass $dM>0$ of
+elite triples and opening $dn = (A_e/A_c)\,dM$ competent triples restores material
+balance in both goods \emph{exactly} (machine-verified). All movers and all
+non-elite agents are at reservation utility throughout, so no agent is worse off.
+The elite mass falls to $M^\ast-dM$, so $v$ rises, and every inframarginal elite's
+utility rises by $\eta\,[v(M^\ast-dM)-v(M^\ast)]\,\delta_s\delta_m w_E
+h$-units~$>0$. Finally, transfer an arbitrarily small amount of each good from the
+(strictly better off) elites to all agents pro rata: by continuity the elites
+remain strictly better off, and strict monotonicity makes almost every agent
+strictly better off. The resulting state is feasible and strictly Pareto dominates
+the equilibrium state; the grand coalition can implement it, so the state is
+blocked and not in the core. \qed
+
+\subsection{Planner cutoff condition, the wedge \eqref{eq:wedge}, and
+Proposition~\ref{prop:tax}}
+Consider the one-parameter family of feasible states indexed by the cutoff
+$\hat\eta$, constructed as in the proof of Proposition~\ref{prop:inefficiency}
+(members outside the elite held at reservation utility; material balance restored
+via the competent margin). Elite utility is $U(\eta,\hat\eta) =
+(1+\eta v(M(\hat\eta)))\,\delta_s\delta_m w_E\, H$ with $M(\hat\eta) =
+1-F(\hat\eta)$ and $H \equiv 1/(2\sqrt{p_2})$. Differentiating aggregate elite
+utility and using $M'(\hat\eta)=-f(\hat\eta)$:
+\[
+\frac{d}{d\hat\eta}\int_{\hat\eta}^{\infty}\! U\, dF
+= -\underbrace{U(\hat\eta,\hat\eta)f(\hat\eta)}_{\text{marginal type's utility}}
++ \underbrace{f(\hat\eta)\left|v'(M)\right| \delta_s\delta_m w_E H
+\int_{\hat\eta}^{\infty}\!\eta\, dF}_{\text{de-dilution of inframarginals}} .
+\]
+At an interior optimum the marginal type's \emph{surplus} over reservation utility
+equals the second term divided by $f(\hat\eta)$; converting to income units by
+dividing by the marginal type's marginal utility of income
+$(1+\hat\eta v)\delta_s\delta_m H$ gives the wedge \eqref{eq:wedge}. At
+laissez-faire the marginal surplus is zero while $\Omega>0$: over-entry.
+For Proposition~\ref{prop:tax}: (i) with tax $t$ and rebate $T=tM$, the entrant's
+income becomes $w_E = Z - t$ and the fixed-point map remains continuous and
+strictly decreasing, so uniqueness persists and $M(t)$ is strictly decreasing for
+small $t$ (machine-verified in the example, monotone by the same argument as
+Proposition~\ref{prop:positional}); (ii) at $t=0$ every private margin is at a
+first-order optimum, so the derivative of utilitarian welfare reduces to the
+uninternalized de-dilution term, which is strictly positive; equating the marginal
+entrant's income loss to the wedge gives $t^\ast=\Omega$; (iii) $dM/dt<0$ and
+condition \eqref{eq:decline} give $dY/dt>0$ by Proposition~\ref{prop:decline}.
+The global welfare-maximizing tax in the numerical example, which accounts for all
+equilibrium feedback including the rebate, is computed in
+\texttt{analysis/positional\_model.py}. \qed
 
 \bibliographystyle{chicago}
 \bibliography{elite-status-refs}

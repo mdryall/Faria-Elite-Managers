@@ -17,9 +17,10 @@ status spreads, yet no reallocation Pareto-improves on it.
 
 | Path | Contents |
 |------|----------|
-| `market-for-elite-status.tex` | **Current manuscript.** Static clubs model, Propositions 1&ndash;2 and Theorem 1, numerical example, proofs. |
+| `market-for-elite-status.tex` | **Current manuscript.** Static clubs model (Props 1&ndash;2, Theorem 1), positional extension (Props 3&ndash;5: uniqueness, inefficiency, membership tax), numerical examples, proofs. |
 | `elite-status-refs.bib` | Curated bibliography. Entries flagged `TODO-VERIFY` need checking against the published source before submission. |
-| `analysis/static_model.py` | Symbolic verification of every equilibrium formula in the paper (11 checks) plus the comparative-statics figure. Run with `python3 analysis/static_model.py`. |
+| `analysis/static_model.py` | Symbolic verification of every static-section formula (11 checks) plus the comparative-statics figure. |
+| `analysis/positional_model.py` | Verification and computation for the positional section: fixed point, Pareto-improvement construction, tax equilibria, welfare curve, figure. |
 | `figures/` | Generated figures included by the manuscript. |
 | `literature/` | Source PDFs of the Ellickson et al. papers. |
 | `drafts/` | Archived prior drafts and notes (superseded). |
@@ -32,7 +33,7 @@ final edits).
 
 - [x] **Phase 0 &mdash; Scaffolding.** Repo structure, notation scheme, curated `.bib`, verification harness.
 - [x] **Phase 1 &mdash; Static core.** Heterogeneous-status model; Proposition 1 (coexistence of wasteful elite firms), Proposition 2 (efficient decline of output), Theorem 1 (no market correction); numerical example; machine-verified appendix.
-- [ ] **Phase 2 &mdash; Positional extension.** Relative status as a widespread externality; failure of the first welfare theorem; over-entry and corrective membership tax.
+- [x] **Phase 2 &mdash; Positional extension.** Relative status as a widespread externality; unique self-limiting equilibrium (Prop 3); failure of the first welfare theorem and core equivalence (Prop 4, constructive); over-entry and a membership tax that raises welfare *and* output (Prop 5).
 - [ ] **Phase 3 &mdash; Dynamics (OLG).** `k_t` as state variable; within-period allocation is the Phase 1 equilibrium; multiple steady states and rational-expectations decline paths.
 - [ ] **Phase 4 &mdash; Framing, literature, empirics.** Introduction, related-work confrontations, empirical-implications section.
 - [ ] **Phase 5 &mdash; Stress-test and circulation.** Adversarial review, seminars, submission.
@@ -40,7 +41,8 @@ final edits).
 ## Building
 
 ```sh
-python3 analysis/static_model.py          # regenerate figures + verify algebra
+python3 analysis/static_model.py          # verify static algebra + figure
+python3 analysis/positional_model.py      # verify positional results + figure
 pdflatex market-for-elite-status
 bibtex   market-for-elite-status
 pdflatex market-for-elite-status
