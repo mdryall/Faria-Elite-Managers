@@ -18,7 +18,7 @@ status spreads, yet no reallocation Pareto-improves on it.
 | Path | Contents |
 |------|----------|
 | `market-for-elite-status.tex` | **Current manuscript.** Static clubs model (Props 1&ndash;2, Theorem 1), positional extension (Props 3&ndash;5), OLG dynamics (Props 6&ndash;8: transition map, status-as-luxury, status drag), numerical examples, proofs. |
-| `elite-status-refs.bib` | Curated bibliography. Entries flagged `TODO-VERIFY` need checking against the published source before submission. |
+| `elite-status-refs.bib` | Curated bibliography, fully verified against publisher/journal sources. |
 | `analysis/static_model.py` | Symbolic verification of every static-section formula (11 checks) plus the comparative-statics figure. |
 | `analysis/positional_model.py` | Verification and computation for the positional section: fixed point, Pareto-improvement construction, tax equilibria, welfare curve, figure. |
 | `analysis/dynamic_model.py` | Verification and computation for the dynamic section: period-economy algebra, transition maps, steady states, taste-spread decline, figure. |
@@ -36,7 +36,7 @@ final edits).
 - [x] **Phase 1 &mdash; Static core.** Heterogeneous-status model; Proposition 1 (coexistence of wasteful elite firms), Proposition 2 (efficient decline of output), Theorem 1 (no market correction); numerical example; machine-verified appendix.
 - [x] **Phase 2 &mdash; Positional extension.** Relative status as a widespread externality; unique self-limiting equilibrium (Prop 3); failure of the first welfare theorem and core equivalence (Prop 4, constructive); over-entry and a membership tax that raises welfare *and* output (Prop 5).
 - [x] **Phase 3 &mdash; Dynamics (OLG).** Warm-glow bequests in the produced good; within-period allocation is the Phase 1/2 equilibrium at `k_t`; one condition (elite output-per-resource deficit) governs the static decline, status-as-luxury (Prop 7), and the accumulation drag (Prop 8); rational, fully-foreseen impoverishment with no collapse; positional dilution protects wealth.
-- [ ] **Phase 4 &mdash; Framing, literature, empirics.** Introduction, related-work confrontations, empirical-implications section.
+- [x] **Phase 4 &mdash; Framing, literature, empirics.** Final introduction with motivating evidence and roadmap; full-prose related-literature section (incl. clubs lineage and elite-overproduction positioning); Empirical Content section with five falsifiable prediction blocks; Conclusion; keywords/JEL; bibliography fully verified against publisher sources.
 - [ ] **Phase 5 &mdash; Stress-test and circulation.** Adversarial review, seminars, submission.
 
 ## Building

@@ -47,17 +47,20 @@ Then the equilibrium remains unique but exhibits over-entry into elite instituti
 Equilibria are no longer in the core, and a tax on elite memberships raises both welfare and output.
 Setting the economy in motion in an overlapping-generations frame, one condition --- the elite sector produces less output per unit of resources --- simultaneously governs the static output decline, makes status a luxury (wealthy economies endogenously support larger elites), and makes the elite sector a drag on accumulation: growth finances the status spending that arrests it, and the economy converges to a steady state permanently poorer than its status-free counterfactual, with every generation optimizing and the path fully foreseen.
 Positional dilution partially immunizes against the drag.
+\medskip
+\noindent\textbf{Keywords:} elite status; clubs; general equilibrium; positional externalities; credentialism; elite overproduction.\\
+\textbf{JEL codes:} D51, D62, D71, I24, J31, Z13.
 \end{abstract}
 
 \onehalfspacing
 
 \section{Introduction}\label{sec:intro}
 
-\emph{[Working draft of the introduction. To be finalized last, per the project plan.]}
-
 A familiar argument holds that competitive markets discipline waste: an institution that consumes more resources than it returns should be undercut by rivals and disappear.
 Elite institutions appear to defy this logic.
-Elite universities charge extraordinary tuition while their measurable value-added is contested; the firms that preferentially hire their graduates pay premia that are difficult to attribute to productivity; and both have persisted, and indeed expanded, over decades of intense competition in product, labor, and education markets.
+Elite universities charge tuition that has far outpaced any measure of instructional cost, and their measurable value-added is contested: average returns to attending a more selective college are close to zero once student quality is held fixed \citep{dalekrueger2002}, the causal payoff of elite programs accrues disproportionately to students who arrive already connected \citep{zimmerman2019elite}, and among the educational elite the labor-market premium to joining the right social clubs has been found to exceed the premium to academic performance \citep{michelmanpricezimmerman2022}.
+The firms that recruit preferentially from these institutions screen on pedigree and polish as much as on tested ability \citep{rivera2015pedigree,chettydemingfriedman2026}.
+Yet elite schools and the firms their graduates run have not been competed away; they have persisted, and expanded, through decades of intense competition in product, labor, and education markets.
 
 This paper's answer is not that competition fails, but that it succeeds.
 We model elite status as what it observably is: a membership --- in a school, and subsequently in the class of people who run certain firms --- that is bought and sold at market prices.
@@ -94,15 +97,29 @@ And the elite sector drags on accumulation: growth finances the status spending 
 The path involves no error and no myopia: it is common knowledge, and no atomistic dynasty could or would deviate.
 Rational societies really do let it happen.
 
+Three features distinguish the exercise from prior work, which Section~\ref{sec:lit} reviews in detail.
+Status here is \emph{produced and sold} by institutions with real resource costs and competitively priced as a club membership, rather than attached to occupations, allocated by norms, sold by a monopolist, or traded as an abstract good in fixed supply.
+The persistence result is at the level of the \emph{firm}, with the financing of elite inefficiency traced to identified parties at market prices.
+And the welfare analysis is disciplined by the clubs welfare theorems themselves, so that the line between efficient status consumption and a genuine rat race is a theorem, not a stance.
+
+The paper proceeds as follows.
+Section~\ref{sec:lit} positions the contribution.
+Section~\ref{sec:framework} presents the general framework and Section~\ref{sec:model} our economy.
+Section~\ref{sec:equilibrium} characterizes equilibrium, the compensation decomposition, and the no-market-correction theorem, illustrated numerically in Section~\ref{sec:example}.
+Section~\ref{sec:positional} develops the positional extension and Section~\ref{sec:dynamics} the overlapping-generations dynamics.
+Section~\ref{sec:empirics} collects the model's empirical content, Section~\ref{sec:discussion} discusses interpretation and extensions, and Section~\ref{sec:conclusion} concludes.
+All derivations are gathered in the appendices and are verified symbolically in the paper's companion code.
+
 \section{Related Literature}\label{sec:lit}
 
-\emph{[Skeleton --- each paragraph states the confrontation to be developed.]}
-
 \textbf{Markets for status.}
-\citet{beckermurphywerning2005} price status as a divisible good in fixed supply traded in a hedonic market.
-We differ in making the supply side explicit: status here is membership in clubs --- schools and firms --- produced by institutions with real resource costs, priced by the membership prices of \citet{ellickson1999clubs}, with a production economy attached.
-\citet{colemailathpostlewaite1992} generate status-driven distortions from matching norms; our status is marketed, not normed, which yields prices, entry margins, and comparative statics that norms models do not deliver.
-\citet{moldovanuselashi2007}, \citet{board2009group}, and \citet{rayo2013signal} study a single designer selling status categories or exclusivity; here the supply of status is competitive and embedded in general equilibrium.
+The idea that status itself can be traded has an established lineage.
+\citet{beckermurphywerning2005} price status as a divisible good in fixed supply traded in a hedonic market alongside consumption; their central objects are the induced income distribution and the complementarity between status and consumption.
+We differ in making the supply side explicit: status here is membership in clubs --- schools and the firms their graduates run --- produced by institutions with real resource costs and priced by the membership prices of \citet{ellickson1999clubs}, with a full production economy attached, so that the resource cost of status and its incidence across workers, managers, and schools are equilibrium objects rather than primitives.
+\citet{colemailathpostlewaite1992} generate status-driven distortions from self-enforcing matching norms, in which rank governs access to nonmarket goods; our status is marketed rather than normed, which yields prices, entry margins, and comparative statics that norms models do not deliver, at the cost of taking the taste for membership as a primitive.
+A third tradition studies a single designer selling status: contest categories in \citet{moldovanuselashi2007}, exclusive groups with peer effects in \citet{board2009group}, pure signals of type in \citet{rayo2013signal}, and the fashion cycles of \citet{pesendorfer1995fashion}, in which an intrinsically useless good profitably sorts its buyers.
+Here, by contrast, the supply of status is competitive --- any potential group type is priced --- and embedded in general equilibrium, which is what allows welfare statements about the whole economy rather than about a designer's profit.
+Conspicuous-consumption signaling \citep{bagwellbernheim1996veblen} shares our subject but not our mechanism: our economy has no hidden types, so the persistence of elite waste cannot be attributed to information.
 
 \textbf{Status and allocation.}
 \citet{fershtmanmurphyweiss1996} show occupational status concerns distort the allocation of talent in growth.
@@ -111,15 +128,22 @@ The rat-race tradition (\citealt{akerlof1976caste}; \citealt{hopkinskornienko200
 \citet{kimtertiltyum2024} provide a recent quantitative treatment of education-status externalities; we provide the institutional theory.
 
 \textbf{Education and elite institutions.}
-In \citet{spence1973signaling} education is informative about hidden types; our elite school conveys no information --- there are no hidden types --- and its product is the membership itself.
-This places us closest to the reputation-and-selection view of schooling of \citet{macleodurquiola2019} and to the evidence that elite institutions' value operates through access and affiliation rather than skill production (\citealt{zimmerman2019elite}; \citealt{michelmanpricezimmerman2022}; \citealt{chettydemingfriedman2026}; \citealt{dalekrueger2002}; \citealt{rivera2015pedigree}).
-We treat the zero-teaching elite school as a polar case; \citet{arteaga2018} shows content matters even at elite institutions, and nothing in our results requires the polar case (Remark~\ref{rem:polar}).
-Prior applied uses of the clubs machinery are rare; the main exceptions are \citet{caucutt2001peer,caucutt2002vouchers} on schooling with peer effects, and the firms-as-clubs analyses of \citet{prescotttownsend2006firms} and \citet{zame2007incentives}.
+In \citet{spence1973signaling} education is privately valuable because it is informative about hidden types.
+Our elite school conveys no information --- there are no hidden types anywhere in the model --- and its product is the membership itself; the mechanism would survive full information, which cleanly separates it from signaling.
+This places us closest to the reputation-and-selection view of schooling of \citet{macleodurquiola2019}, in which schools are valued for whom they admit rather than what they teach, and to the empirical literature finding that elite institutions' value operates through access and affiliation rather than measured skill production: near-zero average selectivity premia \citep{dalekrueger2002}, elite-program returns concentrated on the already-connected \citep{zimmerman2019elite}, social-club premia exceeding academic premia \citep{michelmanpricezimmerman2022}, admission effects operating through gateways to prestigious firms \citep{chettydemingfriedman2026}, and hiring at elite professional-service firms screening on pedigree \citep{rivera2015pedigree}.
+We treat the zero-teaching elite school as a polar case; \citet{arteaga2018} shows curricular content matters even at a top university, and nothing in our results requires the polar case (Remark~\ref{rem:polar}).
+
+\textbf{The clubs framework.}
+Our machinery descends from \citet{buchanan1965clubs} through the competitive general-equilibrium formulation of \citet{ellickson1999clubs,ellickson2001clubs,ellickson2006organization}; \citet{scotchmer2002clubs} surveys the field, \citet{coleprescott1997valuation} provides the lottery formulation, and \citet{allouchwooders2008} relax the bounds on club sizes.
+Applied uses of this machinery are rare: the main exceptions are \citet{caucutt2001peer,caucutt2002vouchers}, who compute club equilibria of school economies with peer effects, and the firms-as-clubs analyses of \citet{prescotttownsend2006firms} and \citet{zame2007incentives}, the latter establishing that with strategic play inside firms, equilibria may be Pareto ranked.
+To our knowledge the present paper is the first to use the framework to price status, the first to embed a widespread externality in it, and --- via the sequence of period equilibria in Section~\ref{sec:dynamics} --- the first to study a dynamic economy whose period allocations are club equilibria.
 
 \textbf{Dynamics.}
 The rent-seeking-and-decline tradition (\citealt{murphyshleifervishny1991}; \citealt{baumol1990entrepreneurship}; \citealt{acemoglu1995reward}) diverts talent to unproductive activity through distorted rewards; our drag operates instead through competitively priced status consumption, and its strength is disciplined by the same condition that governs the static equilibrium.
 Where \citet{hasslermora2000} and \citet{colemailathpostlewaite1992} sustain aristocratic regimes through information or norms, our elite is sustained by prices --- and where the leisure-loving aristocracies of \citet{doepkezilibotti2008} are competed away at industrialization, ours survive precisely because their inefficiency is financed by willing status buyers rather than borne by the firms' bottom line.
 The memberships tradition in inequality dynamics (\citealt{durlauf1996persistent}; \citealt{galorzeira1993}) generates traps from productive group memberships and credit constraints; our membership is a pure positional good, and our poverty dynamics run top-down --- wealth creates the elite that erodes wealth --- rather than bottom-up.
+Finally, the pattern our dynamics formalize --- prosperity breeding an expanding elite that strains the society supporting it --- is the ``elite overproduction'' of \citet{turchin2023endtimes}.
+That literature is historical and demographic; to our knowledge, no formal treatment with optimizing agents and market-clearing prices exists, and Propositions~\ref{prop:luxury} and~\ref{prop:drag} may be read as one.
 
 \section{The Framework}\label{sec:framework}
 
@@ -637,33 +661,64 @@ All computations are verified in \texttt{analysis/dynamic\_model.py}.
   \label{fig:dynamics}
 \end{figure}
 
-\section{Discussion and Planned Extensions}\label{sec:discussion}
+\section{Empirical Content}\label{sec:empirics}
 
-\emph{[Working notes; to be developed.]}
+The model was built to explain a pattern, and it returns a set of predictions sharp enough to be wrong.
+We collect them here, together with the existing evidence that bears on each.
+
+\textbf{Compensation.}
+Corollary~\ref{cor:wages} predicts the precise configuration observed in elite labor markets: conspicuous gross salaries, inferior net positions.
+Its decomposition --- gross premium equals excess tuition minus the status discount --- carries two testable implications.
+Across elite labor markets and over time, gross elite premia should co-move with elite tuition, because the premium \emph{is} tuition reimbursement.
+And estimated returns to the elite career track, computed net of the full cost of elite education, should be at or below the returns to the non-elite track --- consistent with the near-zero average selectivity premia of \citet{dalekrueger2002} and with the concentration of elite-program gains on students whose complementary connections came free \citep{zimmerman2019elite}.
+
+\textbf{Firm accounts versus national accounts.}
+In the central configuration, every firm-level comparison flatters the elite sector: higher output per firm, better-paid managers.
+The drain appears only in aggregate resource accounting, because it is incurred in the school system rather than on any firm's books (Proposition~\ref{prop:decline}).
+The model therefore predicts a specific measurement wedge: industries and economies with expanding elite sectors should exhibit \emph{rising} firm-level performance measures for elite firms alongside \emph{falling} aggregate measured productivity, with the gap accounted for by the resource absorption of credentialing institutions.
+Credential inflation --- more resources devoted to obtaining a given position --- is this wedge in labor-market form.
+
+\textbf{Status as a luxury.}
+Proposition~\ref{prop:luxury} predicts that the elite share of the population rises with aggregate wealth, holding tastes fixed, and that markets for expensive, skill-free credentials should be absent in poor economies and prominent in rich ones.
+The cross-sectional and historical pattern --- purely positional credentialing institutions flourishing where and when societies are richest --- is the informal evidence; the model supplies the mechanism, a fixed resource burn financed by wages that scale with wealth, and ties its operation to the same condition that governs the aggregate drag.
+
+\textbf{Distinguishing absolute from positional status.}
+The paper's two welfare regimes are observationally similar in a cross-section --- wasteful elite institutions persist in both --- but differ in their dynamics.
+Positional status implies self-damped responses of the elite share to demand shifts (Proposition~\ref{prop:positional}) and predicts that expansions of elite institutions dilute the premium attached to them; absolute status implies proportional pass-through.
+Historical episodes of elite-seat expansion therefore identify the operative regime, and with it the policy conclusion, since only the positional regime admits a welfare-improving membership tax (Proposition~\ref{prop:tax}).
+
+\textbf{What the causal evidence can and cannot say.}
+The best-identified estimates of elite-education effects compare admitted with rejected applicants and find large gains in top-tail outcomes and access to prestigious positions \citep{zimmerman2019elite,chettydemingfriedman2026}.
+Such designs identify \emph{relative} effects and cannot distinguish the creation of output from the reallocation of positions.
+The model predicts exactly this pattern under pure reallocation: elite membership causally moves its holder up the queue for a fixed set of elite seats while producing nothing --- so large private returns to admission coexist with zero (or negative) aggregate returns to elite-sector expansion.
+The aggregate margin, not the individual one, is where the model's distinctive content lies.
+
+\section{Discussion}\label{sec:discussion}
 
 \textbf{GDP versus welfare.}
 Propositions~\ref{prop:coexist}--\ref{prop:decline} and Theorem~\ref{thm:nocorrection} jointly formalize a distinction the public debate conflates: what declines as elite status spreads is what statistical agencies measure, not what agents maximize.
 Any diagnosis of ``inefficiency'' from output or TFP data alone presumes status utility does not count --- a normative stance that should be argued, not assumed.
 
-\textbf{Compensation as evidence.}
-Corollary~\ref{cor:wages} makes elite compensation data informative rather than embarrassing.
-The model predicts exactly the observed pattern --- conspicuous elite salaries, worse net positions after elite tuition --- and identifies the premium as tuition reimbursement, not productivity.
-Two further channels would amplify observed premia without disturbing the mechanism: scarcity rents on the elite characteristic when its supply is capped (negative prices on a scarce characteristic, as in \citealt[Section~9.3.6]{ellickson2006organization}), and heterogeneity in ability bundled with elite membership.
-The testable content is the decomposition itself: across elite labor markets, gross premia should co-move with elite tuition, and estimated \emph{net} returns to the elite career track should be at or below those of the non-elite track --- consistent with the near-zero average selectivity premium of \citet{dalekrueger2002}.
-
-\textbf{Absolute versus positional status as an empirical question.}
-The paper's two halves assign opposite policy conclusions to observationally similar worlds --- wasteful elite institutions persist in both --- so the operative question is which preference structure obtains.
-The halves do differ observably: positional status implies self-damped responses of elite-sector size to demand shifts (Proposition~\ref{prop:positional}(ii)) and predicts that historical expansions of elite institutions dilute the premium attached to them, while absolute status implies proportional pass-through.
-Developing this into a sharper empirical strategy is on the agenda for the framing phase.
-
 \textbf{Positional scarcity and rents.}
 Positional status supplies the first of the amplification channels just noted: with $v$ strictly decreasing, the elite characteristic is in endogenously limited supply, and extensions in which firms compete for a capped pool of incumbent elites would shift $q_{4.1}$ further toward scarcity rents --- widening observed premia beyond tuition reimbursement --- without disturbing the marginal entrant's status discount.
 
-\textbf{What remains.}
-Three items are on the agenda for the next revision.
+\textbf{Extensions.}
+Three extensions strike us as most valuable.
 First, dynasty-specific inheritance: uniform inheritance isolates the aggregate mechanism, but letting elite parents bequeath directly to their children would interact status persistence with wealth inequality in the manner of \citet{galorzeira1993}, and would let the model speak to intergenerational mobility at the top.
 Second, parents who value their children's \emph{status} rather than the bequest itself --- the natural sharpening of the warm-glow specification, which would make elite membership itself heritable in demand.
 Third, intertemporal welfare: each period's absolute-status allocation is optimal given its inheritance, but the path's efficiency across generations --- and what, if anything, a generation-spanning planner could improve even in the absolute-status world --- is open, and the answer plausibly differs between the absolute and positional regimes.
+
+\section{Conclusion}\label{sec:conclusion}
+
+Elite institutions that consume more than they return are not an affront to the theory of competitive markets; they are an application of it.
+When status is a priced membership, competition sustains the institutions that produce it for the same reason it sustains any other industry: willing buyers cover the costs.
+This paper has priced elite status explicitly, in the most demanding competitive framework available, and traced the consequences through compensation, output, welfare, and growth.
+The results discipline both sides of a familiar argument.
+Against the presumption that visible elite premia and superior elite-firm performance certify productive efficiency, the model shows both arising in an economy that competition is making permanently poorer.
+Against the presumption that elite waste is a market failure demanding correction, the model shows the waste is Pareto optimal --- unless status is valued for its scarcity, in which case, and only in which case, there is over-entry and a corrective tax that raises output and welfare together.
+The operative empirical question is therefore not whether elite institutions are wasteful, but why their members want them: for what membership is, or for what it is not shared with.
+Markets work either way.
+Material efficiency follows in neither.
 
 \appendix
 
