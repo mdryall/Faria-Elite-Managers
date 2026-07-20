@@ -270,7 +270,7 @@ drop_pos = 100 * (1 - hs_pos[-1] / hs_none)
 print(f"\nat s = {svals[-1]:.2f}: absolute-status wealth loss {drop_abs:.1f}% vs "
       f"no-elite benchmark; positional only {drop_pos:.1f}% (dilution protects wealth)")
 
-# generational path after a taste shift s: 0.30 -> 0.75, starting at old steady state
+# generational path after a taste shift s: 0.10 -> 0.18, starting at old steady state
 s_new = 0.18
 kpath = [k_abs]
 for _ in range(40):
