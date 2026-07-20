@@ -147,7 +147,7 @@ Blackboard letters denote the standard number systems: $\R$ is the real line, $\
 Two standard exceptions are retained: distribution functions are written with the conventional capital $F$, and a bar over a lowercase letter ($\bar{w}$, $\bar{y}$) denotes an economy-wide aggregate of the corresponding individual quantity.
 Every symbol is defined where it first appears.
 Two workhorse letters serve double duty across distant contexts where no ambiguity can arise: $s$ is an organizational characteristic in the group-type notation and the taste-scale parameter of the numerical examples, and $t$ is the membership tax of Section~\ref{sec:positional} and the time index of Section~\ref{sec:dynamics}.
-Bars also mark two bounds ($\bar\ell$, $\bar\eta$) alongside the aggregates, the count $N$ and utilitarian welfare $W$ are capitals by long convention, and the letter $m$ names both generic memberships (always paired with a group type or subscripted) and the elite mass of Section~\ref{sec:positional}.
+Bars also mark two bounds ($\bar\ell$, $\bar\eta$) alongside the aggregates; the count $N$, utilitarian welfare $W$, the appendix aggregator $A$ and its common factor $Q$, and the rebate level $T$ are capitals by long convention; and the letter $m$ names both generic memberships (always paired with a group type or subscripted) and the elite mass of Section~\ref{sec:positional}.
 
 \subsection{Commodities, groups, and memberships}
 
@@ -482,7 +482,7 @@ Let $m$ denote the aggregate measure of agents holding the elite-manager members
 \begin{equation}\label{eq:positional-utility}
   1 + \eta\, v(m),
 \end{equation}
-where $v:[0,1]\rightarrow(0,1]$ is continuously differentiable, strictly decreasing, with $v(0)=1$: the value of eliteness falls as eliteness spreads.
+where $v:[0,1]\rightarrow(0,1]$ is continuously differentiable with $v'<0$ throughout and $v(0)=1$: the value of eliteness falls as eliteness spreads.
 Each agent is negligible and takes $m$ as given.
 (The scalar mass $m$ is unsubscripted; membership labels $m_1,m_{3.1},\dots$ always carry subscripts, so no confusion should arise, and in equilibrium $m$ equals the measure of elite managers, the object the fixed point below denotes $m^\ast$.)
 Because utility now depends on \emph{other agents'} memberships, preferences violate the assumptions of \citet{ellickson2006organization}: this is a widespread externality in the sense of \citet{noguchizame2006externalities}.
@@ -538,17 +538,17 @@ expressed in units of the marginal entrant's income.
 Since the equilibrium sets the marginal surplus to zero while the wedge is strictly positive, there is over-entry.
 
 \begin{proposition}[Membership tax]\label{prop:tax} Let a tax $t$ be levied on the elite-manager membership, with revenue rebated as a uniform lump sum.
-(i) At any fixed rebate level, the fixed-point map remains continuous and strictly decreasing in the elite mass, so the equilibrium elite mass is unique given the rebate and is strictly decreasing in $t$.
+(i) At any fixed rebate level, the fixed-point map remains continuous and weakly decreasing in the elite mass, strictly wherever positive, so the equilibrium elite mass is unique given the rebate and is strictly decreasing in $t$ while positive.
 (ii) The laissez-faire equilibrium exhibits over-entry: its cutoff sets the marginal entrant's surplus to zero, whereas every Pareto-optimal cutoff allocation requires that surplus to equal the strictly positive wedge \eqref{eq:wedge}.
-(iii) At $t=0^{+}$, the output response decomposes into a de-entry term and a rebate term, $d\bar{y}/dt = \bar{y}_m\,m'(0^{+}) + \bar{y}_T\,m^\ast$, where $\bar{y}_m$ is the derivative of Proposition~\ref{prop:decline} (positive times $m'<0$ under condition \eqref{eq:decline}) and $\bar{y}_T<0$ is the rebate's effect through reservation incomes and the output price; output rises if and only if the de-entry term dominates.
+(iii) At $t=0^{+}$, the output response decomposes into three channels, $d\bar{y}/dt = \bar{y}_m\,m'(0^{+}) + \bar{y}_T\,m^\ast + \bar{y}_t$: a de-entry term, in which $\bar{y}_m$ is the derivative of Proposition~\ref{prop:decline} (negative under condition \eqref{eq:decline}, so that with $m'(0^{+})<0$ the term is positive); a rebate term $\bar{y}_T\,m^\ast<0$, operating through reservation incomes and the output price; and a direct incidence term $\bar{y}_t = \phi m^\ast/[2c+2r+(\mu+2\lambda-3)k]>0$, the tax's reduction of elite consumption demand releasing resources to production; output rises if and only if the two positive channels together dominate the rebate term.
 \end{proposition}
 
 The propositions state what is proven; the numerical continuation below shows that their hypotheses are not vacuous.
 Part (iii) deserves emphasis because it reverses the baseline's policy content.
 Under absolute status, taxing the elite sector reduces welfare (it undoes priced, efficient consumption).
-Under positional status, whenever entry responds strongly enough that the de-entry term dominates the rebate's price effect, the tax raises output and welfare simultaneously, so there is no equity--efficiency trade-off: the taxed activity was destroying value at the margin in both senses.
+Under positional status the tax raises welfare in the example, and it raises output whenever the de-entry and incidence channels together dominate the rebate's price effect; when both margins improve, as they do in the example, there is no equity--efficiency trade-off: the taxed activity was destroying value at the margin in both senses.
 Dominance is a genuine condition rather than a formality; a taste distribution thin at the cutoff makes entry unresponsive, and the rebate's price effect can then reverse the output gain even as the elite mass falls.
-In the example the de-entry term is $+0.016$ against a rebate term of $-0.006$, so both margins improve (Appendix~\ref{app:positional}).
+In the example the three channels are $+0.0160$, $-0.0063$, and $+0.0037$, a total of $+0.0134$, so both margins improve (Appendix~\ref{app:positional}).
 The practical diagnostic offered by the theory is thus a question about preferences, not about waste: \emph{is elite status valued in itself, or valued because others lack it?}
 Only in the second case is there anything for policy to correct.
 
@@ -851,14 +851,15 @@ Differentiating aggregate elite utility and using $m'(\hat\eta)=-F'(\hat\eta)$: 
 U\, dF = -\underbrace{U(\hat\eta,\hat\eta)F'(\hat\eta)}_{\text{marginal type's utility}} + \underbrace{F'(\hat\eta)\left|v'(m)\right| \delta_s\delta_m w_E h_0 \int_{\hat\eta}^{\infty}\!\eta\, dF}_{\text{de-dilution of inframarginals}} .
 \] At an interior optimum the marginal type's \emph{surplus} over reservation utility equals the second term divided by $F'(\hat\eta)$; converting to income units by dividing by the marginal type's marginal utility of income $(1+\hat\eta v)\delta_s\delta_m h_0$ gives the wedge \eqref{eq:wedge}.
 At laissez-faire the marginal surplus is zero while the wedge is strictly positive: over-entry.
-For Proposition~\ref{prop:tax}: (i) with tax $t$, the rebate feeds back into all incomes, so the equilibrium is a joint fixed point in the elite mass and the rebate; at fixed rebate the map remains continuous and strictly decreasing, so uniqueness persists at that level, and the map shifts down pointwise in $t$ (the cutoff $\mu(k+T)/(z-t)-1$ rises), so the fixed-rebate mass falls strictly; in the example the joint fixed point is also unique with $m(t)$ strictly decreasing (the companion script solves the joint problem explicitly).
+For Proposition~\ref{prop:tax}: (i) with tax $t$, the rebate feeds back into all incomes, so the equilibrium is a joint fixed point in the elite mass and the rebate; at fixed rebate the map remains continuous and weakly decreasing, strictly wherever positive, so its fixed point is unique at that level as in the proof of Proposition~\ref{prop:positional}, and the map shifts down in $t$ wherever positive (the cutoff $\mu(k+T)/(z-t)-1$ rises, $T\geq 0$ denoting the lump-sum rebate), so the fixed-rebate mass falls strictly while positive; in the example the joint fixed point is also unique with $m(t)$ strictly decreasing (the companion script solves the joint problem explicitly).
 (ii) The over-entry statement is the planner cutoff condition derived above.
 We emphasize what is \emph{not} claimed: the derivative of utilitarian welfare at $t=0$ does not reduce to the de-dilution wedge, because the rebate shifts every agent's effective income (moving all wages and prices at first order) and redistributes between agents with unequal marginal utilities of income.
 Writing $W(t)$ for utilitarian welfare at tax $t$ (a capital letter by convention exception, alongside the taste distribution $F$): in the example, $dW/dt|_{t=0^+}=0.00125$, of which the de-dilution term accounts for $0.00058$; the remainder is the rebate's general-equilibrium and redistributive contribution (both quantities computed at fine step in the companion script).
 The wedge \eqref{eq:wedge} characterizes over-entry along the planner's cutoff family; it is not the welfare-maximizing tax, which in the example is $t^{W}\approx 0.31$ against a wedge of $\approx 0.35$.
-(iii) At $t=0^{+}$, $d\bar{y}/dt = \bar{y}_m m'(0^{+}) + \bar{y}_T m^\ast$ with $\bar{y}_m = \phi[\alpha(c+r)-\beta c-\tau r]/[2c+2r+(\mu+2\lambda-3)k]$, the identity of Proposition~\ref{prop:decline} evaluated at reservation income $k+t\,m$, and $\bar{y}_T<0$ obtained by differentiating market clearing in the rebate.
-Under \eqref{eq:decline} the first term is positive when $m'<0$; it need not dominate --- a taste distribution putting little mass at the cutoff makes $|m'(0^{+})|$ small while $m^\ast$ remains bounded away from zero, and output then falls with the tax --- which is why (iii) states the dominance condition rather than an unconditional sign.
-In the example the terms are $+0.016$ and $-0.006$ (computed in the companion script), so output rises.
+(iii) Equilibrium output depends on the tax through three channels: the elite mass, the rebate, and the tax's direct incidence on the elite manager's net income $w_E = z - t$ at fixed mass and rebate.
+At $t=0^{+}$, $d\bar{y}/dt = \bar{y}_m m'(0^{+}) + \bar{y}_T m^\ast + \bar{y}_t$, with $\bar{y}_m = \phi[\alpha(c+r)-\beta c-\tau r]/[2c+2r+(\mu+2\lambda-3)k]$ the identity of Proposition~\ref{prop:decline}; $\bar{y}_T<0$ obtained by differentiating market clearing in the rebate; and $\bar{y}_t = \phi m^\ast/[2c+2r+(\mu+2\lambda-3)k]>0$, because the taxed manager's forgone consumption of the input good is released to the production sector.
+Under \eqref{eq:decline} the de-entry term is positive when $m'<0$; the positive channels need not dominate --- a taste distribution putting little mass at the cutoff makes $|m'(0^{+})|$ small, and when the rebate term also outweighs the incidence term, output falls with the tax --- which is why (iii) states the dominance condition rather than an unconditional sign.
+In the example the channels are $+0.0160$, $-0.0063$, and $+0.0037$, a total of $+0.0134$; the companion script computes all three and verifies that their sum reproduces the direct equilibrium derivative.
 The global welfare-maximizing tax in the numerical example, which accounts for all equilibrium feedback including the rebate, is computed in \texttt{analysis/positional\_model.py}.
 \qed
 
@@ -881,7 +882,7 @@ The no-forecasting claim is immediate: \eqref{eq:olg-utility} depends on own con
 
 \subsection{Proof of Proposition~\ref{prop:luxury}} $\eta^\ast_0(k)=\mu k/z(k)-1$ with $z=\alpha p_2\phi-\beta c-\tau r+(3-2\lambda^{e})k$.
 Then $d\eta^\ast_0/dk = \mu\,(z-kz')/z^2$ and direct computation (machine-verified) gives $z-kz' = \alpha(c+r)-\beta c-\tau r$.
-Hence $\eta^\ast_0$ is strictly decreasing iff $\alpha(c+r)<\beta c+\tau r$, and $m^\ast=1-F(\eta^\ast_0)$ (or its positional analogue, whose fixed-point map shifts up as $\eta^\ast_0$ falls) is strictly increasing wherever $0<z<\mu k$.
+Hence $\eta^\ast_0$ is strictly decreasing iff $\alpha(c+r)<\beta c+\tau r$, and $m^\ast=1-F(\eta^\ast_0)$ (or its positional analogue, whose fixed-point map shifts up as $\eta^\ast_0$ falls) is strictly increasing wherever $0<z<\mu k$ and the cutoff is interior to the support of $F$.
 Viability: $z(k)\leq 0$ for $k$ below the root of $z$, where no cutoff exists and the elite sector is empty.
 \qed
 

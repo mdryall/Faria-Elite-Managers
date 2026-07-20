@@ -272,12 +272,22 @@ def ybar_at(T_, m_):
     n_ = num / den_
     return P['phi'] * (n_ + P['alpha'] * m_)
 Y_T = (ybar_at(hT, m00) - ybar_at(0.0, m00)) / hT
-term_entry, term_rebate = Y_m * mp0, Y_T * m00
-print(f"output decomposition at t=0+: de-entry {term_entry:+.6f}, rebate-price {term_rebate:+.6f}, "
-      f"total {term_entry + term_rebate:+.6f}")
-assert term_entry > 0 and term_rebate < 0 and term_entry + term_rebate > 0, \
-    "example must satisfy the dominance condition of Prop tax (iii)"
-print("[ok] dominance condition of Prop tax (iii) holds in the example")
+# direct incidence channel: the tax lowers w_E at fixed mass and rebate,
+# releasing the manager's forgone input-good consumption to production
+Y_t = P['phi'] * m00 / den
+term_entry, term_rebate, term_incid = Y_m * mp0, Y_T * m00, Y_t
+total3 = term_entry + term_rebate + term_incid
+print(f"output decomposition at t=0+: de-entry {term_entry:+.6f}, "
+      f"rebate-price {term_rebate:+.6f}, incidence {term_incid:+.6f}, total {total3:+.6f}")
+# cross-check against the DIRECT equilibrium derivative (the check whose absence
+# let an incomplete two-term decomposition through in round 2)
+h_dir = 1e-6
+y_direct = (solve_positional(P, t=h_dir)['Y'] - solve_positional(P, t=0.0)['Y']) / h_dir
+print(f"direct equilibrium derivative dY/dt|0+ = {y_direct:+.6f}")
+assert abs(total3 - y_direct) < 1e-3, "three-channel sum must reproduce the direct derivative"
+assert term_entry > 0 and term_rebate < 0 and term_incid > 0 and total3 > 0
+print("[ok] three-channel decomposition of Prop tax (iii) reproduces the direct")
+print("     derivative, and the positive channels dominate in the example")
 
 print(f"dW/dt at t=0+: {(Ws[1]-Ws[0])/(ts[1]-ts[0]):+.6f}  (positive => over-entry)")
 print(f"welfare-maximizing tax  t^W = {ts[i_star]:.3f}  "
