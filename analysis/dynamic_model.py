@@ -93,6 +93,12 @@ gap = sp.simplify(sp.factor(n_sol.subs(g, 1) - n_static))
 assert gap == 0
 print("[ok] gamma = 1 recovers the static (no-bequest) market clearing for n")
 
+# Appendix E invariance: wages, p2, z contain no bequest-share parameter g
+for expr_name, expr in (("p2*phi", Pi), ("z (= w_E)", Z), ("w_M", wM), ("w_L", wL)):
+    assert g not in expr.free_symbols, expr_name
+print("[ok] savings-motive invariance: wages, p2, and z are free of the transfer share")
+
+
 # status is a luxury: d(eta*)/dk sign
 eta_expr = mu_ * k / Z - 1
 num = sp.simplify(sp.together(sp.diff(eta_expr, k)) * Z ** 2 / mu_)  # = Z - k Z' (x -1)
