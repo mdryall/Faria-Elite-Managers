@@ -18,7 +18,7 @@
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}
 
-\newcommand{\Lists}{\mathbf{Lists}}
+\newcommand{\Lists}{\Lambda}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\md}[1]{\textcolor{red}{[#1]}} % margin note command for coauthor comments
 \usepackage{xcolor}
@@ -124,34 +124,81 @@ The memberships tradition in inequality dynamics (\citealt{durlauf1996persistent
 \section{The Framework}\label{sec:framework}
 
 We adopt the general equilibrium model of groups of \citet{ellickson2006organization}, which extends \citet{ellickson1999clubs} to allow groups to produce outputs and memberships to carry acquired characteristics.
-We state the primitives compactly and refer the reader to the source for full detail.
+This section states the primitives, explains what each is intended to represent, and records the two theorems we use; the reader is referred to the source for proofs and for the framework's full generality.
+
+\paragraph{Notational conventions.}
+Throughout the paper, lowercase Latin and Greek letters denote parameters, functions, and elements of sets; capital Latin and Greek letters denote sets; and calligraphic letters denote collections of sets (the only instance below is a $\sigma$-algebra).
+Blackboard letters denote the standard number systems: $\R$ is the real line, $\R^N$ its $N$-fold Cartesian product, $\R_+$ the nonnegative reals, and $\mathbb{Z}_+=\{0,1,2,\dots\}$ the nonnegative integers.
+Two standard exceptions are retained: distribution functions are written with the conventional capital $F$, and a bar over a lowercase letter ($\bar{w}$, $\bar{y}$) denotes an economy-wide aggregate of the corresponding individual quantity.
+Every symbol is defined where it first appears.
 
 \subsection{Commodities, groups, and memberships}
 
-There are $N$ divisible, publicly traded private goods.
-Groups are described by a finite set $\mathcal{G}$ of \emph{group types} $(\pi,\gamma,y)$: a \emph{profile} $\pi:\Omega\rightarrow\mathbb{Z}_+$ specifying how many members with each \emph{membership characteristic} $\omega\in\Omega$ the group requires; an \emph{organizational characteristic} $\gamma\in\Gamma$; and an \emph{input--output vector} $y\in\R^N$, with negative components inputs and positive components outputs.
-A \emph{membership} is a pair $m=(\omega,(\pi,\gamma,y))$ with $\pi(\omega)\geq 1$; $\mathcal{M}$ denotes the (finite) set of memberships.
-A \emph{list} is a function $\ell:\mathcal{M}\rightarrow\mathbb{Z}_+$; $\Lists$ denotes the set of lists.
+There are $N\geq 1$ perfectly divisible, publicly traded private goods; a bundle of them is a vector in $\R^N$.
+Alongside these ordinary commodities, the framework's distinctive objects are \emph{groups}: collections of individuals associated for some purpose --- in our application, schools and firms.
+
+Two exogenous finite sets describe the raw material from which groups are built.
+$\Omega$ is the set of \emph{membership characteristics}, with typical element $\omega$.
+A membership characteristic is any attribute of a person that matters to the group she joins or to the activity conducted there: a role (student, laborer), a qualification (holding a particular degree), or a position (manager).
+Characteristics are observable and contractible, and --- importantly for what follows --- they can be \emph{acquired}: attending a school confers a characteristic that a firm requires.
+$\Gamma$ is the set of \emph{organizational characteristics}, with typical element $\gamma$.
+An organizational characteristic describes everything about a group that is not its membership roster or its market transactions: its activity, internal organization, or institutional identity.
+In our application $\Omega$ has four elements (student, competent manager, elite manager, laborer) and $\Gamma$ has four (serious school, elite school, competent firm, elite firm); both sets are primitives of the model, fixed throughout.
+
+A \emph{group type} is a triple $(\pi,\gamma,y)$ consisting of:
+a \emph{profile} $\pi:\Omega\rightarrow\mathbb{Z}_+$, an exogenously fixed function specifying the integer number $\pi(\omega)$ of members with characteristic $\omega$ that a group of this type requires, so that $\sum_{\omega\in\Omega}\pi(\omega)$ is the group's total size;
+an organizational characteristic $\gamma\in\Gamma$;
+and an \emph{input--output vector} $y\in\R^N$, whose negative components are the quantities of private goods the group uses up and whose positive components are the quantities it produces.
+A firm, for example, is a group type whose profile demands one manager and two laborers and whose input--output vector converts raw materials into product; a school is a group type whose profile demands one student and whose input--output vector uses up resources and produces no traded good.
+The economy's group technology is an exogenous finite set $G$ of group types.
+Groups of any type in $G$ may form in any nonnegative mass; which types form, and in what mass, is determined in equilibrium.
+
+A \emph{membership} is an opening in a group: formally, a pair $m=(\omega,(\pi,\gamma,y))$ with $(\pi,\gamma,y)\in G$ and $\pi(\omega)\geq 1$ --- a seat for a member with characteristic $\omega$ in a group of type $(\pi,\gamma,y)$.
+$M$ denotes the set of memberships; it is finite because $\Omega$ and $G$ are.
+Agents may hold several memberships at once --- the same person can be a student in one group and a manager in another --- so an agent's choice object is a \emph{list}: a function $\ell:M\rightarrow\mathbb{Z}_+$ recording how many memberships of each kind she holds.
+$\Lambda$ denotes the set of lists, and $0\in\Lambda$ denotes the empty list (no memberships).
 
 \subsection{Agents}
 
-The set of agents is a nonatomic finite measure space $(A,\mathcal{F},\lambda)$.
-An agent $a$ is described by a consumption set $X_a\subset\R^N_+\times\Lists$ (closed, allowing free disposal upward in private goods, with a uniform bound on list sizes), an endowment $(e_a,0)\in X_a$ of private goods and no memberships, and a utility function $u_a:X_a\rightarrow\R$, continuous and strictly increasing in private goods for each fixed list.
-Consumption sets encode qualification requirements: a choice $(x_a,\ell_a)$ is feasible only if $a$ can fulfill the requirements of every membership in $\ell_a$, and characteristics may be \emph{acquired} by holding other memberships (e.g., a degree qualifies its holder for a managerial role).
-The economy is the measurable mapping $a\mapsto(X_a,e_a,u_a)$.
+The set of agents is a nonatomic finite measure space $(A,\mathcal{F},\lambda)$: $A$ is the set of agents, $\mathcal{F}$ is a $\sigma$-algebra of subsets of $A$ --- the collection of coalitions to which a size can be assigned --- and $\lambda$ is a nonatomic measure with $\lambda(A)<\infty$, so that $\lambda(B)$ is the mass of coalition $B\in\mathcal{F}$ and no single agent carries positive mass.
+The continuum formalizes perfect competition: each agent is negligible and takes prices as given, while groups of small finite size can still form in positive mass --- the technical feature that makes competitive pricing of memberships coherent.
 
-\subsection{States and equilibrium}
+Each agent $a\in A$ is described by three objects.
+Her \emph{consumption set} $X_a\subset\R^N_+\times\Lambda$ collects the pairs of goods bundles and lists she is capable of choosing; it is closed, allows free upward disposal in private goods, and bounds the number of memberships on any list by a uniform integer $\bar{\ell}$.
+The consumption set is where qualifications live: a list that includes a managerial membership belongs to $X_a$ only if it also includes the schooling membership that confers the managerial qualification.
+Her \emph{endowment} $(e_a,0)\in X_a$ consists of a bundle $e_a\in\R^N_+$ of private goods and the empty list: nobody is born holding a membership.
+Her \emph{utility function} $u_a:X_a\rightarrow\R$ is continuous and strictly increasing in private goods for each fixed list; no assumption is placed on how utility varies across lists, which is precisely what allows preferences over group affiliation --- including a taste for elite status --- to enter unrestricted.
+The economy is the mapping $a\mapsto(X_a,e_a,u_a)$, assumed measurable.
 
-A \emph{state} $(x,\mu):A\rightarrow\R^N\times\R^{\mathcal{M}}$ assigns private goods and lists.
-A state is \emph{feasible} if it is individually feasible, satisfies material balance (aggregate consumption does not exceed aggregate endowment plus the net output of the groups formed), and is \emph{consistent}: for every group type, the aggregate choices of its various memberships are in the proportions $\pi$ requires, so that agents can be matched into groups with no seat empty and no agent unmatched.
+\subsection{States, feasibility, and equilibrium}
 
-Prices are $(p,q)\in\R^N_+\times\R^{\mathcal{M}}$: $p$ for private goods, $q$ for memberships.
-Membership prices may be positive (tuition), negative (wages), or zero.
-A \emph{group equilibrium} is a price system $(p,q)$ with $p\neq 0$ and a feasible state $(x,\mu)$ such that:
+A \emph{state} is a measurable assignment $(x,\ell):A\rightarrow\R^N_+\times\Lambda$ of a goods bundle $x_a$ and a list $\ell_a$ to each agent.
+A state is \emph{feasible} if three requirements hold.
+First, \emph{individual feasibility}: $(x_a,\ell_a)\in X_a$ for almost every $a\in A$.
+Second, \emph{consistency}: the memberships chosen across the population can actually be assembled into groups.
+Formally, for every group type $(\pi,\gamma,y)\in G$ there is a scalar $\nu(\pi,\gamma,y)\geq 0$ --- the mass of groups of that type that form --- such that
+\[
+\int_A \ell_a\big(\omega,(\pi,\gamma,y)\big)\,d\lambda(a) \;=\; \nu(\pi,\gamma,y)\,\pi(\omega)
+\qquad\text{for every } \omega\in\Omega :
+\]
+the population's choices of the various seats in a group type must come in exactly the proportions its profile requires, so that groups form with no seat empty and no member unmatched.
+Third, \emph{material balance}:
+\[
+\int_A x_a\,d\lambda(a) \;\leq\; \int_A e_a\,d\lambda(a) \;+ \sum_{(\pi,\gamma,y)\in G}\nu(\pi,\gamma,y)\,y ,
+\]
+aggregate consumption cannot exceed aggregate endowment plus the net output of all the groups that form.
+
+Both goods and memberships are priced.
+A price system is a pair $(p,q)$ with $p\in\R^N_+$ the prices of the private goods and $q\in\R^{M}$ a vector assigning a price $q(m)$ to each of the finitely many membership kinds $m\in M$.
+Membership prices are the framework's payroll and fee schedule rolled into one object: a positive $q(m)$ is a payment the member makes to the group (tuition), and a negative $q(m)$ is a payment the member receives (a wage).
+A \emph{group equilibrium} is a price system $(p,q)$ with $p\neq 0$ and a feasible state $(x,\ell)$ such that:
 \begin{enumerate}
-\item \textbf{Budget balance for group types:} for each $(\pi,\gamma,y)\in\mathcal{G}$, $\sum_{\omega\in\Omega}\pi(\omega)\,q(\omega,(\pi,\gamma,y)) + p\cdot y = 0$.
-\item \textbf{Budget feasibility:} for almost all $a$, $(p,q)\cdot(x_a,\mu_a)\leq p\cdot e_a$.
-\item \textbf{Optimization:} for almost all $a$, any choice strictly preferred to $(x_a,\mu_a)$ costs strictly more than $p\cdot e_a$.
+\item \textbf{Budget balance for group types:} for each $(\pi,\gamma,y)\in G$, $\sum_{\omega\in\Omega}\pi(\omega)\,q(\omega,(\pi,\gamma,y)) + p\cdot y = 0$.
+Every group breaks even: the membership payments its members make and receive, plus the market value of its net output, sum to zero --- there are no profits to distribute and no owners required.
+\item \textbf{Budget feasibility:} for almost all $a$, $(p,q)\cdot(x_a,\ell_a)\leq p\cdot e_a$.
+Each agent's spending on goods and memberships, net of the wages her memberships pay, is covered by the value of her endowment.
+\item \textbf{Optimization:} for almost all $a$, any choice in $X_a$ strictly preferred to $(x_a,\ell_a)$ costs strictly more than $p\cdot e_a$.
+No agent can afford anything she would rather have.
 \end{enumerate}
 
 Two results from \citet{ellickson2006organization} are used below.
@@ -163,40 +210,44 @@ Their Theorem~2 provides existence under group irreducibility, desirable endowme
 \subsection{Goods, group types, and memberships}
 
 There are two private goods: an input good $y_1$ (``resources,'' the num\'{e}raire) and a consumption good $y_2$ with price $p_2$.
-Membership characteristics are $\Omega=\{S, M, EM, L\}$: student, manager, elite manager, laborer.
+The membership characteristics are $\Omega=\{\omega_s,\omega_m,\omega_e,\omega_l\}$: $\omega_s$ is being a student, $\omega_m$ holding a competent managerial qualification, $\omega_e$ holding an elite managerial qualification, and $\omega_l$ supplying labor, which requires no qualification.
+The organizational characteristics are $\Gamma=\{s,s^\ast,f,f^\ast\}$: serious school, elite school, competent firm, elite firm.
 There are four group types:
 \begin{align*}
-  g_1 &= \big((S);\, s;\, (-r,0)\big)
+  g_1 &= \big(\pi_1;\, s;\, (-r,0)\big)
     && \text{serious school: educates one student at resource cost } r>0,\\
-  g_2 &= \big((S);\, s^\ast;\, (-\tau r,0)\big)
+  g_2 &= \big(\pi_1;\, s^\ast;\, (-\tau r,0)\big)
     && \text{elite school: } \tau\geq 1,\\
-  g_3 &= \big((M,2L);\, f;\, (-c,\phi)\big)
+  g_3 &= \big(\pi_2;\, f;\, (-c,\phi)\big)
     && \text{competent firm: one manager, two laborers},\\
-  g_4 &= \big((EM,2L);\, f^\ast;\, (-\beta c,\alpha\phi)\big)
+  g_4 &= \big(\pi_3;\, f^\ast;\, (-\beta c,\alpha\phi)\big)
     && \text{elite firm: } \beta\geq 1,\ \alpha>0.
 \end{align*}
+Here $\pi_1$ is the profile demanding one student and nothing else ($\pi_1(\omega_s)=1$, zero elsewhere); $\pi_2$ demands one competent manager and two laborers ($\pi_2(\omega_m)=1$, $\pi_2(\omega_l)=2$); and $\pi_3$ demands one elite manager and two laborers ($\pi_3(\omega_e)=1$, $\pi_3(\omega_l)=2$).
+Thus $G=\{g_1,g_2,g_3,g_4\}$, and the goods space has $N=2$.
+The parameters $r>0$ and $c>0$ are the resource costs of operating a serious school (per student) and a competent firm; $\phi>0$ is the competent firm's output.
 The parameter $\tau$ measures the resources elite schools devote to the production of status rather than skill; $\beta$ measures the excess resource use of elite-managed firms; $\alpha$ their output multiplier.
 The configuration of central interest is $\tau>1$, $\beta\geq 1$, and $\alpha$ \emph{above} one but below the resource-efficiency threshold identified in Proposition~\ref{prop:decline}: elite firms out-produce competent ones firm-for-firm, yet the elite complex --- schools included --- consumes disproportionately more resources than it returns.
 The polar case $\alpha\leq 1$, in which even output-inferior elite firms survive, is characterized in Proposition~\ref{prop:coexist}.
 
-The memberships are $m_1=(S,g_1)$, $m_2=(S,g_2)$, $m_{3.1}=(M,g_3)$, $m_{3.2}=(L,g_3)$, $m_{4.1}=(EM,g_4)$, $m_{4.2}=(L,g_4)$.
+The resulting membership set is $M=\{m_1,m_2,m_{3.1},m_{3.2},m_{4.1},m_{4.2}\}$, where $m_1=(\omega_s,g_1)$ and $m_2=(\omega_s,g_2)$ are student seats at the two schools, $m_{3.1}=(\omega_m,g_3)$ and $m_{4.1}=(\omega_e,g_4)$ are the managerial seats at the two firm types, and $m_{3.2}=(\omega_l,g_3)$ and $m_{4.2}=(\omega_l,g_4)$ are laborer seats.
 
 \subsection{Agents}
 
 Agents form a continuum of measure one.
 Each is endowed with $e=(k,0)$, $k>0$.
 Agents may attend at most one school and hold at most one job.
-The characteristic $M$ is acquired at a serious school and $EM$ at an elite school:\ a choice with $\ell(m_{3.1})\geq 1$ is feasible only if $\ell(m_1)\geq 1$, and $\ell(m_{4.1})\geq 1$ only if $\ell(m_2)\geq 1$.
-The characteristic $L$ requires no schooling.
+The qualification $\omega_m$ is acquired at a serious school and $\omega_e$ at an elite school, encoded in consumption sets as in Section~\ref{sec:framework}: a list with $\ell(m_{3.1})\geq 1$ is feasible only if $\ell(m_1)\geq 1$, and $\ell(m_{4.1})\geq 1$ only if $\ell(m_2)\geq 1$.
+The characteristic $\omega_l$ requires no schooling, so laborer seats are open to all.
 
 Agents differ in a single taste parameter $\eta\geq 0$, distributed according to an atomless distribution function $F$, strictly increasing on its support $[0,\bar\eta)$ with $\bar\eta\leq\infty$.
 Preferences are
 \begin{equation}\label{eq:utility}
-  u(x,\ell;\eta) \;=\; D(\ell;\eta)\, h(x_1,x_2),
+  u(x,\ell;\eta) \;=\; d(\ell;\eta)\, h(x_1,x_2),
   \qquad h(x_1,x_2)=\sqrt{x_1 x_2},
 \end{equation}
-where $D$ is built multiplicatively from the list:\ attending any school contributes a factor $\delta_s\in(0,1)$; working as a manager a factor $\delta_m\in(0,1)$; working as a laborer a factor $\delta_l\in(0,1)$; holding the elite-manager membership $m_{4.1}$ contributes the additional factor $(1+\eta)$ --- this is the utility of elite status --- and holding the elite-firm laborer membership $m_{4.2}$ the factor $(1-\chi)$, $\chi\in[0,1)$, reflecting distaste for working under elite management.
-Thus, for the five undominated vocational choices, \[ D = \begin{cases} 1 & \text{leisure (empty list)},\\ \delta_s\delta_m(1+\eta) & \text{elite manager } (\ell(m_2)=\ell(m_{4.1})=1),\\ \delta_s\delta_m & \text{competent manager } (\ell(m_1)=\ell(m_{3.1})=1),\\ \delta_l & \text{laborer, competent firm } (\ell(m_{3.2})=1),\\ \delta_l(1-\chi) & \text{laborer, elite firm } (\ell(m_{4.2})=1).
+where $d$ is built multiplicatively from the list:\ attending any school contributes a factor $\delta_s\in(0,1)$; working as a manager a factor $\delta_m\in(0,1)$; working as a laborer a factor $\delta_l\in(0,1)$; holding the elite-manager membership $m_{4.1}$ contributes the additional factor $(1+\eta)$ --- this is the utility of elite status --- and holding the elite-firm laborer membership $m_{4.2}$ the factor $(1-\chi)$, $\chi\in[0,1)$, reflecting distaste for working under elite management.
+Thus, for the five undominated vocational choices, \[ d = \begin{cases} 1 & \text{leisure (empty list)},\\ \delta_s\delta_m(1+\eta) & \text{elite manager } (\ell(m_2)=\ell(m_{4.1})=1),\\ \delta_s\delta_m & \text{competent manager } (\ell(m_1)=\ell(m_{3.1})=1),\\ \delta_l & \text{laborer, competent firm } (\ell(m_{3.2})=1),\\ \delta_l(1-\chi) & \text{laborer, elite firm } (\ell(m_{4.2})=1).
 \end{cases}
 \] All other feasible lists (school without subsequent employment, schooling combined with labor, double schooling) are strictly dominated at any prices arising in equilibrium; Lemma~\ref{lem:dominated} in Appendix~\ref{app:derivations} verifies this.
 Note that status attaches to the \emph{elite-manager membership}: the elite school is the gate, not the prize.
@@ -210,13 +261,13 @@ All results below depend only on the composite parameters $(\tau,\beta,\alpha)$,
 
 \section{Equilibrium}\label{sec:equilibrium}
 
-Because $h$ is homothetic, an agent with net income $w$ (endowment value net of membership prices) demands $x_1=w/2$, $x_2=w/(2p_2)$ and attains indirect utility $D\, w/(2\sqrt{p_2})$.
-All occupational comparisons are therefore rankings of $D\cdot w$, independent of $p_2$.
+Because $h$ is homothetic, an agent with net income $w$ (endowment value net of membership prices) demands $x_1=w/2$, $x_2=w/(2p_2)$ and attains indirect utility $d\, w/(2\sqrt{p_2})$.
+All occupational comparisons are therefore rankings of $d\cdot w$, independent of $p_2$.
 
 \subsection{Characterization}
 
 Occupational indifference for the (atomless) population pins down net incomes.
-Since leisure yields $D\cdot w = k$, participation of laborers and competent managers requires
+Since leisure yields $d\cdot w = k$, participation of laborers and competent managers requires
 \begin{equation}\label{eq:wages}
   w_M = \mu k, \qquad w_L = \lambda k, \qquad w_{L^\ast} = \lambda^{e} k,
 \end{equation}
@@ -240,10 +291,10 @@ Budget balance for competent firms determines the output price,
 and budget balance for elite firms determines the cutoff.
 Define
 \begin{equation}\label{eq:Z}
-  Z \;\equiv\; \alpha\big[c + r + (\mu+2\lambda-3)k\big] \;-\; \beta c \;-\; \tau r
+  z \;\equiv\; \alpha\big[c + r + (\mu+2\lambda-3)k\big] \;-\; \beta c \;-\; \tau r
   \;+\; (3 - 2\lambda^{e})k .
 \end{equation}
-Then the elite-firm budget balances if and only if $w_E = Z$, i.e.,
+Then the elite-firm budget balances if and only if $w_E = z$, i.e.,
 \begin{equation}\label{eq:etastar}
   1+\eta^\ast \;=\; \frac{\mu k}{Z}.
 \end{equation}
@@ -258,10 +309,10 @@ Market clearing in the input good,
 \end{equation}
 with $\sigma_0 = 1 - 3m^\ast - 3n$ the leisure share, determines $n$ linearly; clearing of the consumption good follows by Walras' law (Appendix~\ref{app:derivations}).
 
-\begin{assumption}[Interior configuration]\label{ass:interior} Parameters are such that (i) $0 < Z < \mu k$; (ii) $F(\eta^\ast)<1$; (iii) the solution $n$ of \eqref{eq:clearing} is strictly positive; and (iv) $\sigma_0\geq 0$.
+\begin{assumption}[Interior configuration]\label{ass:interior} Parameters are such that (i) $0 < z < \mu k$; (ii) $F(\eta^\ast)<1$; (iii) the solution $n$ of \eqref{eq:clearing} is strictly positive; and (iv) $\sigma_0\geq 0$.
 \end{assumption}
 
-Part (i) puts the cutoff in the interior: if $Z\leq 0$, elite firms cannot break even even with unpaid managers and the elite sector is empty; if $Z\geq\mu k$, every agent joins it.
+Part (i) puts the cutoff in the interior: if $z\leq 0$, elite firms cannot break even even with unpaid managers and the elite sector is empty; if $z\geq\mu k$, every agent joins it.
 Parts (ii)--(iv) ensure all sectors coexist.
 The parameterization of Section~\ref{sec:example} satisfies all four.
 
@@ -317,7 +368,7 @@ No cross-subsidy from outside the group is possible --- budget balance for group
 
 \subsection{The spread of status preferences and the decline of output}
 
-Aggregate output of the consumption good is $Y=\phi\,(n+\alpha m^\ast)$.
+Aggregate output of the consumption good is $\bar{y}=\phi\,(n+\alpha m^\ast)$.
 Consider a first-order stochastically dominating shift of the taste distribution $F$ --- more people care more about status.
 By \eqref{eq:etastar} the cutoff $\eta^\ast$ depends only on prices and technology, \emph{not} on $F$; hence the elite sector expands mechanically, $m^\ast = 1-F(\eta^\ast)$ rising with the shift.
 
@@ -335,7 +386,7 @@ Measured productivity statistics will register this as declining aggregate TFP.
 \subsection{The market cannot correct it}
 
 \begin{theorem}[No market correction]\label{thm:nocorrection} Every equilibrium of Lemma~\ref{lem:characterization} belongs to the core of the economy and is strongly Pareto optimal.
-Consequently: (i) no feasible reallocation --- including any that shuts the elite sector, redirects its resources, or introduces any group type in $\mathcal{G}$ in any proportion --- makes almost all agents better off without making a positive measure worse off; (ii) no coalition of agents, of any size, can profitably secede with any configuration of schools and firms; (iii) the conclusion is unchanged as the taste for status spreads and output falls per Proposition~\ref{prop:decline}.
+Consequently: (i) no feasible reallocation --- including any that shuts the elite sector, redirects its resources, or introduces any group type in $G$ in any proportion --- makes almost all agents better off without making a positive measure worse off; (ii) no coalition of agents, of any size, can profitably secede with any configuration of schools and firms; (iii) the conclusion is unchanged as the taste for status spreads and output falls per Proposition~\ref{prop:decline}.
 \end{theorem}
 
 \begin{proof}
@@ -347,13 +398,13 @@ Theorem~\ref{thm:nocorrection} is the paper's central claim, and it is worth sta
 It does not say the elite sector is harmless: output falls, resources are burned, and the burn is real.
 It says the situation is not a market failure.
 The waste is voluntarily financed by the people who consume the status it produces, at prices that fully internalize its cost within each group.
-Competition has no lever: an entrant offering ``elite status without the waste'' would have to offer the elite-manager membership at its equilibrium price, and the equilibrium already prices every potential group type in $\mathcal{G}$.
+Competition has no lever: an entrant offering ``elite status without the waste'' would have to offer the elite-manager membership at its equilibrium price, and the equilibrium already prices every potential group type in $G$.
 The familiar inference --- markets discipline waste, elite waste persists, therefore markets must be impeded --- fails at its first step.
 Markets discipline \emph{unpriced} waste.
 Status is priced.
 
 Three caveats delimit the result.
-First, the feasible set takes the group-type list $\mathcal{G}$ as given; whether a status-conferring group type without resource burn could exist is a question about what makes status credible.
+First, the feasible set takes the group-type list $G$ as given; whether a status-conferring group type without resource burn could exist is a question about what makes status credible.
 Section~\ref{sec:positional} answers it: when status derives from scarcity, entry self-dilutes, and exclusivity needs no artificial protection.
 Second, if status is valued \emph{because others lack it}, utility depends on the economy-wide pattern of memberships --- an externality outside the present framework, under which the welfare theorem genuinely fails; that is the subject of Section~\ref{sec:positional}.
 Third, welfare here is welfarist: status utility counts.
@@ -366,7 +417,7 @@ Elite schools cost four times what serious schools cost.
 Elite firms are competent firms scaled up by exactly $25\%$ --- both input and output --- so no firm-level productivity comparison distinguishes them; the entire drain is the school system's burn, $(\tau-1)r=3$ per elite manager trained.
 The resource condition \eqref{eq:decline} holds with room to spare: $\alpha(c+r)=2.5 < \beta c+\tau r = 5.25$.
 
-Then $p_2=2$, $w_E=Z=5.75$, $\eta^\ast=9/23\approx 0.391$, and:
+Then $p_2=2$, $w_E=z=5.75$, $\eta^\ast=9/23\approx 0.391$, and:
 \begin{center}
 \begin{tabular}{lcccc}
 \toprule
@@ -380,7 +431,7 @@ net income $w$ & $5.75$ & $8$ & $5$ & $4$\\
 \end{center}
 The example displays Corollary~\ref{cor:wages} in the empirically relevant regime: elite managers earn a visible salary premium of $10.7\%$ ($7.75$ against $7$), which is exactly excess tuition minus the status discount ($3 - 2.25 = 0.75$), while their net position is $28\%$ \emph{below} their competent peers' ($5.75$ against $8$).
 The elite sector employs $3m^\ast\approx 6.0\%$ of the population ($m^\ast\approx 0.020$), the competent sector $3n\approx 34.2\%$ ($n\approx 0.114$), and $\sigma_0\approx 59.8\%$ take leisure.
-Aggregate output is $Y\approx 0.834$ and the resources burned are $m^\ast[(\beta-1)c+(\tau-1)r]\approx 0.065$.
+Aggregate output is $\bar{y}\approx 0.834$ and the resources burned are $m^\ast[(\beta-1)c+(\tau-1)r]\approx 0.065$.
 For the polar regime of Proposition~\ref{prop:coexist}, set $\tau=2$, $\alpha=0.9$, $s=0.3$: coexistence condition \eqref{eq:coexist} holds ($4.45 > 2 + 1.25$) and, per Corollary~\ref{cor:wages}(iii), elite managers are then paid less in gross terms as well ($3.55$ against $7$).
 
 Figure~\ref{fig:comparative} traces the equilibrium as the mean $s$ of the taste distribution rises --- a FOSD shift.
@@ -405,14 +456,15 @@ This section makes status positional and shows that everything in Theorem~\ref{t
 
 \subsection{Positional preferences and equilibrium}
 
-Let $M$ denote the aggregate measure of agents holding the elite-manager membership $m_{4.1}$, and replace the status factor $(1+\eta)$ in the utility specification of Section~\ref{sec:model} with
+Let $m$ denote the aggregate measure of agents holding the elite-manager membership $m_{4.1}$, and replace the status factor $(1+\eta)$ in the utility specification of Section~\ref{sec:model} with
 \begin{equation}\label{eq:positional-utility}
-  1 + \eta\, v(M),
+  1 + \eta\, v(m),
 \end{equation}
 where $v:[0,1]\rightarrow(0,1]$ is continuous, strictly decreasing, with $v(0)=1$: the value of eliteness falls as eliteness spreads.
-Each agent is negligible and takes $M$ as given.
+Each agent is negligible and takes $m$ as given.
+(The scalar mass $m$ is unsubscripted; membership labels $m_1,m_{3.1},\dots$ always carry subscripts, so no confusion should arise, and in equilibrium $m$ coincides with the elite-manager mass $m^\ast$ of Section~\ref{sec:equilibrium}.)
 Because utility now depends on \emph{other agents'} memberships, preferences violate the assumptions of \citet{ellickson2006organization}: this is a widespread externality in the sense of \citet{noguchizame2006externalities}.
-We accordingly define a \emph{positional group equilibrium} as prices $(p,q)$ and a feasible state $(x,\mu)$ satisfying the three conditions of Section~\ref{sec:framework}, where optimization is with respect to preferences \eqref{eq:positional-utility} evaluated at the aggregate elite mass $M$ induced by the state itself.
+We accordingly define a \emph{positional group equilibrium} as prices $(p,q)$ and a feasible state $(x,\ell)$ satisfying the three conditions of Section~\ref{sec:framework}, where optimization is with respect to preferences \eqref{eq:positional-utility} evaluated at the aggregate elite mass $m$ induced by the state itself.
 
 Crucially, the externality operates at the level of the \emph{class} of elites --- the holders of $m_{4.1}$ across all elite firms --- not at the level of any single group.
 Membership prices internalize composition effects within a group; they have no instrument that spans groups.
@@ -420,19 +472,19 @@ This is precisely the gap in the price system that the welfare theorem needs clo
 
 \subsection{Existence, uniqueness, and self-limiting eliteness}
 
-The wages \eqref{eq:wages}, the output price \eqref{eq:p2}, and the elite-firm break-even income $w_E=Z$ are untouched by the externality.
-The cutoff condition becomes $(1+\eta^\ast v(M))\,\delta_s\delta_m\, w_E = k$, i.e.,
+The wages \eqref{eq:wages}, the output price \eqref{eq:p2}, and the elite-firm break-even income $w_E=z$ are untouched by the externality.
+The cutoff condition becomes $(1+\eta^\ast v(m))\,\delta_s\delta_m\, w_E = k$, i.e.,
 \begin{equation}\label{eq:positional-cutoff}
-  \eta^\ast(M) \;=\; \frac{\eta^\ast_0}{v(M)},
+  \eta^\ast(M) \;=\; \frac{\eta^\ast_0}{v(m)},
 \end{equation}
-where $\eta^\ast_0 = \mu k/Z - 1$ is the cutoff of Section~\ref{sec:equilibrium}.
-Consistency of the conjectured mass with sorting requires $M$ to be a fixed point of
+where $\eta^\ast_0 = \mu k/z - 1$ is the cutoff of Section~\ref{sec:equilibrium}.
+Consistency of the conjectured mass with sorting requires $m$ to be a fixed point of
 \begin{equation}\label{eq:fixedpoint}
-  \Phi(M) \;\equiv\; 1 - F\!\left(\frac{\eta^\ast_0}{v(M)}\right).
+  \rho(m) \;\equiv\; 1 - F\!\left(\frac{\eta^\ast_0}{v(m)}\right).
 \end{equation}
 
-\begin{proposition}[Positional equilibrium]\label{prop:positional} Under Assumption~\ref{ass:interior} (applied at $M=M^\ast$), a positional group equilibrium exists and its elite mass is unique: $\Phi$ is continuous and strictly decreasing on $[0,1]$, so it has exactly one fixed point $M^\ast$.
-Moreover: (i) $M^\ast < M_0 \equiv 1-F(\eta^\ast_0)$ --- dilution self-limits the elite; (ii) a FOSD shift of $F$ raises $M^\ast$, but by strictly less than it raises $M_0$ --- positional concerns dampen the expansion of Proposition~\ref{prop:decline}; (iii) all prices, and the equilibrium values of $p_2$, $w_E$, $n$, and $Y$ given $M^\ast$, are as in Section~\ref{sec:equilibrium}.
+\begin{proposition}[Positional equilibrium]\label{prop:positional} Under Assumption~\ref{ass:interior} (applied at $M=m^\ast$), a positional group equilibrium exists and its elite mass is unique: $\rho$ is continuous and strictly decreasing on $[0,1]$, so it has exactly one fixed point $m^\ast$.
+Moreover: (i) $m^\ast < m_0 \equiv 1-F(\eta^\ast_0)$ --- dilution self-limits the elite; (ii) a FOSD shift of $F$ raises $m^\ast$, but by strictly less than it raises $m_0$ --- positional concerns dampen the expansion of Proposition~\ref{prop:decline}; (iii) all prices, and the equilibrium values of $p_2$, $w_E$, $n$, and $\bar{y}$ given $m^\ast$, are as in Section~\ref{sec:equilibrium}.
 \end{proposition}
 
 Part (i) already delivers a result the baseline cannot: eliteness is self-protecting.
@@ -445,9 +497,9 @@ Entry of new elite institutions dilutes the very good they sell, so the market i
 
 The proof (Appendix~\ref{app:positional}) is constructive and exploits the equilibrium's own structure.
 Every non-elite agent --- laborers, competent managers, leisure-takers --- is at reservation utility and indifferent among their activities; so is every marginal elite.
-The planner therefore shuts a small mass $dM$ of elite triples, sends their members to reservation activities at unchanged utility, and opens competent triples in the ratio that restores material balance in both goods --- a reallocation that is \emph{exactly} feasible because both adjustment directions have zero value at equilibrium prices.
+The planner therefore shuts a small mass $dm$ of elite triples, sends their members to reservation activities at unchanged utility, and opens competent triples in the ratio that restores material balance in both goods --- a reallocation that is \emph{exactly} feasible because both adjustment directions have zero value at equilibrium prices.
 Nothing real has been given up by anyone.
-But $v(M)$ rises, so every inframarginal elite is strictly better off: a Pareto improvement, executable by the grand coalition, so the state is blocked and core equivalence fails.
+But $v(m)$ rises, so every inframarginal elite is strictly better off: a Pareto improvement, executable by the grand coalition, so the state is blocked and core equivalence fails.
 The contrast with Theorem~\ref{thm:nocorrection} is exact: there, shutting elite firms had to take status away from people who had paid its price; here, shrinking the elite \emph{creates} status out of scarcity.
 
 \subsection{Over-entry and the membership tax}
@@ -455,15 +507,15 @@ The contrast with Theorem~\ref{thm:nocorrection} is exact: there, shutting elite
 At the laissez-faire equilibrium the marginal entrant weighs the private value of elite membership against its price, but ignores the dilution imposed on every inframarginal elite.
 The planner's cutoff condition (Appendix~\ref{app:positional}) equates the marginal type's surplus to the aggregate dilution wedge
 \begin{equation}\label{eq:wedge}
-  \Omega \;=\; \left|v'(M)\right|\, \frac{w_E}{\,1+\eta^\ast v(M)\,}
+  t^\ast \;=\; \left|v'(M)\right|\, \frac{w_E}{\,1+\eta^\ast v(m)\,}
   \int_{\eta\geq\eta^\ast}\!\! \eta\, dF(\eta),
 \end{equation}
 expressed in units of the marginal entrant's income.
-Since the equilibrium sets the marginal surplus to zero while $\Omega>0$, there is over-entry.
+Since the equilibrium sets the marginal surplus to zero while the wedge is strictly positive, there is over-entry.
 
 \begin{proposition}[Membership tax]\label{prop:tax} Let a tax $t$ be levied on the elite-manager membership, with revenue rebated as a uniform lump sum.
-(i) The positional equilibrium remains unique for small $t$, with $M(t)$ strictly decreasing.
-(ii) Utilitarian welfare is strictly increasing in $t$ at $t=0$: small membership taxes are Pareto-improvable improvements over laissez-faire in the sense of Proposition~\ref{prop:inefficiency}, and the first-order Pigouvian level is $t^\ast=\Omega$.
+(i) The positional equilibrium remains unique for small $t$, with $m(t)$ strictly decreasing.
+(ii) Utilitarian welfare is strictly increasing in $t$ at $t=0$: small membership taxes are Pareto-improvable improvements over laissez-faire in the sense of Proposition~\ref{prop:inefficiency}, and the first-order Pigouvian level is $t^\ast equal to the wedge \eqref{eq:wedge}$.
 (iii) If, in addition, condition \eqref{eq:decline} holds, aggregate output also rises with the tax.
 \end{proposition}
 
@@ -475,22 +527,22 @@ Only in the second case is there anything for policy to correct.
 
 \subsection{Numerical continuation}
 
-Continuing the example of Section~\ref{sec:example} with $v(M)=1/(1+\psi M)$, $\psi=25$: the elite mass falls from $M_0\approx 0.0200$ to $M^\ast\approx 0.0086$ ($v(M^\ast)\approx 0.82$) --- dilution cuts the elite by more than half --- and output rises to $Y\approx 0.847$.
+Continuing the example of Section~\ref{sec:example} with $v(m)=1/(1+\kappa m)$, $\kappa=25$: the elite mass falls from $m_0\approx 0.0200$ to $m^\ast\approx 0.0086$ ($v(m^\ast)\approx 0.82$) --- dilution cuts the elite by more than half --- and output rises to $\bar{y}\approx 0.847$.
 The same FOSD taste shift that raises the baseline elite mass by $0.0085$ raises the positional mass by only $0.0023$.
-Utilitarian welfare is strictly increasing in the membership tax at $t=0$; the welfare-maximizing tax in the example is $t^{W}\approx 0.31$ (about $5.4\%$ of the elite manager's net income, and close to the first-order Pigouvian level $\Omega\approx 0.35$), under which the elite mass falls to $0.0050$ and output rises further.
+Utilitarian welfare is strictly increasing in the membership tax at $t=0$; the welfare-maximizing tax in the example is $t^{W}\approx 0.31$ (about $5.4\%$ of the elite manager's net income, and close to the first-order Pigouvian level $t^\ast\approx 0.35$), under which the elite mass falls to $0.0050$ and output rises further.
 Figure~\ref{fig:positional} displays the fixed point and the welfare curve.
 All computations are verified in \texttt{analysis/positional\_model.py}.
 
 \begin{figure}[t]
   \centering
   \includegraphics[width=\textwidth]{figures/positional_tax.pdf}
-  \caption{The positional equilibrium. Panel (a): the map $\Phi$ of
+  \caption{The positional equilibrium. Panel (a): the map $\rho$ of
   \eqref{eq:fixedpoint} is strictly decreasing, giving a unique elite mass
-  $M^\ast$, strictly below the non-positional mass $M_0$ (dotted). Panel (b):
+  $m^\ast$, strictly below the non-positional mass $m_0$ (dotted). Panel (b):
   utilitarian welfare as a function of the membership tax $t$ (uniform lump-sum
   rebate); welfare rises for all small taxes --- the signature of over-entry ---
   and peaks at $t^{W}$. Parameters as in Section~\ref{sec:example} with
-  $v(M)=1/(1+25M)$.}
+  $v(m)=1/(1+25M)$.}
   \label{fig:positional}
 \end{figure}
 
@@ -509,19 +561,19 @@ Time is discrete, $t=0,1,2,\dots$.
 Each period a measure-one generation is born, inherits per-capita resources $k_t$ (the input good), and lives for one productive period within which the schooling-then-employment sequence of the static model unfolds (memberships are dated within the period, as in \citealt{ellickson2006organization}).
 Preferences extend \eqref{eq:utility} with a warm-glow bequest made in the \emph{produced} good --- output invested today is the resource base of the next generation:
 \begin{equation}\label{eq:olg-utility}
-  u \;=\; D(\ell;\eta)\; x_1^{\gamma/2}\, x_2^{\gamma/2}\, b^{\,1-\gamma},
-  \qquad \gamma\in(0,1),
+  u \;=\; d(\ell;\eta)\; x_1^{\zeta/2}\, x_2^{\zeta/2}\, b^{\,1-\zeta},
+  \qquad \zeta\in(0,1),
 \end{equation}
-so an agent with net income $w$ spends $(\gamma/2)w$ on each consumption good and $(1-\gamma)w$ on the bequest, and attains indirect utility $D\,w\,\Psi(p_2)$ --- \emph{still linear in net income}.
-Every occupational-indifference condition, membership price, the output price \eqref{eq:p2}, the cutoff \eqref{eq:etastar}, and the positional fixed point \eqref{eq:fixedpoint} therefore carry over verbatim at wealth $k_t$; only the competent-sector scale $n$ adjusts for the saving margin, and $\gamma=1$ recovers the static model exactly (Lemma~\ref{lem:period} in Appendix~\ref{app:dynamics}).
-Invested output converts into next-period resources at a rate $\Theta>0$ (a linear investment technology), and children inherit the economy-wide average bequest:
+so an agent with net income $w$ spends $(\zeta/2)w$ on each consumption good and $(1-\zeta)w$ on the bequest, and attains indirect utility $d\,w\,\psi(p_2)$ --- \emph{still linear in net income}.
+Every occupational-indifference condition, membership price, the output price \eqref{eq:p2}, the cutoff \eqref{eq:etastar}, and the positional fixed point \eqref{eq:fixedpoint} therefore carry over verbatim at wealth $k_t$; only the competent-sector scale $n$ adjusts for the saving margin, and $\zeta=1$ recovers the static model exactly (Lemma~\ref{lem:period} in Appendix~\ref{app:dynamics}).
+Invested output converts into next-period resources at a rate $\theta>0$ (a linear investment technology), and children inherit the economy-wide average bequest:
 \begin{equation}\label{eq:transition}
-  k_{t+1} \;=\; G(k_t) \;\equiv\; \Theta\,(1-\gamma)\,\frac{W(k_t)}{p_2(k_t)},
+  k_{t+1} \;=\; \xi(k_t) \;\equiv\; \theta\,(1-\zeta)\,\frac{\bar{w}(k_t)}{p_2(k_t)},
 \end{equation}
-where $W(k)$ is aggregate net income --- endowment plus the value added of the schools and firms that form at wealth $k$.
+where $\bar{w}(k)$ is aggregate net income --- endowment plus the value added of the schools and firms that form at wealth $k$.
 Uniform inheritance abstracts from within-generation dynasty heterogeneity; the Galor--Zeira-style interaction of inherited inequality with elite membership is an important extension we defer.
 
-\begin{proposition}[The transition map]\label{prop:map} Under \eqref{eq:olg-utility}: (i) the within-period allocation at wealth $k_t$ is the club equilibrium of Section~\ref{sec:equilibrium} (or Section~\ref{sec:positional}) at $k_t$; (ii) $G$ is continuous, with $G'(0^+)=\Theta(1-\gamma)\phi/(c+r)$ and $\lim_{k\to\infty}G(k)<\infty$ (diminishing returns operate through the price of investment, $p_2(k)$, which rises with wealth); (iii) if $\Theta(1-\gamma)\phi>c+r$, the origin repels and a stable interior steady state exists.
+\begin{proposition}[The transition map]\label{prop:map} Under \eqref{eq:olg-utility}: (i) the within-period allocation at wealth $k_t$ is the club equilibrium of Section~\ref{sec:equilibrium} (or Section~\ref{sec:positional}) at $k_t$; (ii) $\xi$ is continuous, with $\xi'(0^+)=\theta(1-\zeta)\phi/(c+r)$ and $\lim_{k\to\infty}\xi(k)<\infty$ (diminishing returns operate through the price of investment, $p_2(k)$, which rises with wealth); (iii) if $\theta(1-\zeta)\phi>c+r$, the origin repels and a stable interior steady state exists.
 Along any equilibrium path, no agent's optimization requires forecasting: bequest utility is over the gift itself, and each period's prices depend only on $k_t$.
 \end{proposition}
 
@@ -533,19 +585,19 @@ It is what optimizing behavior looks like when status is among the things people
 
 \subsection{Status is a luxury --- by theorem, not assumption}
 
-\begin{proposition}[Luxury]\label{prop:luxury} The elite cutoff $\eta^\ast_0(k)=\mu k/Z(k)-1$ is strictly decreasing in $k$ --- and hence the elite mass $m^\ast(k)$ strictly increasing in $k$ wherever the elite sector is viable --- if and only if $\alpha(c+r) < \beta c + \tau r$: precisely the resource-productivity condition \eqref{eq:decline} of Proposition~\ref{prop:decline}.
+\begin{proposition}[Luxury]\label{prop:luxury} The elite cutoff $\eta^\ast_0(k)=\mu k/z(k)-1$ is strictly decreasing in $k$ --- and hence the elite mass $m^\ast(k)$ strictly increasing in $k$ wherever the elite sector is viable --- if and only if $\alpha(c+r) < \beta c + \tau r$: precisely the resource-productivity condition \eqref{eq:decline} of Proposition~\ref{prop:decline}.
 \end{proposition}
 
 The mechanism is instructive.
 The elite sector's excess costs --- the school's burn $(\tau-1)r$, the firm's burn $(\beta-1)c$ --- are \emph{fixed} resource costs, while every wage in the economy scales with wealth.
 As $k$ grows, the burn shrinks relative to the status discount that finances it, so the marginal entrant needs less taste for status to justify entry: rich societies buy more eliteness not because their preferences differ but because they can better afford the waste.
-Below a viability threshold ($Z(k)\leq 0$) the elite sector cannot break even at any taste level: poor economies have no market for wasteful status.
+Below a viability threshold ($z(k)\leq 0$) the elite sector cannot break even at any taste level: poor economies have no market for wasteful status.
 No nonhomotheticity is assumed anywhere; the luxury property is produced by the same condition that makes the elite sector a drag on output.
 
 \subsection{The status drag and the spread of taste}
 
-\begin{proposition}[Status drag]\label{prop:drag} At any wealth $k$ at which the elite sector is active, $\operatorname{sign}\,\partial G/\partial m^\ast = \operatorname{sign} [\alpha(c+r)-(\beta c+\tau r)]$.
-Under condition \eqref{eq:decline}, therefore: (i) the transition map lies strictly below the no-elite-sector map wherever the elite is active, and the stable steady state is strictly poorer, $k^\ast_{\mathrm{elite}} < k^\ast_{\mathrm{none}}$; (ii) a FOSD spread of the status-taste distribution lowers $G$ pointwise (strictly where the elite is active) and strictly lowers the stable steady state; (iii) under positional status, both effects are strictly damped: $k^\ast_{\mathrm{abs}} < k^\ast_{\mathrm{pos}} < k^\ast_{\mathrm{none}}$.
+\begin{proposition}[Status drag]\label{prop:drag} At any wealth $k$ at which the elite sector is active, $\operatorname{sign}\,\partial \xi/\partial m^\ast = \operatorname{sign} [\alpha(c+r)-(\beta c+\tau r)]$.
+Under condition \eqref{eq:decline}, therefore: (i) the transition map lies strictly below the no-elite-sector map wherever the elite is active, and the stable steady state is strictly poorer, $k^\ast_{\mathrm{elite}} < k^\ast_{\mathrm{none}}$; (ii) a FOSD spread of the status-taste distribution lowers $\xi$ pointwise (strictly where the elite is active) and strictly lowers the stable steady state; (iii) under positional status, both effects are strictly damped: $k^\ast_{\mathrm{abs}} < k^\ast_{\mathrm{pos}} < k^\ast_{\mathrm{none}}$.
 \end{proposition}
 
 One condition --- the elite sector produces less output per unit of resources --- now governs all three of the paper's mechanisms: the static output decline (Proposition~\ref{prop:decline}), the luxury property (Proposition~\ref{prop:luxury}), and the dynamic drag (Proposition~\ref{prop:drag}).
@@ -564,7 +616,7 @@ Whether the equilibrium path is efficient among feasible paths --- and what a ge
 
 \subsection{Numerical continuation}
 
-Continuing the running example with $\gamma=0.8$ (a 20\% bequest share) and $\Theta$ calibrated so that the absolute-status steady state is exactly the static example's wealth, $k^\ast=2$: the steady state is stable ($G'(k^\ast)=0.17$), with the static example's prices, wages, cutoff, and elite mass reproduced as the steady-state allocation.
+Continuing the running example with $\zeta=0.8$ (a 20\% bequest share) and $\theta$ calibrated so that the absolute-status steady state is exactly the static example's wealth, $k^\ast=2$: the steady state is stable ($\xi'(k^\ast)=0.17$), with the static example's prices, wages, cutoff, and elite mass reproduced as the steady-state allocation.
 The no-elite counterfactual steady state is $2.085$; the positional steady state $2.045$.
 As the taste scale rises from $s=0.10$ to $s=0.19$, the absolute-status steady state falls to $1.73$ --- a 16.8\% wealth loss relative to the no-elite benchmark, with the elite sector swelling to about a fifth of the population --- while the positional steady state falls only to $1.97$ (a 5.7\% loss).
 After a taste shift to $s=0.18$, the transition $2.00\rightarrow1.74\rightarrow1.77\rightarrow1.76$ settles within three generations (the mild overshoot reflects the temporary output surge as displaced competent-sector resources are consumed).
@@ -581,7 +633,7 @@ All computations are verified in \texttt{analysis/dynamic\_model.py}.
   the taste scale $s$ rises --- the absolute-status economy is impoverished by
   the spread of status taste, the positional economy is largely protected by
   dilution. Parameters as in Sections~\ref{sec:example}
-  and~\ref{sec:positional} with $\gamma=0.8$, $\Theta=5.141$.}
+  and~\ref{sec:positional} with $\zeta=0.8$, $\theta=5.141$.}
   \label{fig:dynamics}
 \end{figure}
 
@@ -620,10 +672,10 @@ Third, intertemporal welfare: each period's absolute-status allocation is optima
 All computations in this appendix are verified symbolically in \texttt{analysis/static\_model.py}.
 
 \subsection{Demand and indirect utility}
-An agent with net income $w$ solves $\max_{x_1,x_2} D\sqrt{x_1x_2}$ subject to $x_1+p_2x_2=w$, giving $x_1=w/2$, $x_2=w/(2p_2)$, and indirect utility $D\,w/(2\sqrt{p_2})$.
+An agent with net income $w$ solves $\max_{x_1,x_2} d\sqrt{x_1x_2}$ subject to $x_1+p_2x_2=w$, giving $x_1=w/2$, $x_2=w/(2p_2)$, and indirect utility $d\,w/(2\sqrt{p_2})$.
 
 \subsection{Dominated lists}
-\begin{lemma}\label{lem:dominated} At any prices satisfying \eqref{eq:prices} with $r,\tau r>0$, every feasible list other than the five in Section~\ref{sec:model} is strictly dominated: (i) schooling with no job yields $D\leq\delta_s<1$ and net income $k-q_j<k$, dominated by leisure; (ii) schooling plus a laborer job multiplies the laborer's $D$ by $\delta_s<1$ and subtracts tuition, dominated by the same laborer job alone; (iii) double schooling adds a factor $\delta_s$ and tuition, dominated by the single required school; (iv) an elite-school graduate cannot hold membership $m_{3.1}$ nor a serious-school graduate $m_{4.1}$ (consumption sets), so no other manager lists are feasible.
+\begin{lemma}\label{lem:dominated} At any prices satisfying \eqref{eq:prices} with $r,\tau r>0$, every feasible list other than the five in Section~\ref{sec:model} is strictly dominated: (i) schooling with no job yields $D\leq\delta_s<1$ and net income $k-q_j<k$, dominated by leisure; (ii) schooling plus a laborer job multiplies the laborer's $d$ by $\delta_s<1$ and subtracts tuition, dominated by the same laborer job alone; (iii) double schooling adds a factor $\delta_s$ and tuition, dominated by the single required school; (iv) an elite-school graduate cannot hold membership $m_{3.1}$ nor a serious-school graduate $m_{4.1}$ (consumption sets), so no other manager lists are feasible.
 \qed
 \end{lemma}
 
@@ -631,7 +683,7 @@ An agent with net income $w$ solves $\max_{x_1,x_2} D\sqrt{x_1x_2}$ subject to $
 \emph{Budget balance.}
 Schools: $q_1-r=0$, $q_2-\tau r=0$ by \eqref{eq:prices}.
 Competent firms: $q_{3.1}+2q_{3.2} - c + p_2\phi = (k-r-\mu k) + 2(k-\lambda k) - c + p_2\phi = 0$ by \eqref{eq:p2}.
-Elite firms: $q_{4.1}+2q_{4.2} - \beta c + p_2\alpha\phi = 0$ reduces, using \eqref{eq:p2}, to $w_E = Z$, which is \eqref{eq:etastar}.
+Elite firms: $q_{4.1}+2q_{4.2} - \beta c + p_2\alpha\phi = 0$ reduces, using \eqref{eq:p2}, to $w_E = z$, which is \eqref{eq:etastar}.
 \emph{Optimization.}
 By Lemma~\ref{lem:dominated} only the five vocational choices need comparison; by construction of \eqref{eq:wages} and \eqref{eq:cutoff}, types below $\eta^\ast$ are indifferent among the four non-elite choices and strictly prefer them to the elite path, types above strictly prefer the elite path, and the marginal type is indifferent.
 \emph{Consistency and material balance.}
@@ -651,9 +703,9 @@ Uniqueness of the interior configuration follows because \eqref{eq:wages}--\eqre
 \qed
 
 \subsection{Proof of Proposition~\ref{prop:decline}} $\eta^\ast$ solves \eqref{eq:etastar}, which contains no object depending on $F$; a FOSD shift weakly raises $1-F(\eta)$ pointwise, strictly at $\eta^\ast$ by the strict-increase assumption on $F$, so $m^\ast$ rises.
-Differentiating $Y = \phi(n+\alpha m^\ast)$ with $n$ from \eqref{eq:nclosed}, \[ \frac{dY}{dm^\ast} \;=\; \phi\left(\alpha - 1 + \frac{d(n+m^\ast)}{dm^\ast}\right),
+Differentiating $\bar{y} = \phi(n+\alpha m^\ast)$ with $n$ from \eqref{eq:nclosed}, \[ \frac{d\bar{y}}{dm^\ast} \;=\; \phi\left(\alpha - 1 + \frac{d(n+m^\ast)}{dm^\ast}\right),
 \qquad
-\operatorname{sign}\frac{dY}{dm^\ast} = \operatorname{sign}\big[\alpha(c+r) - (\beta c + \tau r)\big], \] where the second equality is by direct computation (machine-verified): the denominator of \eqref{eq:nclosed} equals $\tfrac12[2c+2r+(\mu+2\lambda\hspace{1pt}{-}\hspace{1pt}3)k]>0$ and the numerator of $\alpha-1+d(n+m^\ast)/dm^\ast$ reduces to $\alpha(c+r)-(\beta c+\tau r)$ over that denominator.
+\operatorname{sign}\frac{d\bar{y}}{dm^\ast} = \operatorname{sign}\big[\alpha(c+r) - (\beta c + \tau r)\big], \] where the second equality is by direct computation (machine-verified): the denominator of \eqref{eq:nclosed} equals $\tfrac12[2c+2r+(\mu+2\lambda\hspace{1pt}{-}\hspace{1pt}3)k]>0$ and the numerator of $\alpha-1+d(n+m^\ast)/dm^\ast$ reduces to $\alpha(c+r)-(\beta c+\tau r)$ over that denominator.
 \qed
 
 \section{Verification of Framework Assumptions}\label{app:assumptions}
@@ -664,7 +716,7 @@ Free upward disposal in private goods holds.
 The correspondence $a\mapsto X_a$ is constant in $a$ (types differ only through $u$), hence measurable.
 
 \emph{Utility.}
-$u(x,\ell;\eta)$ is continuous and strictly increasing in $x$ for each $\ell$, and jointly measurable since $\eta\mapsto D(\ell;\eta)$ is continuous and $a\mapsto\eta_a$ measurable.
+$u(x,\ell;\eta)$ is continuous and strictly increasing in $x$ for each $\ell$, and jointly measurable since $\eta\mapsto d(\ell;\eta)$ is continuous and $a\mapsto\eta_a$ measurable.
 
 \emph{Desirable endowments.}
 $u_a(e_a,0) = h(k,0) = 0$.
@@ -678,34 +730,34 @@ Not invoked: Lemma~\ref{lem:characterization} exhibits equilibrium in closed for
 
 All computations are verified in \texttt{analysis/positional\_model.py}.
 
-\subsection{Proof of Proposition~\ref{prop:positional}} The occupational-indifference conditions for non-elite choices do not involve $M$, so \eqref{eq:wages} and \eqref{eq:p2} are unchanged, as is the elite break-even income $w_E=Z$ from firm budget balance.
-The cutoff type solves $(1+\eta v(M))\,\delta_s\delta_m w_E = k$, giving \eqref{eq:positional-cutoff}; sorting is strict above and below the cutoff because \eqref{eq:positional-utility} is strictly increasing in $\eta$ for fixed $M$.
-Consistency of $M$ with sorting is \eqref{eq:fixedpoint}.
-Since $v$ is continuous and strictly decreasing and $F$ is continuous and strictly increasing, $\Phi$ is continuous and strictly decreasing, with $\Phi(0)=1-F(\eta^\ast_0)<1$ and $\Phi(1)\geq 0$; a unique fixed point $M^\ast\in[0,1)$ exists by the intermediate value theorem, and $M^\ast>0$ whenever $F$ has unbounded support.
-(i) Since $v(M^\ast)<1$ for $M^\ast>0$, $\eta^\ast=\eta^\ast_0/v(M^\ast)>\eta^\ast_0$, so $M^\ast=1-F(\eta^\ast)<1-F(\eta^\ast_0)=M_0$.
-(ii) A FOSD shift raises $1-F(\cdot)$ pointwise, shifting $\Phi$ up; with $\Phi$ strictly decreasing, the fixed point rises, but the induced fall in $v$ raises the cutoff, damping the increase: formally $dM^\ast = d\Phi/(1+|\partial\Phi/\partial M|) < d\Phi = dM_0$.
-(iii) Immediate, since given $M^\ast$ the remaining conditions coincide with those of Lemma~\ref{lem:characterization}.
+\subsection{Proof of Proposition~\ref{prop:positional}} The occupational-indifference conditions for non-elite choices do not involve $m$, so \eqref{eq:wages} and \eqref{eq:p2} are unchanged, as is the elite break-even income $w_E=z$ from firm budget balance.
+The cutoff type solves $(1+\eta v(m))\,\delta_s\delta_m w_E = k$, giving \eqref{eq:positional-cutoff}; sorting is strict above and below the cutoff because \eqref{eq:positional-utility} is strictly increasing in $\eta$ for fixed $m$.
+Consistency of $m$ with sorting is \eqref{eq:fixedpoint}.
+Since $v$ is continuous and strictly decreasing and $F$ is continuous and strictly increasing, $\rho$ is continuous and strictly decreasing, with $\rho(0)=1-F(\eta^\ast_0)<1$ and $\rho(1)\geq 0$; a unique fixed point $m^\ast\in[0,1)$ exists by the intermediate value theorem, and $m^\ast>0$ whenever $F$ has unbounded support.
+(i) Since $v(m^\ast)<1$ for $m^\ast>0$, $\eta^\ast=\eta^\ast_0/v(m^\ast)>\eta^\ast_0$, so $m^\ast=1-F(\eta^\ast)<1-F(\eta^\ast_0)=m_0$.
+(ii) A FOSD shift raises $1-F(\cdot)$ pointwise, shifting $\rho$ up; with $\rho$ strictly decreasing, the fixed point rises, but the induced fall in $v$ raises the cutoff, damping the increase: formally $dm^\ast = d\rho/(1+|\partial\rho/\partial m|) < d\rho = dm_0$.
+(iii) Immediate, since given $m^\ast$ the remaining conditions coincide with those of Lemma~\ref{lem:characterization}.
 \qed
 
 \subsection{Proof of Proposition~\ref{prop:inefficiency}} Work at the equilibrium of Proposition~\ref{prop:positional}.
-Shutting one elite triple and moving its three members to leisure at their reservation utility changes aggregate excess demand by $(A_e,B_e)$ in (input, output): \[ A_e = \tau r + \beta c + \tfrac{w_E}{2} + w_{L^\ast} - \tfrac{3k}{2},
+Shutting one elite triple and moving its three members to leisure at their reservation utility changes aggregate excess demand by $(a_e,b_e)$ in (input, output): \[ a_e = \tau r + \beta c + \tfrac{w_E}{2} + w_{L^\ast} - \tfrac{3k}{2},
 \qquad
-B_e = -\alpha\phi + \frac{w_E + 2w_{L^\ast} - 3k}{2p_2}, \] and elite-firm budget balance implies $A_e + p_2 B_e = 0$.
-Opening one competent triple staffed from the (indifferent) leisure pool changes excess demand by $(-A_c, B_c)$ with $A_c = c + r + (w_M+2w_L-3k)/2$, $B_c = \phi - (w_M+2w_L-3k)/(2p_2)$, and competent budget balance implies $A_c = p_2 B_c$.
-Both vectors are orthogonal to $(1,p_2)$, hence collinear; shutting mass $dM>0$ of elite triples and opening $dn = (A_e/A_c)\,dM$ competent triples restores material balance in both goods \emph{exactly} (machine-verified).
+b_e = -\alpha\phi + \frac{w_E + 2w_{L^\ast} - 3k}{2p_2}, \] and elite-firm budget balance implies $a_e + p_2 b_e = 0$.
+Opening one competent triple staffed from the (indifferent) leisure pool changes excess demand by $(-a_c, b_c)$ with $a_c = c + r + (w_M+2w_L-3k)/2$, $b_c = \phi - (w_M+2w_L-3k)/(2p_2)$, and competent budget balance implies $a_c = p_2 b_c$.
+Both vectors are orthogonal to $(1,p_2)$, hence collinear; shutting mass $dm>0$ of elite triples and opening $dn = (a_e/a_c)\,dm$ competent triples restores material balance in both goods \emph{exactly} (machine-verified).
 All movers and all non-elite agents are at reservation utility throughout, so no agent is worse off.
-The elite mass falls to $M^\ast-dM$, so $v$ rises, and every inframarginal elite's utility rises by $\eta\,[v(M^\ast-dM)-v(M^\ast)]\,\delta_s\delta_m w_E h$-units~$>0$.
+The elite mass falls to $m^\ast-dm$, so $v$ rises, and every inframarginal elite's utility rises by $\eta\,[v(m^\ast-dm)-v(m^\ast)]\,\delta_s\delta_m w_E h$-units~$>0$.
 Finally, transfer an arbitrarily small amount of each good from the (strictly better off) elites to all agents pro rata: by continuity the elites remain strictly better off, and strict monotonicity makes almost every agent strictly better off.
 The resulting state is feasible and strictly Pareto dominates the equilibrium state; the grand coalition can implement it, so the state is blocked and not in the core.
 \qed
 
 \subsection{Planner cutoff condition, the wedge \eqref{eq:wedge}, and Proposition~\ref{prop:tax}} Consider the one-parameter family of feasible states indexed by the cutoff $\hat\eta$, constructed as in the proof of Proposition~\ref{prop:inefficiency} (members outside the elite held at reservation utility; material balance restored via the competent margin).
-Elite utility is $U(\eta,\hat\eta) = (1+\eta v(M(\hat\eta)))\,\delta_s\delta_m w_E\, H$ with $M(\hat\eta) = 1-F(\hat\eta)$ and $H \equiv 1/(2\sqrt{p_2})$.
+Elite utility is $U(\eta,\hat\eta) = (1+\eta v(m(\hat\eta)))\,\delta_s\delta_m w_E\, h_0$ with $m(\hat\eta) = 1-F(\hat\eta)$ and $h_0 \equiv 1/(2\sqrt{p_2})$.
 Differentiating aggregate elite utility and using $M'(\hat\eta)=-f(\hat\eta)$: \[ \frac{d}{d\hat\eta}\int_{\hat\eta}^{\infty}\!
 U\, dF = -\underbrace{U(\hat\eta,\hat\eta)f(\hat\eta)}_{\text{marginal type's utility}} + \underbrace{f(\hat\eta)\left|v'(M)\right| \delta_s\delta_m w_E H \int_{\hat\eta}^{\infty}\!\eta\, dF}_{\text{de-dilution of inframarginals}} .
 \] At an interior optimum the marginal type's \emph{surplus} over reservation utility equals the second term divided by $f(\hat\eta)$; converting to income units by dividing by the marginal type's marginal utility of income $(1+\hat\eta v)\delta_s\delta_m H$ gives the wedge \eqref{eq:wedge}.
-At laissez-faire the marginal surplus is zero while $\Omega>0$: over-entry.
-For Proposition~\ref{prop:tax}: (i) with tax $t$ and rebate $T=tM$, the entrant's income becomes $w_E = Z - t$ and the fixed-point map remains continuous and strictly decreasing, so uniqueness persists and $M(t)$ is strictly decreasing for small $t$ (machine-verified in the example, monotone by the same argument as Proposition~\ref{prop:positional}); (ii) at $t=0$ every private margin is at a first-order optimum, so the derivative of utilitarian welfare reduces to the uninternalized de-dilution term, which is strictly positive; equating the marginal entrant's income loss to the wedge gives $t^\ast=\Omega$; (iii) $dM/dt<0$ and condition \eqref{eq:decline} give $dY/dt>0$ by Proposition~\ref{prop:decline}.
+At laissez-faire the marginal surplus is zero while the wedge is strictly positive: over-entry.
+For Proposition~\ref{prop:tax}: (i) with tax $t$ and rebate $t\,m$, the entrant's income becomes $w_E = z - t$ and the fixed-point map remains continuous and strictly decreasing, so uniqueness persists and $m(t)$ is strictly decreasing for small $t$ (machine-verified in the example, monotone by the same argument as Proposition~\ref{prop:positional}); (ii) at $t=0$ every private margin is at a first-order optimum, so the derivative of utilitarian welfare reduces to the uninternalized de-dilution term, which is strictly positive; equating the marginal entrant's income loss to the wedge gives $t^\ast equal to the wedge \eqref{eq:wedge}$; (iii) $dm/dt<0$ and condition \eqref{eq:decline} give $d\bar{y}/dt>0$ by Proposition~\ref{prop:decline}.
 The global welfare-maximizing tax in the numerical example, which accounts for all equilibrium feedback including the rebate, is computed in \texttt{analysis/positional\_model.py}.
 \qed
 
@@ -713,28 +765,28 @@ The global welfare-maximizing tax in the numerical example, which accounts for a
 
 All computations are verified in \texttt{analysis/dynamic\_model.py}.
 
-\begin{lemma}[Period equivalence]\label{lem:period} Under preferences \eqref{eq:olg-utility}, an agent with net income $w$ facing $(p_2)$ chooses $x_1=(\gamma/2)w$, $p_2x_2=(\gamma/2)w$, $p_2b=(1-\gamma)w$, and attains indirect utility $D\,w\,\Psi(p_2)$ with $\Psi(p_2)=(\gamma/2)^{\gamma}(1-\gamma)^{1-\gamma}p_2^{-(\gamma/2+1-\gamma)}$.
+\begin{lemma}[Period equivalence]\label{lem:period} Under preferences \eqref{eq:olg-utility}, an agent with net income $w$ facing $(p_2)$ chooses $x_1=(\zeta/2)w$, $p_2x_2=(\zeta/2)w$, $p_2b=(1-\zeta)w$, and attains indirect utility $d\,w\,\psi(p_2)$ with $\psi(p_2)=(\zeta/2)^{\zeta}(1-\zeta)^{1-\zeta}p_2^{-(\zeta/2+1-\zeta)}$.
 Hence all occupational-indifference conditions, membership prices \eqref{eq:prices}, the output price \eqref{eq:p2}, the cutoff \eqref{eq:etastar}, and the positional fixed point \eqref{eq:fixedpoint} hold at wealth $k_t$ exactly as in the static sections.
-Market clearing in the input good reads $(\gamma/2)W + n(r+c) + m^\ast(\tau r+\beta c) = k$, which is linear in $n$; output clearing holds identically given it (Walras, machine-verified), and at $\gamma=1$ the static condition \eqref{eq:clearing} is recovered.
+Market clearing in the input good reads $(\zeta/2)W + n(r+c) + m^\ast(\tau r+\beta c) = k$, which is linear in $n$; output clearing holds identically given it (Walras, machine-verified), and at $\zeta=1$ the static condition \eqref{eq:clearing} is recovered.
 \qed
 \end{lemma}
 
 \subsection{Proof of Proposition~\ref{prop:map}} (i) is Lemma~\ref{lem:period}.
-(ii): aggregate income satisfies $W = k + n(\mu+2\lambda-3)k + m^\ast e$ with $e \equiv w_E+(2\lambda^{e}-3)k$; substituting the clearing solution for $n$ gives $W(k)$ in closed form, and $G=\Theta(1-\gamma)\phi W/\Pi$ with $\Pi(k)=c+r+(\mu+2\lambda-3)k$.
-As $k\to 0^+$ the elite sector is inactive (Proposition~\ref{prop:luxury}) and $W\to k$, so $G/k\to\Theta(1-\gamma)\phi/(c+r)$; as $k\to\infty$, $n$ and $W/\Pi$ converge, so $G$ is bounded (limits machine-verified).
-(iii): with $G(0)=0$, $G'(0^+)>1$, $G$ continuous and bounded, $G$ crosses the diagonal from above at least once; at any such crossing the steady state is stable if $|G'|<1$, verified in the example ($G'=0.31$).
+(ii): aggregate income satisfies $\bar{w} = k + n(\mu+2\lambda-3)k + m^\ast \varepsilon$ with $\varepsilon \equiv w_E+(2\lambda^{e}-3)k$; substituting the clearing solution for $n$ gives $\bar{w}(k)$ in closed form, and $\xi=\theta(1-\zeta)\bar{w}/p_2$ with $p_2(k)\phi=c+r+(\mu+2\lambda-3)k$ from \eqref{eq:p2}.
+As $k\to 0^+$ the elite sector is inactive (Proposition~\ref{prop:luxury}) and $\bar{w}\to k$, so $\xi/k\to\theta(1-\zeta)\phi/(c+r)$; as $k\to\infty$, $n$ and $\bar{w}/(p_2\phi)$ converge, so $\xi$ is bounded (limits machine-verified).
+(iii): with $\xi(0)=0$, $\xi'(0^+)>1$, $\xi$ continuous and bounded, $\xi$ crosses the diagonal from above at least once; at any such crossing the steady state is stable if $|\xi'|<1$, verified in the example ($\xi'=0.31$).
 The no-forecasting claim is immediate: \eqref{eq:olg-utility} depends on own consumption and own gift only, and period-$t$ prices depend only on $k_t$.
 \qed
 
-\subsection{Proof of Proposition~\ref{prop:luxury}} $\eta^\ast_0(k)=\mu k/Z(k)-1$ with $Z=\alpha\Pi-\beta c-\tau r+(3-2\lambda^{e})k$.
-Then $d\eta^\ast_0/dk = \mu\,(Z-kZ')/Z^2$ and direct computation (machine-verified) gives $Z-kZ' = \alpha(c+r)-\beta c-\tau r$.
-Hence $\eta^\ast_0$ is strictly decreasing iff $\alpha(c+r)<\beta c+\tau r$, and $m^\ast=1-F(\eta^\ast_0)$ (or its positional analogue, whose fixed-point map shifts up as $\eta^\ast_0$ falls) is strictly increasing wherever $0<Z<\mu k$.
-Viability: $Z(k)\leq 0$ for $k$ below the root of $Z$, where no cutoff exists and the elite sector is empty.
+\subsection{Proof of Proposition~\ref{prop:luxury}} $\eta^\ast_0(k)=\mu k/z(k)-1$ with $z=\alpha p_2\phi-\beta c-\tau r+(3-2\lambda^{e})k$.
+Then $d\eta^\ast_0/dk = \mu\,(z-kz')/z^2$ and direct computation (machine-verified) gives $z-kz' = \alpha(c+r)-\beta c-\tau r$.
+Hence $\eta^\ast_0$ is strictly decreasing iff $\alpha(c+r)<\beta c+\tau r$, and $m^\ast=1-F(\eta^\ast_0)$ (or its positional analogue, whose fixed-point map shifts up as $\eta^\ast_0$ falls) is strictly increasing wherever $0<z<\mu k$.
+Viability: $z(k)\leq 0$ for $k$ below the root of $z$, where no cutoff exists and the elite sector is empty.
 \qed
 
-\subsection{Proof of Proposition~\ref{prop:drag}} Note $e = w_E+(2\lambda^{e}-3)k = \alpha\Pi-\beta c-\tau r$: the elite triple's value added.
-Substituting the clearing solution for $n$ into $W$ and differentiating at fixed $k$, \[ \operatorname{sign}\frac{\partial W}{\partial m^\ast} = \operatorname{sign}\Big[(r+c)\,e - (\tau r+\beta c)\,(\Pi-r-c)\Big] = \operatorname{sign}\Big[\Pi\,\big(\alpha(c+r)-\beta c-\tau r\big)\Big], \] (machine-verified), and $\partial G/\partial m^\ast$ has the same sign since $\Pi$ is fixed given $k$.
-Under \eqref{eq:decline} the sign is negative: (i) follows pointwise and hence for the stable steady state ($G$ falls, the crossing with the diagonal moves left); (ii) a FOSD shift raises $m^\ast(k)$ at every $k$ with the elite active (Propositions~\ref{prop:decline} and~\ref{prop:positional}(ii)), lowering $G$ pointwise; (iii) under positional status the same shift raises $m^\ast$ by strictly less (Proposition~\ref{prop:positional}(ii)), so $G$ falls by strictly less at every $k$, and the steady states order as stated (verified in the example).
+\subsection{Proof of Proposition~\ref{prop:drag}} Note $\varepsilon = w_E+(2\lambda^{e}-3)k = \alpha p_2\phi-\beta c-\tau r$: the elite triple's value added.
+Substituting the clearing solution for $n$ into $\bar{w}$ and differentiating at fixed $k$, \[ \operatorname{sign}\frac{\partial \bar{w}}{\partial m^\ast} = \operatorname{sign}\Big[(r+c)\,\varepsilon - (\tau r+\beta c)\,(p_2\phi-r-c)\Big] = \operatorname{sign}\Big[p_2\phi\,\big(\alpha(c+r)-\beta c-\tau r\big)\Big], \] (machine-verified), and $\partial \xi/\partial m^\ast$ has the same sign since $p_2$ is fixed given $k$.
+Under \eqref{eq:decline} the sign is negative: (i) follows pointwise and hence for the stable steady state ($\xi$ falls, the crossing with the diagonal moves left); (ii) a FOSD shift raises $m^\ast(k)$ at every $k$ with the elite active (Propositions~\ref{prop:decline} and~\ref{prop:positional}(ii)), lowering $\xi$ pointwise; (iii) under positional status the same shift raises $m^\ast$ by strictly less (Proposition~\ref{prop:positional}(ii)), so $\xi$ falls by strictly less at every $k$, and the steady states order as stated (verified in the example).
 \qed
 
 \bibliographystyle{chicago}

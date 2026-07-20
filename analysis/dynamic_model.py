@@ -298,7 +298,7 @@ ax.plot(kk, [G(x, 0.18, 'absolute', THETA) for x in kk], lw=2, color='k',
 ax.plot([k_abs], [k_abs], 'ko', ms=6)
 ax.annotate(r'$k^\ast$', (k_abs, k_abs), textcoords='offset points',
             xytext=(6, -12))
-ax.set_xlabel(r'$k_t$'); ax.set_ylabel(r'$k_{t+1}=G(k_t)$')
+ax.set_xlabel(r'$k_t$'); ax.set_ylabel(r'$k_{t+1}=\xi(k_t)$')
 ax.legend(frameon=False, fontsize=8, loc='lower right')
 ax.set_title('(a) Transition maps and the status drag')
 

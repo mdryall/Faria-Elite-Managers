@@ -276,11 +276,11 @@ ax.legend(frameon=False)
 ax.set_title('(a) Sorting')
 
 ax = axes[1]
-ax.plot(rows[:, 0], rows[:, 4], lw=2, color='k', label=r'output $Y$')
+ax.plot(rows[:, 0], rows[:, 4], lw=2, color='k', label=r'output $\bar{y}$')
 ax2 = ax.twinx()
 ax2.plot(rows[:, 0], rows[:, 5], lw=1.5, color='0.5', ls=':', label='resources burned')
 ax.set_xlabel(r'status-taste scale $s$')
-ax.set_ylabel(r'aggregate output $Y$')
+ax.set_ylabel(r'aggregate output $\bar{y}$')
 ax2.set_ylabel('resources burned')
 h1, l1 = ax.get_legend_handles_labels(); h2, l2 = ax2.get_legend_handles_labels()
 ax.legend(h1 + h2, l1 + l2, frameon=False, loc='center left')

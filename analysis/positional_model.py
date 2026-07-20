@@ -270,14 +270,14 @@ ax = axes[0]
 Mgrid = np.linspace(1e-6, 0.06, 400)
 eta0_lf = mu * kT / Z - 1
 Phi = 1 - F(eta0_lf / v(Mgrid, P['psi']), P['s'])
-ax.plot(Mgrid, Phi, lw=2, label=r'$\Phi(M)=1-F(\eta_0^\ast/v(M))$')
+ax.plot(Mgrid, Phi, lw=2, label=r'$\rho(m)=1-F(\eta_0^\ast/v(m))$')
 ax.plot(Mgrid, Mgrid, lw=1, color='0.5', ls='--', label=r'$45^\circ$')
 ax.axvline(E_nopos['M'], color='0.6', ls=':', lw=1.5,
-           label=r'non-positional $M_0$')
+           label=r'non-positional $m_0$')
 ax.plot([E0['M']], [E0['M']], 'ko', ms=6)
-ax.annotate(r'$M^\ast$', (E0['M'], E0['M']), textcoords='offset points',
+ax.annotate(r'$m^\ast$', (E0['M'], E0['M']), textcoords='offset points',
             xytext=(8, -12))
-ax.set_xlabel(r'elite mass $M$'); ax.set_ylabel(r'$\Phi(M)$')
+ax.set_xlabel(r'elite mass $m$'); ax.set_ylabel(r'$\rho(m)$')
 ax.legend(frameon=False, fontsize=9)
 ax.set_title('(a) Unique positional equilibrium')
 
