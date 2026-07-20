@@ -104,6 +104,24 @@ gap = sp.simplify((p2phi_comp - p2phi_elite) - (status_discount - hate_premium -
 assert gap == 0
 print("[ok] Proposition 1: alpha<1 iff (wM-wE) > 2(wL*-wL) + (beta-1)c + (tau-1)r")
 
+# (c') Corollary (gross/net compensation decomposition):
+#   gross wage: elite = wE - k + tau*r (= -q41), competent = wM - k + r (= -q31)
+#   gross premium = (tau-1)*r - (wM - wE)   [excess tuition minus status discount]
+grossE = wE - k + tau * r
+grossM = wM - k + r
+assert sp.simplify((grossE - grossM) - ((tau - 1) * r - (wM - wE))) == 0
+# gross premium requires alpha > 1: at equilibrium the elite balance sets
+# alpha * p2phi_comp = p2phi_elite, so the (c) identity becomes
+#   p2phi_comp*(1-alpha) = (wM-wE) - 2(wL*-wL) - (beta-1)c - (tau-1)r,
+# and (wM-wE) < (tau-1)r  =>  p2phi_comp*(1-alpha) < -2(wL*-wL)-(beta-1)c <= 0.
+eta_eq = sp.solve(sp.Eq(alpha * p2phi_comp, p2phi_elite), eta)[0]
+lhs = (1 - alpha) * p2phi_comp
+rhs = (status_discount - hate_premium - waste).subs(eta, eta_eq)
+assert sp.simplify(lhs - rhs) == 0
+print("[ok] Corollary: gross premium = (tau-1)r - status discount;")
+print("     at equilibrium p2phi(1-alpha) = discount - hate - burn, so a gross")
+print("     elite premium is possible only if alpha > 1 (given chi>0 or beta>1)")
+
 # (d) Market clearing in y1 and Walras check for y2
 sigma0 = 1 - 3 * mstar - 3 * n
 demand_y1 = (sigma0 * k / 2 + mstar * wE / 2 + 2 * mstar * wLs / 2
@@ -130,8 +148,12 @@ print("=" * 72)
 print("NUMERICAL EXAMPLE")
 print("=" * 72)
 
-P = dict(k=2.0, r=1.0, c=1.0, tau=2.0, beta=1.25, alpha=0.9, phi=6.0,
-         dM=0.25, dL=0.5, chi=0.2, s=0.30)   # eta ~ Exp(mean s)
+# Main (empirical) configuration: elite firms scale competent firms up 25% in
+# BOTH input and output (alpha = beta = 1.25) -- firm-level accounting reveals
+# no inefficiency; the drain is the elite school burn (tau = 4). Elite managers
+# earn a GROSS premium but a NET discount after tuition.
+P = dict(k=2.0, r=1.0, c=1.0, tau=4.0, beta=1.25, alpha=1.25, phi=6.0,
+         dM=0.25, dL=0.5, chi=0.2, s=0.10)   # eta ~ Exp(mean s)
 
 def solve_equilibrium(P):
     k_, r_, c_, tau_, beta_, alpha_, phi_ = (P[x] for x in
@@ -158,11 +180,20 @@ def solve_equilibrium(P):
     out['sigma0'] = 1 - 3 * ms - 3 * out['n']
     out['output'] = phi_ * (out['n'] + alpha_ * ms)
     out['input_burn'] = ms * ((beta_ - 1) * c_ + (tau_ - 1) * r_)
+    out['grossE'] = wE_ - k_ + tau_ * r_
+    out['grossM'] = wM_ - k_ + r_
     # feasibility checks
     checks = {'p2>0': out['p2'] > 0, 'n>=0': out['n'] >= -1e-12,
-              'sigma0>=0': out['sigma0'] >= -1e-12, 'wE>0': wE_ > 0,
-              'Prop1 (alpha<1 coexistence)':
-                  (wM_ - wE_) > 2 * (wLs_ - wL_) + (beta_ - 1) * c_ + (tau_ - 1) * r_}
+              'sigma0>=0': out['sigma0'] >= -1e-12, 'wE>0': wE_ > 0}
+    # regime consistency: gross premium iff status discount < (tau-1)r iff alpha
+    # large enough; Prop-1 (alpha<1) coexistence iff discount > hate + burn
+    discount = wM_ - wE_
+    hate = 2 * (wLs_ - wL_)
+    burn = (beta_ - 1) * c_ + (tau_ - 1) * r_
+    if alpha_ < 1:
+        checks['Prop1 (alpha<1 coexistence)'] = discount > hate + burn
+    checks['decomposition'] = abs((out['grossE'] - out['grossM'])
+                                  - ((tau_ - 1) * r_ - discount)) < 1e-12
     out['checks'] = checks
     return out
 
@@ -174,11 +205,24 @@ print(f"m*      = {E['m_star']:.4f}   (elite managers; elite sector pop = {3*E['
 print(f"n       = {E['n']:.4f}   (competent firms; competent sector pop = {3*E['n']:.4f})")
 print(f"sigma0  = {E['sigma0']:.4f}   (leisure share)")
 print(f"net incomes: wE={E['wE']:.3f}  wM={E['wM']:.3f}  wL={E['wL']:.3f}  wL*={E['wLs']:.3f}")
+print(f"GROSS wages: elite {E['grossE']:.3f} vs competent {E['grossM']:.3f} "
+      f"(premium {100*(E['grossE']/E['grossM']-1):+.1f}%); "
+      f"NET: {E['wE']:.3f} vs {E['wM']:.3f} (discount {100*(1-E['wE']/E['wM']):.1f}%)")
 print(f"membership prices: {({kk: round(v, 3) for kk, v in E['q'].items()})}")
 print(f"aggregate output Y = {E['output']:.4f};  resources burned = {E['input_burn']:.4f}")
 for name, ok in E['checks'].items():
     print(f"  check {name}: {'PASS' if ok else 'FAIL'}")
 assert all(E['checks'].values())
+assert E['grossE'] > E['grossM'] and E['wE'] < E['wM'], \
+    "empirical configuration: gross premium with net discount"
+
+# secondary parameter point: the alpha<1 polar case of Proposition 1
+P_polar = dict(P, tau=2.0, alpha=0.9, s=0.30)
+Ep = solve_equilibrium(P_polar)
+assert all(Ep['checks'].values())
+assert Ep['grossE'] < Ep['grossM'], "alpha<1 forces a gross discount (Corollary)"
+print(f"\npolar case (tau=2, alpha=0.9<1, s=0.3): coexistence holds with GROSS "
+      f"discount ({Ep['grossE']:.2f} < {Ep['grossM']:.2f}) -- Prop 1 regime")
 
 # ----------------------------------------------------------------------------
 # 3. COMPARATIVE STATICS: spread of status taste (FOSD shift, s up)
@@ -189,16 +233,18 @@ print("COMPARATIVE STATICS: status-taste scale s (eta ~ Exp(mean s))")
 print("=" * 72)
 print("Note eta* is price-determined and independent of F; m* = exp(-eta*/s).")
 
-svals = np.linspace(0.05, 0.60, 200)
+svals = np.linspace(0.02, 0.16, 200)
 rows = []
 for s_ in svals:
     Ps = dict(P, s=s_)
     try:
         Es = solve_equilibrium(Ps)
-        rows.append((s_, Es['m_star'], Es['n'], Es['sigma0'], Es['output'],
-                     Es['input_burn']))
     except ValueError:
         continue
+    if Es['n'] < 0 or Es['sigma0'] < 0:
+        continue
+    rows.append((s_, Es['m_star'], Es['n'], Es['sigma0'], Es['output'],
+                 Es['input_burn']))
 rows = np.array(rows)
 print(f"{'s':>6} {'m*':>8} {'n':>8} {'sigma0':>8} {'output':>8} {'burn':>8}")
 for i in np.linspace(0, len(rows) - 1, 8, dtype=int):

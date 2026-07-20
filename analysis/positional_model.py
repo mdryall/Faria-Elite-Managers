@@ -58,8 +58,8 @@ from scipy.optimize import brentq
 # ----------------------------------------------------------------------------
 # 0. Example economy (same as Phase 1) + positional primitive v
 # ----------------------------------------------------------------------------
-P = dict(k=2.0, r=1.0, c=1.0, tau=2.0, beta=1.25, alpha=0.9, phi=6.0,
-         dM=0.25, dL=0.5, chi=0.2, s=0.30,      # eta ~ Exp(mean s)
+P = dict(k=2.0, r=1.0, c=1.0, tau=4.0, beta=1.25, alpha=1.25, phi=6.0,
+         dM=0.25, dL=0.5, chi=0.2, s=0.10,      # eta ~ Exp(mean s)
          psi=25.0)                              # v(M) = 1/(1 + psi*M)
 
 def v(M, psi):  return 1.0 / (1.0 + psi * M)
@@ -181,9 +181,9 @@ assert E0['M'] < E_nopos['M']
 assert min(E0['n'], E0['sigma0'], E0['wE']) > 0
 
 # self-damping of FOSD shifts
-dM_pos = solve_positional(dict(P, s=0.33))['M'] - E0['M']
-dM_non = solve_positional(dict(P_nopos, s=0.33))['M'] - E_nopos['M']
-print(f"FOSD shift s: 0.30 -> 0.33: dM positional = {dM_pos:.5f} "
+dM_pos = solve_positional(dict(P, s=0.11))['M'] - E0['M']
+dM_non = solve_positional(dict(P_nopos, s=0.11))['M'] - E_nopos['M']
+print(f"FOSD shift s: 0.10 -> 0.11: dM positional = {dM_pos:.5f} "
       f"< dM non-positional = {dM_non:.5f}: {dM_pos < dM_non}")
 assert 0 < dM_pos < dM_non
 
@@ -237,7 +237,7 @@ print("=" * 72)
 print("MEMBERSHIP TAX: welfare curve and Pigouvian level")
 print("=" * 72)
 
-ts = np.linspace(0.0, 1.2, 121)
+ts = np.linspace(0.0, 2.0, 161)
 Ws, Ms, Ys = [], [], []
 for t_ in ts:
     Et = solve_positional(P, t=t_)
@@ -267,7 +267,7 @@ import matplotlib.pyplot as plt
 fig, axes = plt.subplots(1, 2, figsize=(10, 3.8))
 
 ax = axes[0]
-Mgrid = np.linspace(1e-6, 0.05, 400)
+Mgrid = np.linspace(1e-6, 0.06, 400)
 eta0_lf = mu * kT / Z - 1
 Phi = 1 - F(eta0_lf / v(Mgrid, P['psi']), P['s'])
 ax.plot(Mgrid, Phi, lw=2, label=r'$\Phi(M)=1-F(\eta_0^\ast/v(M))$')

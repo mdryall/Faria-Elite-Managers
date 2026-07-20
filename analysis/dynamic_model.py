@@ -51,8 +51,8 @@ from scipy.optimize import brentq
 # ----------------------------------------------------------------------------
 # 0. Parameters (continuing the running example)
 # ----------------------------------------------------------------------------
-P = dict(r=1.0, c=1.0, tau=2.0, beta=1.25, alpha=0.9, phi=6.0,
-         dM=0.25, dL=0.5, chi=0.2, s=0.30, psi=25.0)
+P = dict(r=1.0, c=1.0, tau=4.0, beta=1.25, alpha=1.25, phi=6.0,
+         dM=0.25, dL=0.5, chi=0.2, s=0.10, psi=25.0)
 mu, lam = 1 / P['dM'], 1 / P['dL']
 lam_e = lam / (1 - P['chi'])
 
@@ -249,7 +249,7 @@ def top_stable(s, mode):
     stable = [x for x in ss if abs(slope(x, s, mode)) < 1]
     return max(stable) if stable else np.nan
 
-svals = np.linspace(0.05, 0.80, 76)
+svals = np.linspace(0.02, 0.19, 69)
 hs_abs = np.array([top_stable(s_, 'absolute') for s_ in svals])
 hs_pos = np.array([top_stable(s_, 'positional') for s_ in svals])
 hs_none = top_stable(P['s'], 'none')
@@ -265,11 +265,11 @@ print(f"\nat s = {svals[-1]:.2f}: absolute-status wealth loss {drop_abs:.1f}% vs
       f"no-elite benchmark; positional only {drop_pos:.1f}% (dilution protects wealth)")
 
 # generational path after a taste shift s: 0.30 -> 0.75, starting at old steady state
-s_new = 0.75
+s_new = 0.18
 kpath = [k_abs]
 for _ in range(40):
     kpath.append(G(kpath[-1], s_new, 'absolute', THETA))
-print(f"\ntransition after taste shift s: 0.30 -> {s_new:.2f} "
+print(f"\ntransition after taste shift s: 0.10 -> {s_new:.2f} "
       f"(generations, absolute status):")
 print("   " + " -> ".join(f"{x:.3f}" for x in kpath[:7])
       + f" -> ... -> {kpath[-1]:.4f}")
@@ -287,14 +287,14 @@ import matplotlib.pyplot as plt
 fig, axes = plt.subplots(1, 2, figsize=(10, 3.9))
 
 ax = axes[0]
-kk = np.linspace(0.01, 3.2, 500)
+kk = np.linspace(0.01, 3.0, 500)
 ax.plot(kk, kk, color='0.6', lw=1, ls='--', label=r'$45^\circ$')
 ax.plot(kk, [G(x, P['s'], 'none', THETA) for x in kk], lw=1.6, color='0.45',
         label='no elite sector')
 ax.plot(kk, [G(x, P['s'], 'absolute', THETA) for x in kk], lw=2, color='k',
         label='absolute status')
-ax.plot(kk, [G(x, 0.75, 'absolute', THETA) for x in kk], lw=2, color='k',
-        alpha=0.45, label=r'absolute, high taste ($s=0.75$)')
+ax.plot(kk, [G(x, 0.18, 'absolute', THETA) for x in kk], lw=2, color='k',
+        alpha=0.45, label=r'absolute, high taste ($s=0.18$)')
 ax.plot([k_abs], [k_abs], 'ko', ms=6)
 ax.annotate(r'$k^\ast$', (k_abs, k_abs), textcoords='offset points',
             xytext=(6, -12))
