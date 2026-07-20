@@ -126,6 +126,12 @@ subs_test = {k: 2, r: 1, c: 1, tau: 2, beta: sp.Rational(5, 4),
 assert ratio_f.subs(subs_test) > 0
 for pert in ({alpha: sp.Rational(11, 10)}, {k: 5}, {g: sp.Rational(1, 2)}):
     assert ratio_f.subs({**subs_test, **pert}) > 0
+# global closed form (referee-grade): dGdm equals a manifestly signed expression
+target = (1 - g) * phi * 2 * (alpha * (c + r) - beta * c - tau * r) \
+    / (2 * (r + c) + g * (mu_ + 2 * lam_ - 3) * k)
+assert sp.simplify(dGdm - target) == 0
+print("[ok] GLOBAL identity: dG/dm* = (1-zeta) phi * 2[alpha(c+r)-beta c-tau r]")
+print("     / [2(r+c)+zeta(mu+2lam-3)k]  -- denominator positive, sign as claimed")
 print("[ok] sign(dG/dm*) = sign[ alpha(c+r) - beta c - tau r ]:")
 print("     ONE condition governs the static output decline (Prop 2), the luxury")
 print("     property (d eta*/dk < 0), and the dynamic status drag (dG/dm* < 0)")

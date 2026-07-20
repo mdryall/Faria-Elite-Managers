@@ -37,7 +37,8 @@ final edits).
 - [x] **Phase 2 &mdash; Positional extension.** Relative status as a widespread externality; unique self-limiting equilibrium (Prop 3); failure of the first welfare theorem and core equivalence (Prop 4, constructive); over-entry and a membership tax that raises welfare *and* output (Prop 5).
 - [x] **Phase 3 &mdash; Dynamics (OLG).** Warm-glow bequests in the produced good; within-period allocation is the Phase 1/2 equilibrium at `k_t`; one condition (elite output-per-resource deficit) governs the static decline, status-as-luxury (Prop 7), and the accumulation drag (Prop 8); rational, fully-foreseen impoverishment with no collapse; positional dilution protects wealth.
 - [x] **Phase 4 &mdash; Framing, literature, empirics.** Final introduction with motivating evidence and roadmap; full-prose related-literature section (incl. clubs lineage and elite-overproduction positioning); Empirical Content section with five falsifiable prediction blocks; Conclusion; keywords/JEL; bibliography fully verified against publisher sources.
-- [ ] **Phase 5 &mdash; Stress-test and circulation.** Adversarial review, seminars, submission.
+- [x] **Phase 5a &mdash; Adversarial stress-test.** Four independent referee passes (GE theory vs. the EGSZ source, macro/dynamics, empirics vs. the cited papers, hostile editor); all findings triaged and fixed: proofs repaired (Props 3-6), claims weakened to what is proven, empirical interface rebuilt around the model's true comparative statics (zero tuition pass-through), notation covenant enforced.
+- [ ] **Phase 5b &mdash; Circulation.** Mike/Joao sign-off, seminars, submission (target JPE).
 
 ## Building
 

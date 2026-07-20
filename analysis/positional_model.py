@@ -194,7 +194,9 @@ print()
 print("=" * 72)
 print("PROP 4: PARETO IMPROVEMENT (shut dM elite triples, adjust dn, de-dilute)")
 print("=" * 72)
-# Per shut elite triple (members to leisure at reservation utility):
+# Per shut elite triple (laborers indifferent; managers in the marginal band
+# lose O(dm) surplus each, aggregate O(dm^2), covered by explicit compensation
+# from inframarginal elites -- see manuscript proof of Prop 4):
 #   input freed  A_e = tau*r + beta*c + wE/2 + wLs - 3*kT/2
 #   output freed B_e = -alpha*phi + (wE + 2*wLs - 3*kT)/(2*p2)
 # Per opened competent triple (members from leisure at reservation utility):

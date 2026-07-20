@@ -140,6 +140,26 @@ walras = sp.simplify((demand_y2 - supply_y2).subs(n, n_sol).subs(
 assert walras == 0
 print("[ok] Walras: y2 market clears given y1 clearing and budget balance")
 
+# (e) Proposition 2 derivative identity: d(ybar)/dm* in closed form, at the
+# equilibrium cutoff (eta* is price-determined, so it is held at its
+# equilibrium value as m* varies with the taste distribution)
+eta_equil = sp.solve(sp.Eq(mu * k / (1 + eta), Z), eta)[0]
+ybar = phi * (n_sol + alpha * mstar)
+dydm = sp.simplify(sp.diff(ybar, mstar).subs(eta, eta_equil))
+target = phi * (alpha * (c + r) - (beta * c + tau * r)) / (2 * c + 2 * r + (mu + 2 * lam - 3) * k)
+assert sp.simplify(dydm - target) == 0
+print("[ok] Prop 2 identity: d(ybar)/dm* = phi[alpha(c+r)-(beta c+tau r)] / [2c+2r+(mu+2lam-3)k]")
+
+# (f) Zero tuition pass-through: the gross elite wage is independent of tau
+Zfull = alpha * (c + r + (mu + 2 * lam - 3) * k) - beta * c - tau * r + (3 - 2 * lams) * k
+grossE_eq = Zfull - k + tau * r          # -q41 at equilibrium (w_E = Z)
+assert sp.simplify(sp.diff(grossE_eq, tau)) == 0
+grossM_eq = mu * k - k + r
+assert sp.simplify(sp.diff(grossE_eq - grossM_eq, r) - (alpha - 1)) == 0
+print("[ok] zero incidence of elite tuition on the gross elite wage: d(-q41)/dtau = 0;")
+print("     premium moves with the common school cost at rate d(premium)/dr = alpha-1")
+
+
 # ----------------------------------------------------------------------------
 # 2. NUMERICAL EXAMPLE (manuscript Section 5)
 # ----------------------------------------------------------------------------
