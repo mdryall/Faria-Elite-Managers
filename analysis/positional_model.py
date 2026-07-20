@@ -246,6 +246,39 @@ for t_ in ts:
     Ws.append(welfare(P, Et)); Ms.append(Et['M']); Ys.append(Et['Y'])
 Ws, Ms, Ys = map(np.array, (Ws, Ms, Ys))
 i_star = int(np.argmax(Ws))
+# fine-step derivative and its de-dilution component (manuscript App C)
+h_fd = 1e-5
+W0, Wh = welfare(P, solve_positional(P, t=0.0)), welfare(P, solve_positional(P, t=h_fd))
+dWdt_fine = (Wh - W0) / h_fd
+E00 = solve_positional(P, t=0.0)
+es0, m00 = E00['eta_star'], E00['M']
+# de-dilution term: |v'(m)| * (wE/mu) * H * int_{eta>=eta*} eta dF * |m'(0)|
+mp0 = (solve_positional(P, t=h_fd)['M'] - m00) / h_fd
+dedil = abs(vp(m00, P['psi'])) * (E00['wE'] / mu) * E00['H'] \
+    * (es0 + P['s']) * np.exp(-es0 / P['s']) * abs(mp0)
+print(f"dW/dt at t=0+ (fine step): {dWdt_fine:+.6f}; de-dilution component: {dedil:.6f}")
+print(f"  (the remainder is the rebate's general-equilibrium and redistributive effect)")
+
+# output-derivative decomposition at t=0+ (manuscript Prop tax (iii)):
+#   dY/dt = Y_m * m'(0) + Y_T * m*,  Y_m = phi[alpha(c+r)-beta c-tau r]/(2c+2r+(mu+2lam-3)k)
+den = 2 * P['c'] + 2 * P['r'] + (mu + 2 * lam - 3) * P['k']
+Y_m = P['phi'] * (P['alpha'] * (P['c'] + P['r']) - P['beta'] * P['c'] - P['tau'] * P['r']) / den
+hT = 1e-6
+def ybar_at(T_, m_):
+    kT_ = P['k'] + T_
+    num = (P['k'] - (1 - 3 * m_) * kT_ / 2 - m_ * (base_objects(P, T_)[5]) / 2
+           - m_ * lams * kT_ - m_ * (P['tau'] * P['r'] + P['beta'] * P['c']))
+    den_ = (mu * kT_ / 2 + lam * kT_ - 3 * kT_ / 2 + P['r'] + P['c'])
+    n_ = num / den_
+    return P['phi'] * (n_ + P['alpha'] * m_)
+Y_T = (ybar_at(hT, m00) - ybar_at(0.0, m00)) / hT
+term_entry, term_rebate = Y_m * mp0, Y_T * m00
+print(f"output decomposition at t=0+: de-entry {term_entry:+.6f}, rebate-price {term_rebate:+.6f}, "
+      f"total {term_entry + term_rebate:+.6f}")
+assert term_entry > 0 and term_rebate < 0 and term_entry + term_rebate > 0, \
+    "example must satisfy the dominance condition of Prop tax (iii)"
+print("[ok] dominance condition of Prop tax (iii) holds in the example")
+
 print(f"dW/dt at t=0+: {(Ws[1]-Ws[0])/(ts[1]-ts[0]):+.6f}  (positive => over-entry)")
 print(f"welfare-maximizing tax  t^W = {ts[i_star]:.3f}  "
       f"(M falls {E0['M']:.5f} -> {Ms[i_star]:.5f}; Y rises {Ys[0]:.4f} -> {Ys[i_star]:.4f})")

@@ -273,6 +273,15 @@ for i in np.linspace(0, len(rows) - 1, 8, dtype=int):
 dY = np.diff(rows[:, 4])
 print(f"\nOutput monotonically decreasing in s: {bool(np.all(dY < 1e-12))}")
 
+# credentialing resources per managerial position filled, economy-wide:
+# (n*r + m*tau*r)/(n + m). Per-elite-slot cost tau*r is a technology constant;
+# the economy-wide average rises purely through composition as m rises, n falls.
+cred = (rows[:, 2] * P['r'] + rows[:, 1] * P['tau'] * P['r']) / (rows[:, 2] + rows[:, 1])
+print(f"credentialing resources per managerial slot: {cred[0]:.3f} -> {cred[-1]:.3f} "
+      f"(monotone increasing in s: {bool(np.all(np.diff(cred) > -1e-12))})")
+assert np.all(np.diff(cred) > -1e-12)
+
+
 # Proposition 2 check: dY/dm* < 0  <=>  alpha*(c+r) < beta*c + tau*r
 lhs = P['alpha'] * (P['c'] + P['r'])
 rhs = P['beta'] * P['c'] + P['tau'] * P['r']
