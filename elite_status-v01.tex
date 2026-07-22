@@ -1,3 +1,8 @@
+% TRUTH VERSION: elite_status-v01.tex
+% FILE ROLE: AUTHORITATIVE SOURCE
+% DOCUMENT: Economics Journal Draft
+
+
 \documentclass[12pt,letterpaper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,amssymb,amsthm}
@@ -32,13 +37,14 @@ The algebraic derivations and numerical examples in the appendices are verified 
 \maketitle
 
 \begin{abstract}
-\noindent Why does competition not eliminate elite institutions that consume more resources than they return?
-We price elite status as a club membership in the general equilibrium framework of Ellickson, Grodal, Scotchmer, and Zame.
-Elite managers earn visible salary premia yet lower payoffs net of elite education: the status discount that finances the system.
-Elite firms out-produce their rivals firm by firm, yet aggregate output falls as the taste for status spreads, because the elite complex yields less output per unit of resources.
-Nevertheless, every equilibrium lies in the core: markets work; material efficiency does not follow.
-If status is valued for its scarcity, an unpriced dilution externality generates over-entry, and a corrective membership tax can raise welfare and output together, as it does in our example.
-In an overlapping-generations extension, status is a luxury, and growth finances the status spending that arrests it: societies converge, with full foresight, to steady states permanently poorer than their status-free counterfactuals.
+\noindent Prosperity, on an influential recent account, breeds elite overproduction: the class of leaders and managers expands, its institutions absorb growing resources, and the surplus returned to society shrinks --- a diagnosis that now animates hostility toward elites and elite institutions across the political spectrum.
+The private-sector rejoinder is that free markets provide the check: managers selected for pedigree rather than productivity will run inefficient firms, and competition will squeeze them out.
+We price elite status itself --- admission to an elite school, then command of an elite firm --- in a competitive general-equilibrium economy, and show that the rejoinder fails in an exact way.
+Competition does eliminate any institution dominated in the complete product it sells, status included: a rival supplying equivalent standing at lower resource cost would displace the elite system in every equilibrium.
+But a rival that is merely more productive need not displace anything, because it does not sell what elite participants are buying.
+The drain is therefore real --- when the elite complex returns less output per unit of resources, aggregate output falls as the taste for status spreads --- yet it is no wealth pump: elite managers earn visible salary premia but accept lower payoffs net of elite education, and this status discount finances the entire system at market prices.
+Every such equilibrium is Pareto optimal, so there is nothing for markets or policy to correct --- unless status is valued for its scarcity, in which case entry dilutes incumbents, over-entry results, and a corrective membership tax can raise welfare and output together, as it does in our example.
+Dynamically, richer societies support larger elites --- elite overproduction as a luxury --- and our example economy converges, knowingly, to permanently lower wealth than its status-free counterfactual.
 \medskip
 \noindent\textbf{Keywords:} elite status; clubs; general equilibrium; positional externalities; credentialism; elite overproduction.\\
 \textbf{JEL codes:} D51, D62, D71, I24, J31, Z13.
@@ -48,33 +54,48 @@ In an overlapping-generations extension, status is a luxury, and growth finances
 
 \section{Introduction}\label{sec:intro}
 
-A familiar argument holds that competitive markets discipline waste: an institution that consumes more resources than it returns should be undercut by rivals and disappear.
-Elite institutions appear to defy this logic.
+In \emph{End Times}, the historian Peter Turchin argues that societies at a certain stage of development begin to overproduce elites: the class of leaders and managers expands beyond the positions available to it, turns away from its shepherding role, and constructs ``wealth pumps'' that enrich elites at the expense of everyone else \citep{turchin2023endtimes}.
+Whatever one makes of the historiography, the sentiment has constituencies: significant political movements across the globe now organize around hostility toward elites and the institutions that produce them.
+
+For the private sector, at least, there is a natural rejoinder: free markets provide the check.
+Managers selected for pedigree rather than productivity will run inefficient firms; an institution that consumes more resources than it returns should be undercut by rivals; over time, competition squeezes the incompetent and the self-serving out.
+The rejoinder has a problem, and it is not theoretical.
+Elite schools and the firms their graduates run have not been competed away; they have persisted, and expanded, through decades of intense competition in product, labor, and education markets.
+
+Part of the reason lies in what these institutions actually sell.
 Elite institutions absorb ever more resources per graduate, and how much of what they sell is skill remains contested: for the average admitted student, attending a more selective college adds little to earnings once student quality is held fixed \citep[with the notable exceptions of disadvantaged students, and with returns tracking college resources]{dalekrueger2002}; the causal payoff of elite programs accrues disproportionately to the already advantaged --- in Chile, entirely to men from elite private high schools \citep{zimmerman2019elite}; admission to Ivy-Plus colleges operates through gateways to prestigious firms and graduate schools \citep{chettydemingfriedman2026}; and among interwar Harvard students the labor-market premium to joining the right social clubs exceeded, descriptively, the premium to academic performance \citep{michelmanpricezimmerman2022}.
 The firms that recruit preferentially from these institutions screen on pedigree and polish as much as on tested ability \citep{rivera2015pedigree}.
-Yet elite schools and the firms their graduates run have not been competed away; they have persisted, and expanded, through decades of intense competition in product, labor, and education markets.
 
-This paper's answer is not that competition fails, but that it succeeds.
+This paper shows that markets do work here --- but the check they run is not the one the rejoinder imagines, and material efficiency is not what it delivers.
+The displacement argument orders institutions by their material output; the market trades complete products, and the product of an elite institution includes a membership.
 We model elite status as what it observably is: a membership, first in a school and subsequently in the class of people who run certain firms, that is bought and sold at market prices.
 The natural home for such a model is the general equilibrium theory of clubs developed by \citet{ellickson1999clubs,ellickson2001clubs,ellickson2006organization}, in which group memberships are priced alongside ordinary commodities and agents care about the characteristics of their fellow members.
-Within that framework we obtain three results.
+Within that framework we obtain four results.
 
-First, equilibrium compensation reproduces the gross configuration compensation data show and pairs it with a net prediction those data do not yet test.
+First, and organizing the rest, a displacement theorem draws the boundary the familiar argument leaves implicit (Theorem~\ref{thm:displacement}).
+Competition does eliminate dominated institutions, in the following exact sense: a group type with a feasible \emph{membership-equivalent} replacement --- one whose seats carry the same qualifications and the same utility for their holders --- at lower resource cost cannot be active in any equilibrium.
+What competition does not act on is material dominance alone: an institution can lose every material comparison and survive in the strong core, because the comparison omits the membership its members are paying for.
+The boundary is visible inside the model itself.
+The serious school undercuts the elite school's cost and supplies the same amenity, and fails to displace it for exactly one reason: its degree does not confer the elite qualification.
+The elite premium prices the qualification, not the classroom.
+
+Second, equilibrium compensation reproduces the gross configuration compensation data show and pairs it with a net prediction those data do not yet test.
 Elite managers earn a gross wage premium over their competently trained peers, pinned by their firms' revenue; net of education costs, however, they accept a strictly lower payoff --- the status discount that finances the system (Corollary~\ref{cor:wages}).
 The premium decomposes exactly (gross premium equals excess tuition minus the status discount), so the status-financed component of elite pay is tuition reimbursement rather than productivity, and the decomposition yields the model's sharpest prediction: changes in elite tuition have zero incidence on elite salaries, being absorbed by the status discount.
 The waste is thus financed by identified parties at market prices; no friction, information asymmetry, or market power is involved.
+The incidence is the reverse of a wealth pump: the elite do not extract the system's cost from the rest of society; they pay it.
 The same accounting yields a sharp possibility theorem: even \emph{strictly less productive} elite firms survive whenever the status discount exceeds the workers' compensating differential plus the resources burned (Proposition~\ref{prop:coexist}) --- though in that polar case the gross premium necessarily reverses, so the empirically relevant configuration is the one in which elite firms are more productive per firm and their managers visibly better paid.
 
-Second, as the taste for status spreads through the population, aggregate output falls monotonically (Proposition~\ref{prop:decline}).
+Third, as the taste for status spreads through the population, aggregate output falls monotonically (Proposition~\ref{prop:decline}).
 What matters is not productivity per firm but output \emph{per unit of resources consumed}: in our central configuration elite firms produce strictly more output than competent ones, look superior in any firm-level comparison, pay their managers more --- and still drag aggregate output down, because the elite school system burns resources that firm accounts never show.
 
-Third (and centrally) every such equilibrium lies in the core of the economy and is Pareto optimal (Theorem~\ref{thm:nocorrection}).
-No entrant offering ``status without waste,'' no coalition of workers and investors, and no policymaker restricted to lump-sum instruments can achieve a Pareto improvement.
+Fourth, every such equilibrium lies in the core of the economy and is Pareto optimal (Theorem~\ref{thm:nocorrection}).
+No coalition of agents, deploying the economy's group types in any configuration, can achieve a Pareto improvement.
 The market has nothing to correct: falling aggregate output is the equilibrium price of status consumption.
-The popular syllogism ``markets work, therefore materially wasteful institutions cannot survive competition'' commits a non sequitur, and the point of this paper is to locate it precisely.
+The popular syllogism ``markets work, therefore materially wasteful institutions cannot survive competition'' commits a non sequitur, and Theorem~\ref{thm:displacement} locates it precisely: the syllogism is valid for complete products and invalid for their material projections.
 
 The efficiency of the baseline is not a celebration; it is a diagnosis.
-It locates exactly where a genuine market failure must live if there is one: not in the waste, which is priced, but in the \emph{relativity} of status.
+Within the environments we model, it locates where a genuine market failure must live: not in the waste, which is priced, but in the \emph{relativity} of status.
 Section~\ref{sec:positional} makes status positional (valuable because others lack it) so that each entrant into the elite dilutes the status of every incumbent.
 This economy-wide externality lies outside the assumptions of the clubs welfare theorems: membership prices internalize composition effects \emph{within} a group, but eliteness is a characteristic of a class that spans all elite groups.
 The positional equilibrium exists, is unique, and self-limits (dilution shrinks the elite), but it is no longer Pareto optimal and no longer in the core (Propositions~\ref{prop:positional} and~\ref{prop:inefficiency}): there is over-entry into elite institutions (Proposition~\ref{prop:tax}), and a corrective membership tax can raise welfare and output together, as it does in our example.
@@ -83,20 +104,22 @@ The contrast between Theorem~\ref{thm:nocorrection} and Proposition~\ref{prop:in
 Section~\ref{sec:dynamics} sets the economy in motion.
 Each generation inherits the resources its parents saved, plays the club economy within its lifetime, and bequeaths; the static model is the period economy and its comparative statics become the transition map.
 A single condition (the one already governing the static output decline) delivers two further results.
-Status is a \emph{luxury} by theorem: because the elite sector's waste is a fixed resource cost while wages scale with wealth, richer economies support larger elites (Proposition~\ref{prop:luxury}).
-And the elite sector drags on accumulation: growth finances the status spending that arrests it, and the economy converges to a steady state permanently poorer than its status-free counterfactual (Proposition~\ref{prop:drag}) --- with no collapse, because impoverishment itself prices the elite out of existence at low wealth.
+Status is a luxury in equilibrium: because the elite sector's waste is a fixed resource cost while wages scale with wealth, richer economies support larger elites (Proposition~\ref{prop:luxury}).
+This is elite overproduction, delivered by prices rather than by capture.
+And the elite sector drags on accumulation: rising wealth expands the status spending that absorbs it, and the steady state settles permanently below the status-free counterfactual (Proposition~\ref{prop:drag}, under single-crossing provisos our example satisfies) --- with no collapse, because falling wealth prices the elite out of existence before it can extinguish the economy.
 The path involves no error and no myopia: it is common knowledge, and no atomistic parent could or would deviate.
+Nor does the conclusion rest on parents who fail to look ahead: within a degree-one preference class, any common savings motive, forward-looking or not, changes how much a generation saves but never how the market for status operates at a given wealth (Proposition~\ref{prop:invariance}).
 Rational societies really do let it happen.
 
 Three features distinguish the exercise from prior work, which Section~\ref{sec:lit} reviews in detail.
 Status here is \emph{produced and sold} by institutions with real resource costs and competitively priced as a club membership, rather than attached to occupations, allocated by norms, sold by a monopolist, or traded as an abstract good in fixed supply.
 The persistence result is at the level of the \emph{firm}, with the financing of elite inefficiency traced to identified parties at market prices.
-And the welfare analysis is disciplined by the clubs welfare theorems themselves, so that the line between efficient status consumption and a genuine rat race is a theorem, not a stance.
+And the welfare analysis is disciplined by the framework's own theorems, so that both boundaries the paper draws --- between what competition eliminates and what it sustains, and between efficient status consumption and a genuine rat race --- are theorems, not stances.
 
 The paper proceeds as follows.
 Section~\ref{sec:lit} positions the contribution.
 Section~\ref{sec:framework} presents the general framework and Section~\ref{sec:model} our economy.
-Section~\ref{sec:equilibrium} characterizes equilibrium, the compensation decomposition, and the no-market-correction theorem, illustrated numerically in Section~\ref{sec:example}.
+Section~\ref{sec:equilibrium} characterizes equilibrium, the compensation decomposition, the no-market-correction theorem, and the displacement boundary, illustrated numerically in Section~\ref{sec:example}.
 Section~\ref{sec:positional} develops the positional extension and Section~\ref{sec:dynamics} the overlapping-generations dynamics.
 Section~\ref{sec:empirics} collects the model's empirical content, Section~\ref{sec:discussion} discusses interpretation and extensions, and Section~\ref{sec:conclusion} concludes.
 All derivations are gathered in the appendices and are verified symbolically in the paper's companion code.
@@ -147,7 +170,7 @@ Blackboard letters denote the standard number systems: $\R$ is the real line, $\
 Two standard exceptions are retained: distribution functions are written with the conventional capital $F$, and a bar over a lowercase letter ($\bar{w}$, $\bar{y}$) denotes an economy-wide aggregate of the corresponding individual quantity.
 Every symbol is defined where it first appears.
 Two workhorse letters serve double duty across distant contexts where no ambiguity can arise: $s$ is an organizational characteristic in the group-type notation and the taste-scale parameter of the numerical examples, and $t$ is the membership tax of Section~\ref{sec:positional} and the time index of Section~\ref{sec:dynamics}.
-Bars also mark two bounds ($\bar\ell$, $\bar\eta$) alongside the aggregates; the count $N$, utilitarian welfare $W$, the appendix aggregator $A$ and its common factor $Q$, and the rebate level $T$ are capitals by long convention; and the letter $m$ names both generic memberships (always paired with a group type or subscripted) and the elite mass of Section~\ref{sec:positional}.
+Bars also mark two bounds ($\bar\ell$, $\bar\eta$) alongside the aggregates; the count $N$, utilitarian welfare $W$, the appendix aggregator $A$ and its common factor $Q$, and the rebate level $T$ are capitals by long convention; the letter $m$ names both generic memberships (always paired with a group type or subscripted) and the elite mass of Section~\ref{sec:positional}; and $b$ is the warm-glow bequest of Section~\ref{sec:dynamics} and, in the magnitude exercise of Section~\ref{sec:empirics}, the burn share.
 
 \subsection{Commodities, groups, and memberships}
 
@@ -204,7 +227,10 @@ Third, \emph{material balance}:
 \int_A x_a\,d\iota(a) \;\leq\; \int_A e_a\,d\iota(a) \;+ \sum_{(\pi,\gamma,y)\in G}\nu(\pi,\gamma,y)\,y ,
 \]
 aggregate consumption cannot exceed aggregate endowment plus the net output of all the groups that form.
-A state is \emph{feasible for a coalition} $B\in\mathcal{F}$ if the same three conditions hold with all integrals taken over $B$; this is the notion under which a coalition can block, and hence under which the core is defined.
+A state is \emph{feasible for a coalition} $B\in\mathcal{F}$ if the same three conditions hold with all integrals taken over $B$; this is the notion under which a coalition can block.
+A feasible state is \emph{in the core} if no coalition of positive measure has a feasible state of its own that almost every member strictly prefers.
+It is \emph{in the strong core} if no coalition of positive measure has a feasible state of its own that almost every member weakly prefers and a positive-measure subset strictly prefers \citep[pp.~161--162]{ellickson2006organization}.
+The strong core is the more demanding notion, and the one our displacement result (Theorem~\ref{thm:displacement}) works with: blocking there requires only a weak improvement for most coalition members, so it disciplines reallocations that leave many agents exactly indifferent --- the situation that arises constantly in this paper, where equilibrium holds whole occupational classes at reservation utility.
 
 Both goods and memberships are priced.
 A price system is a pair $(p,q)$ with $p\in\R^N_+$ the prices of the private goods and $q\in\R^{M}$ a vector assigning a price $q(m)$ to each of the finitely many membership kinds $m\in M$.
@@ -265,7 +291,8 @@ Preferences are
   u(x,\ell;\eta) \;=\; d(\ell;\eta)\, h(x_1,x_2),
   \qquad h(x_1,x_2)=\sqrt{x_1 x_2},
 \end{equation}
-where $d$ is built multiplicatively from the list:\ attending any school contributes a factor $\delta_s\in(0,1)$; working as a manager a factor $\delta_m\in(0,1)$; working as a laborer a factor $\delta_l\in(0,1)$; holding the elite-manager membership $m_{4.1}$ contributes the additional factor $(1+\eta)$ (this is the utility of elite status) and holding the elite-firm laborer membership $m_{4.2}$ the factor $(1-\chi)$, $\chi\in[0,1)$, reflecting distaste for working under elite management.
+where $d$ is built multiplicatively from the list:\ attending any school contributes a factor $\delta_s\in(0,1)$; working as a manager a factor $\delta_m\in(0,1)$; working as a laborer a factor $\delta_l\in(0,1)$; holding an elite-manager seat --- any employment membership with characteristic $\omega_e$, of which $G$ contains exactly one, $m_{4.1}$ --- contributes the additional factor $(1+\eta)$ (this is the utility of elite status); and working as a laborer under elite management --- any laborer membership in a group whose profile demands $\omega_e$, in $G$ the membership $m_{4.2}$ --- contributes the factor $(1-\chi)$, $\chi\in[0,1)$, reflecting distaste for the condition.
+Attaching these factors to the characteristics rather than to the membership objects themselves costs nothing in the present group set and matters only in Section~\ref{sec:displacement}, where candidate replacement types create new membership objects that agents must be able to rank.
 Thus, for the five undominated vocational choices, \[ d = \begin{cases} 1 & \text{leisure (empty list)},\\ \delta_s\delta_m(1+\eta) & \text{elite manager } (\ell(m_2)=\ell(m_{4.1})=1),\\ \delta_s\delta_m & \text{competent manager } (\ell(m_1)=\ell(m_{3.1})=1),\\ \delta_l & \text{laborer, competent firm } (\ell(m_{3.2})=1),\\ \delta_l(1-\chi) & \text{laborer, elite firm } (\ell(m_{4.2})=1).
 \end{cases}
 \] The consumption sets already exclude a second school or a second job; the remaining feasible lists (school without subsequent employment, schooling combined with labor) are strictly dominated at any prices arising in equilibrium, as Lemma~\ref{lem:dominated} in Appendix~\ref{app:derivations} verifies.
@@ -417,20 +444,68 @@ The state is a group equilibrium (Lemma~\ref{lem:characterization}), so membersh
 Strong Pareto optimality follows from the same theorem once endowments are verified to be desirable, which is done in Appendix~\ref{app:assumptions}.
 \end{proof}
 
-Theorem~\ref{thm:nocorrection} is the paper's central claim, and it is worth stating what it does and does not say.
+Theorem~\ref{thm:nocorrection} is the paper's central welfare claim, and it is worth stating what it does and does not say.
 It does not say the elite sector is harmless: output falls, resources are burned, and the burn is real.
 It says the situation is not a market failure.
 The waste is voluntarily financed by the people who consume the status it produces, at prices that fully internalize its cost within each group.
-Competition has no lever: an entrant offering ``elite status without the waste'' would have to offer the elite-manager membership at its equilibrium price, and the equilibrium already prices every potential group type in $G$.
+Competition has no lever here, and Section~\ref{sec:displacement} locates the missing lever exactly: dominance in the space of \emph{complete} products, memberships included, suffices to displace the elite institutions, and no available type attains it.
 The familiar inference (markets discipline waste, elite waste persists, therefore markets must be impeded) fails at its first step.
 Markets discipline waste that is unpriced; status is priced.
 
 Three caveats delimit the result.
-First, the feasible set takes the group-type list $G$ as given; whether a status-conferring group type without resource burn could exist is a question about what makes status credible.
-Section~\ref{sec:positional} answers it: when status derives from scarcity, entry self-dilutes, and exclusivity needs no artificial protection.
+First, the feasible set takes the group-type list $G$ as given, just as every production model conditions on its technology set; Theorem~\ref{thm:displacement} below makes the dependence exact, identifying a sufficient condition under which an addition to $G$ displaces the elite institutions and exhibiting the failure of displacement without it.
 Second, if status is valued \emph{because others lack it}, utility depends on the economy-wide pattern of memberships --- an externality outside the present framework, under which the welfare theorem genuinely fails; that is the subject of Section~\ref{sec:positional}.
 Third, welfare here is welfarist: status utility counts.
 Section~\ref{sec:discussion} returns to this.
+
+\subsection{Displacement and its boundary}\label{sec:displacement}
+
+The familiar displacement argument holds that a cheaper producer of the same product drives out a dearer one.
+Theorem~\ref{thm:nocorrection} does not contradict that argument; it exposes its unstated premise.
+This subsection states the premise as a definition and the argument as a theorem, and then shows that the theorem's hypothesis fails --- inside our own group set --- exactly where the elite sector's persistence begins.
+
+Two group types can be compared in this way only if they employ the same people in the same roles.
+Let $g=(\pi,\gamma,y)$ and $g'=(\pi,\gamma',y')$ be group types with a common profile $\pi$, and for a list $\ell$ let $\ell[g\rightarrow g']$ denote the list holding the same seats with every type-$g$ membership exchanged for the corresponding type-$g'$ membership: $\ell[g\rightarrow g'](\omega,g')=\ell(\omega,g')+\ell(\omega,g)$ and $\ell[g\rightarrow g'](\omega,g)=0$, with all other entries unchanged.
+
+\begin{definition}[Membership equivalence]\label{def:equivalence}
+Group type $g'$ is \emph{membership-equivalent} to $g$ if the two share a profile and, for almost every agent $a$:
+(E1) $(x,\ell)\in X_a$ if and only if $(x,\ell[g\rightarrow g'])\in X_a$; and
+(E2) $u_a(x,\ell)=u_a(x,\ell[g\rightarrow g'])$ whenever both pairs lie in $X_a$.
+Type $g'$ \emph{strictly materially dominates} $g$ if $y'\geq y$ and $y'\neq y$.
+\end{definition}
+
+Because memberships are indexed by group type, a new type creates formally different membership objects, so (E1) and (E2) are restrictions on consumption sets and preferences rather than a relabeling.
+(E1) requires the replacement seats to carry the same qualification structure, both what they presuppose and what they confer; (E2) requires agents to value them identically (in the positional regime of Section~\ref{sec:positional}, at each fixed value of the elite mass).
+Whether any feasible type satisfies both clauses relative to an incumbent is the substance of what makes status credible, and it is a primitive here, exactly as the technology set is in any production model.
+
+\begin{theorem}[Displacement boundary]\label{thm:displacement}
+(i) Let $g'$ be membership-equivalent to $g$ and strictly materially dominant over it.
+Then no feasible state in which type-$g$ groups form in positive mass and a positive measure of agents consumes a strictly positive goods bundle belongs to the strong core; and, endowments being desirable, no group equilibrium whose state satisfies the same interiority proviso activates $g$.
+The equilibrium conclusion also follows from optimization and budget balance alone, without the welfare theorem, and therefore extends to the positional equilibria of Section~\ref{sec:positional}.
+(ii) On an open set of parameters containing the example of Section~\ref{sec:example}, the serious school strictly materially dominates the elite school in precisely the sense of (i) and satisfies (E2), but fails (E1): its degree does not confer $\omega_e$.
+No type in $G$ is membership-equivalent to either elite type, and the elite sector is active in an equilibrium whose state lies in the strong core.
+\end{theorem}
+
+The proof is in Appendix~\ref{app:displacement}; part (i) is a replacement construction (the affected groups re-form under the cheaper type, members' utilities unchanged by (E1)--(E2), and the released resources make the improvement strict), and part (ii) is verified against the closed-form equilibrium and machine-checked over a parameter neighborhood.
+A remark in the appendix shows the interiority proviso excludes nothing in our economy --- every group equilibrium satisfies it --- so ``every equilibrium'' may be read literally throughout.
+Three consequences deserve statement.
+
+First, the theorem concedes the strongest form of the displacement argument.
+A status-equivalent technology with lower resource cost would eliminate the elite school in every equilibrium of the augmented economy; nothing in the market for status suspends competition.
+What the market does not do is act on material comparisons alone: a type dominated only in the material projection of its product survives, because the projection omits what its members are paying for.
+
+Second, the boundary runs through the middle of $G$.
+The serious school \emph{is} the ``status without waste'' entrant: it educates a student for $r$ rather than $\tau r$ and supplies the identical amenity $\delta_s$, and it fails to displace the elite school at exactly one point --- clause (E1), because its degree does not qualify the holder for elite management.
+The theorem thus locates the persistence of the burn in the infeasibility of a type that confers $\omega_e$ cheaply, which is a statement about the credibility of qualifications; modeling how such credibility arises or erodes is a theory of reputation we do not attempt.
+
+Third, the pricing route to part (i) yields a general accounting result.
+
+\begin{corollary}[Competitive financing]\label{cor:financing}
+In any group equilibrium, $\sum_{\omega}\pi(\omega)\,q(\omega,(\pi,\gamma,y)) = -\,p\cdot y$ for every type in $G$: a group's material shortfall is financed exactly by the aggregate membership payments of its own members, some of whom receive rather than pay, and by no one outside the group.
+\end{corollary}
+
+The corollary is equilibrium condition~1 rearranged, and we present it as such.
+Its use is that it generalizes the financing logic of Proposition~\ref{prop:coexist} and Corollary~\ref{cor:wages} beyond the four-type economy: whoever the members of a status-producing group are, the price system permits no subsidy from anyone else, so the question ``who pays for status production?'' always has an answer inside the group, and combining the identity with occupational indifference converts that answer into welfare incidence.
 
 \section{Numerical Example}\label{sec:example}
 
@@ -478,7 +553,7 @@ This section makes status positional and shows that everything in Theorem~\ref{t
 
 \subsection{Positional preferences and equilibrium}
 
-Let $m$ denote the aggregate measure of agents holding the elite-manager membership $m_{4.1}$, and replace the status factor $(1+\eta)$ in the utility specification of Section~\ref{sec:model} with
+Let $m$ denote the aggregate measure of agents holding an elite-manager seat --- a membership with characteristic $\omega_e$, of which the group set of Section~\ref{sec:model} contains exactly one, $m_{4.1}$ --- and replace the status factor $(1+\eta)$ in the utility specification of Section~\ref{sec:model} with
 \begin{equation}\label{eq:positional-utility}
   1 + \eta\, v(m),
 \end{equation}
@@ -643,7 +718,7 @@ Under condition \eqref{eq:decline}, therefore: (i) the transition map lies stric
 
 One condition (the elite sector produces less output per unit of resources) now governs all three of the paper's mechanisms: the static output decline (Proposition~\ref{prop:decline}), the luxury property (Proposition~\ref{prop:luxury}), and the dynamic drag (Proposition~\ref{prop:drag}).
 In the example every proviso holds, and the three steady states order as the propositions suggest: $k^\ast_{\mathrm{abs}} < k^\ast_{\mathrm{pos}} < k^\ast_{\mathrm{none}}$.
-Together they compose the paper's dynamic narrative: growth makes status affordable, status absorbs the resources that fund growth, and the economy converges to a steady state permanently poorer than its status-free counterfactual --- with every generation optimizing, and every generation aware.
+Together they compose the paper's dynamic narrative: growth makes status affordable, status absorbs the resources that fund growth, and the economy converges to a steady state with permanently lower wealth than its status-free counterfactual --- with every generation optimizing, and every generation aware.
 
 Two features of the dynamics deserve emphasis.
 First, there is no collapse: since the elite sector is unviable at low wealth (Proposition~\ref{prop:luxury}), the map near the origin is elite-free and the origin repels (Proposition~\ref{prop:map}).
@@ -720,6 +795,27 @@ The model delivers precisely this coexistence: admission carries positive privat
 The magnitude gap between the model's bounded premia and the estimated effects is carried by the scarcity rents discussed above; and the features a relative-effects design cannot rule out in the data-generating world (a fixed stock of top positions, purely positional gains) are exactly the ones such designs cannot distinguish from output creation.
 The aggregate margin, not the individual one, is where the model's distinctive content lies.
 
+\textbf{Magnitudes.}
+The examples above are built to display mechanisms, not to measure them; this final block asks what the mechanism could plausibly amount to in aggregate, and answers with a bound.
+The model supplies the required mapping exactly.
+At the steady states of Section~\ref{sec:dynamics}, the wealth gap between the elite-active economy and its status-free counterfactual satisfies the closed-form identity (Remark~\ref{rem:loss} in Appendix~\ref{app:dynamics})
+\[
+\frac{k^\ast_{\mathrm{none}}-k^\ast_{\mathrm{elite}}}{k^\ast_{\mathrm{none}}} \;=\; M\cdot b,
+\]
+where $b$ is the share of steady-state resources burned by elite credentialing and the multiplier $M$, given in closed form in the remark, contains no taste parameter: the entire taste distribution enters the loss only through the observable burn share.
+In the running example $M=1.25$.
+On the empirical side, U.S.\ degree-granting postsecondary institutions spent \$702 billion in 2020--21 \citep{nces2023expenses}, roughly three percent of GDP \citep{bea2022gdp}, and the elite segment of that spending is small: fewer than half of one percent of Americans attend the twelve Ivy-Plus colleges \citep{chettydemingfriedman2026}.
+Suppose, deliberately extremely, that the status-intensive segment enrolls five percent of students (an order of magnitude beyond Ivy-Plus scale, room enough for every elite private and flagship professional program), that it spends four times the national average per student, and that \emph{all} of that spending is burn rather than skill production --- the polar case of Remark~\ref{rem:polar} applied to the entire segment.
+Then $b$ is at most twenty percent of three percent, or $0.6$ percent of resources, and the implied steady-state wealth loss, at the example's multiplier, is about three-quarters of one percent.
+A central attribution --- a segment at one percent of enrollment, with only its spending premium over the national average, taken as one times that average, counted as burn --- puts the loss at a few hundredths of a percent.
+(All arithmetic is machine-verified in \texttt{analysis/magnitude\_bound.py}.)
+The conclusion is deliberately modest, and we state it plainly: this mechanism does not explain aggregate stagnation.
+Its aggregate bite scales with the resources the status sector absorbs, and those are small.
+What the theory changes is the interpretation of institution-level facts --- who finances elite waste, why firm accounts cannot reveal it, which observables track it, and when policy has anything to correct --- and for the participants the distributional stakes of Corollary~\ref{cor:wages} are first-order regardless of $b$.
+Two scope notes bound the bound itself.
+It prices the burn of formal credentialing, so if positional competition operates through channels the education accounts do not book (grooming, screening, tournament hours), the relevant $b$ exceeds the credentialing envelope.
+And it is a statement about the steady-state wealth of the model economy under uniform inheritance, not a growth-accounting decomposition for any actual one.
+
 \section{Discussion}\label{sec:discussion}
 
 \textbf{GDP versus welfare.}
@@ -741,10 +837,11 @@ Third, intertemporal welfare: each period's absolute-status allocation is optima
 
 Elite institutions that consume more than they return are not an affront to the theory of competitive markets; they are an application of it.
 When status is a priced membership, competition sustains the institutions that produce it for the same reason it sustains any other industry: willing buyers cover the costs.
-This paper has priced elite status explicitly, in the most demanding competitive framework available, and traced the consequences through compensation, output, welfare, and growth.
+Competition remains exacting about the products markets actually trade: a status-equivalent technology at lower resource cost would displace these institutions in every equilibrium (Theorem~\ref{thm:displacement}); what survives is dominated only in the material projection of its product.
+This paper has priced elite status explicitly, in the most demanding competitive framework available, and traced the consequences through displacement, compensation, output, welfare, and accumulation.
 The results discipline both sides of a familiar argument.
-Against the presumption that visible elite premia and superior elite-firm performance certify productive efficiency, the model shows both arising in an economy that competition is making permanently poorer.
-Against the presumption that elite waste is a market failure demanding correction, the model shows the waste is Pareto optimal --- unless status is valued for its scarcity, in which case, and only in which case, there is over-entry, which a corrective membership tax can convert into gains in output and welfare together, as in our example.
+Against the presumption that visible elite premia and superior elite-firm performance certify productive efficiency, the model shows both arising in an economy converging to permanently lower material wealth.
+Against the presumption that elite waste is a market failure demanding correction, the model shows the waste is Pareto optimal --- unless status is valued for its scarcity, in which case, and within the environments we model only in that case, there is over-entry, which a corrective membership tax can convert into gains in output and welfare together, as in our example.
 The operative empirical question is therefore not whether elite institutions are wasteful, but why their members want them: for what membership is, or for what it is not shared with.
 Markets work either way; material efficiency follows in neither.
 
@@ -814,6 +911,51 @@ If $u_a(x,\ell)>0$ then $x\gg 0$, so any reduction $x'\leq x$, $x'\neq x$, remai
 \emph{Existence.}
 Not invoked: Lemma~\ref{lem:characterization} exhibits equilibrium in closed form.
 (For non-interior parameter configurations, existence follows from Theorem~2 of \citealt{ellickson2006organization} upon verifying group irreducibility; this is routine but omitted until needed.)
+
+\section{Displacement: Proofs}\label{app:displacement}
+
+The openness computations of part (ii) are verified in \texttt{analysis/displacement\_theorem.py}.
+
+\subsection{Part (i), core route}
+Let $(x,\ell)$ be feasible with $\nu(g)>0$, and let $S$ be the assumed positive-measure set of agents consuming strictly positive bundles.
+We exhibit a strong block by the grand coalition.
+Assign to every agent the list $\hat\ell_a=\ell_a[g\rightarrow g']$; clause (E1) preserves individual feasibility, and the substitution preserves list lengths, so the bound $\bar\ell$ is respected.
+Consistency holds because the seats released from type-$g$ groups fill type-$g'$ groups in exactly the required proportions (the profiles coincide): $\hat\nu(g')=\nu(g')+\nu(g)$, $\hat\nu(g)=0$, and all other masses are unchanged.
+Aggregate net output changes by $\nu(g)(y'-y)\geq 0$, $\neq 0$; choose a good $j$ with $y'_j>y_j$ and distribute the released surplus $\nu(g)(y'_j-y_j)>0$ of good $j$ uniformly across agents, which free upward disposal keeps inside every consumption set.
+By (E2) the substitution leaves every agent's utility unchanged, the added goods leave almost every agent weakly better off, and every agent in $S$ is strictly better off, utility being strictly increasing at interior bundles.
+This is a strong block: the state is not in the strong core.
+Endowments being desirable (Appendix~\ref{app:assumptions}), every group-equilibrium state belongs to the strong core by Theorem~1 of \citet{ellickson2006organization}, and the contrapositive gives $\nu(g)=0$ at any equilibrium whose state satisfies the proviso.
+The equilibria of Lemma~\ref{lem:characterization} satisfy it: almost every agent's net income is strictly positive (leisure-takers have $w=k>0$ and elite managers $w_E=z>0$ by Assumption~\ref{ass:interior}(i); $z<k$ is possible within Assumption~\ref{ass:interior}, so the argument uses positivity, never size), and demand is then interior.
+
+\subsection{Part (i), pricing route}
+Consider any group equilibrium in which a positive measure of agents consumes an interior bundle; as just verified, the equilibria of Lemma~\ref{lem:characterization} qualify, and so do their positional counterparts, whose prices coincide (Proposition~\ref{prop:positional}(iii)).
+\emph{Step 1: goods prices are strictly positive.}
+Were some $p_j=0$, an agent in the interior set could add the free good at unchanged expenditure and be strictly better off, contradicting optimization.
+\emph{Step 2: the seat bundles are ordered.}
+Budget balance holds for every type in $G$, active or not, so subtracting the two conditions gives $\sum_{\omega}\pi(\omega)\left[q(\omega,g)-q(\omega,g')\right] = p\cdot(y'-y) > 0$ by Step 1.
+\emph{Step 3: arbitrage.}
+Suppose $\nu(g)>0$.
+Integrating the saving from full-list substitution over the population, $\int \left[q\cdot\ell_a - q\cdot\ell_a[g\rightarrow g']\right]d\iota = \nu(g)\,p\cdot(y'-y)>0$, so a positive-measure set of agents each realizes a strictly positive saving from substituting her own list.
+For any such agent the choice (substituted list, current bundle plus a strictly positive amount of every good purchased with the saving) is feasible by (E1), affordable, and strictly preferred: her taste factor is strictly positive, so an interior bundle beats a boundary bundle, and strict monotonicity does the rest when her bundle was already interior.
+This contradicts optimization; hence $\nu(g)=0$.
+The argument never exchanges a single seat in isolation --- the saving is evaluated on the whole list, which is what (E1)--(E2) license --- and in the positional regime it proceeds at fixed elite mass, since the substitution preserves the set of agents holding $\omega_e$ seats and the status factors of Section~\ref{sec:model} attach to characteristics, not to membership objects.
+
+\subsection{Part (ii)}
+At the parameters of Section~\ref{sec:example}, Assumption~\ref{ass:interior} holds with strict inequalities ($z=5.75\in(0,\mu k)=(0,8)$, $n\approx 0.114>0$, $\sigma_0\approx 0.598>0$).
+Every equilibrium object is a closed-form continuous function of the parameter vector, so the strict inequalities persist on an open neighborhood, on which Lemma~\ref{lem:characterization} delivers the active-elite equilibrium and Theorem~\ref{thm:nocorrection} places its state in the strong core.
+The dominance and equivalence clauses are parameter-free on the neighborhood: $y_{g_1}=(-r,0)\geq(-\tau r,0)=y_{g_2}$ strictly for $\tau>1$, with the common profile $\pi_1$; both schools carry the amenity factor $\delta_s$, so (E2) holds on the common feasible domain; and (E1) fails at the elite manager's list, $\{m_2,m_{4.1}\}\in X_a$ while $\{m_1,m_{4.1}\}\notin X_a$, because the serious school does not confer $\omega_e$.
+No other pair of types shares a profile ($\pi_3$ demands $\omega_e$ where $\pi_2$ demands $\omega_m$), so no type in $G$ is membership-equivalent to either elite type.
+The companion script verifies the neighborhood claim numerically: all conditions hold on a $\pm 3\%$ one-at-a-time grid and under $20{,}000$ random joint $\pm 1.5\%$ perturbations, with per-parameter symmetric margins of $\pm 4\%$ ($\alpha$), $\pm 7\%$ ($\lambda,\lambda^{e}$), and at least $\pm 10\%$ (all others).
+The binding constraint as $\alpha$ rises is interiority ($n>0$), not the dominance inequality: coexistence is robust, and what limits the neighborhood is exactly Assumption~\ref{ass:interior}.
+\qed
+
+\begin{remark}[The proviso is vacuous in our economy]\label{rem:proviso}
+In any group equilibrium of the economy of Section~\ref{sec:model}, both goods prices are strictly positive, so the interiority proviso of Theorem~\ref{thm:displacement}(i) excludes nothing.
+If $p_2=0$, then $p_1>0$ (prices are nonzero), every agent's wealth $p_1k$ is strictly positive, and any agent can afford a bundle she strictly prefers to any candidate optimum --- her endowment's worth of the input good together with an arbitrarily large amount of the free consumption good --- violating optimization.
+If $p_1=0$, every agent's wealth is zero, while budget balance for the competent firm gives $q_{3.1}+2q_{3.2}=-p_2\phi<0$, so some seat carries a strictly negative price; schooling is free ($q_1=p_1r=0$), so the seat is attainable, and its wage funds an interior bundle at nonpositive total cost --- a strictly preferred affordable choice, violating optimization.
+Hence $p\gg 0$; every agent's wealth is then strictly positive, every taste factor is strictly positive, and almost every agent's chosen bundle is interior.
+The hypotheses of both proof routes therefore hold at every group equilibrium of our economy, and the summaries in the text may read ``every equilibrium'' without qualification.
+\end{remark}
 
 \section{Positional Extension: Proofs}\label{app:positional}
 
@@ -890,6 +1032,33 @@ Viability: $z(k)\leq 0$ for $k$ below the root of $z$, where no cutoff exists an
 Substituting the clearing solution for $n$ into $\bar{w}$ and differentiating at fixed $k$, \[ \operatorname{sign}\frac{\partial \bar{w}}{\partial m^\ast} = \operatorname{sign}\Big[(r+c)\,\varepsilon - (\tau r+\beta c)\,(p_2\phi-r-c)\Big] = \operatorname{sign}\Big[p_2\phi\,\big(\alpha(c+r)-\beta c-\tau r\big)\Big], \] (machine-verified), and $\partial \xi/\partial m^\ast$ has the same sign since $p_2$ is fixed given $k$.
 Under \eqref{eq:decline} the sign is negative: (i) follows pointwise and hence for the stable steady state ($\xi$ falls, the crossing with the diagonal moves left); (ii) a FOSD shift raises $m^\ast(k)$ at every $k$ with the elite active (Propositions~\ref{prop:decline} and~\ref{prop:positional}(ii)), lowering $\xi$ pointwise; (iii) under positional status the same shift raises $m^\ast$ by strictly less (Proposition~\ref{prop:positional}(ii)), so $\xi$ falls by strictly less at every $k$, and the steady states order as stated (verified in the example).
 \qed
+
+\begin{remark}[Exact steady-state loss]\label{rem:loss}
+Substituting the clearing solution for $n$ into $\bar{w}$ puts the transition map in closed form:
+\[
+\xi(k) \;=\; \theta(1-\zeta)\,\phi\,\frac{k + m^\ast(k)\,\Delta}{S(k)},
+\qquad
+\Delta \equiv \alpha(c+r)-(\beta c+\tau r),
+\quad
+S(k) \equiv c+r+\tfrac{\zeta}{2}(\mu+2\lambda-3)k :
+\]
+the elite map is the no-elite map with $k$ shifted by $m^\ast\Delta$ in the numerator alone (verified symbolically in \texttt{analysis/magnitude\_bound.py}).
+Let $k^\ast_{\mathrm{e}}$ and $k^\ast_{\mathrm{n}}$ be interior steady states of the elite and no-elite maps, and maintain condition~\eqref{eq:decline}, so that $\Delta<0$.
+Subtracting the two steady-state equations and using $S(k^\ast_{\mathrm{n}})=\theta(1-\zeta)\phi$, which is the no-elite steady-state condition itself, gives the exact identity
+\[
+\left(k^\ast_{\mathrm{n}} - k^\ast_{\mathrm{e}}\right)\tfrac{\zeta}{2}(\mu+2\lambda-3)\,k^\ast_{\mathrm{e}}
+\;=\;
+\theta(1-\zeta)\,\phi\; m^\ast(k^\ast_{\mathrm{e}})\,\left|\Delta\right| ,
+\]
+so the steady-state wealth loss is pinned by the elite mass and the resource-productivity gap, with no further dependence on the taste distribution.
+Dividing by $k^\ast_{\mathrm{n}}k^\ast_{\mathrm{e}}$ and by the burn share $b\equiv m^\ast\left[(\tau-1)r+(\beta-1)c\right]/k^\ast_{\mathrm{e}}$ yields the multiplier form used in Section~\ref{sec:empirics}:
+\[
+\frac{k^\ast_{\mathrm{n}}-k^\ast_{\mathrm{e}}}{k^\ast_{\mathrm{n}}} \;=\; M\, b,
+\qquad
+M \;=\; \frac{(\beta c+\tau r)-\alpha(c+r)}{(\tau-1)r+(\beta-1)c}\left[\,1+\frac{c+r}{\tfrac{\zeta}{2}(\mu+2\lambda-3)\,k^\ast_{\mathrm{n}}}\,\right].
+\]
+In the running example $M=1.25$, constant across the entire taste scan because the taste distribution enters the loss only through $b$; the first factor is strictly below one whenever $\alpha>1$ (and equal to one at $\alpha=1$), since $(\beta c+\tau r)-\alpha(c+r)$ is the burn less $(\alpha-1)(c+r)$.
+\end{remark}
 
 \section{The Transfer Motive: Invariance and Necessity}\label{app:motive}
 
